@@ -4,7 +4,6 @@
  */
 package com.aluguelautomoveis.controllerview;
 
-import com.aluguelautomoveis.model.Utils;
 import com.aluguelautomoveis.model.Cliente;
 import com.aluguelautomoveis.model.Automovel;
 import com.aluguelautomoveis.model.Utils;
@@ -18,20 +17,17 @@ import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import com.aluguelautomoveis.model.dao.AluguelDao;
-import com.aluguelautomoveis.model.Aluguel;        
+import com.aluguelautomoveis.model.Aluguel;
 
-        
 public class FormAluguel extends javax.swing.JFrame {
 
-   Cliente cliente = null;
-   Automovel automovel = null;
-   Aluguel aluguel = null;
-   String okcliente = null;
-   String okcarro = null;
-   double random = 0;
-   
+    Cliente cliente = null;
+    Automovel automovel = null;
+    Aluguel aluguel = null;
+    String okcliente = null;
+    String okcarro = null;
+    double random = 0;
 
-           
     public FormAluguel() {
         initComponents();
     }
@@ -507,109 +503,99 @@ public class FormAluguel extends javax.swing.JFrame {
     }//GEN-LAST:event_jtdataaluguelActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-Date data = new Date();
-jtdataaluguel.setText(Utils.DateToStr(data));
-jtdatadevolucao.setText(null);
-jtdevalor.setText(null);
-jtatevalor.setText(null);
+        Date data = new Date();
+        jtdataaluguel.setText(Utils.DateToStr(data));
+        jtdatadevolucao.setText(null);
+        jtdevalor.setText(null);
+        jtatevalor.setText(null);
 
     }//GEN-LAST:event_formWindowOpened
 
     private void jbbuscatdsautosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscatdsautosActionPerformed
-limparTabelaAutomovel();    
+        limparTabelaAutomovel();
         jfplaca.setText("");
-            
+
         ArrayList<Automovel> lista = AutomovelDao.getTodosAutomoveis();
-        
-        DefaultTableModel modelo = (DefaultTableModel)jtauto.getModel();
-        
-        if (!lista.isEmpty())
-        {
-            
-            for(int i=0;i<lista.size();i++)
-            {    
-                if (lista.get(i).getStatus().equals("Disponível"))
-                modelo.addRow(lista.get(i).getAutomovel());
-            
-        } if (modelo.getRowCount() == 0){
-            JOptionPane.showMessageDialog(null,"Não existe Automóveis disponíveis para locação!!!");
+
+        DefaultTableModel modelo = (DefaultTableModel) jtauto.getModel();
+
+        if (!lista.isEmpty()) {
+
+            for (int i = 0; i < lista.size(); i++) {
+                if (lista.get(i).getStatus().equals("Disponível")) {
+                    modelo.addRow(lista.get(i).getAutomovel());
+                }
+
+            }
+            if (modelo.getRowCount() == 0) {
+                JOptionPane.showMessageDialog(null, "Não existe Automóveis disponíveis para locação!!!");
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum Automóvel cadastrado!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
         }
-        
-        }
-        else {
-          JOptionPane.showMessageDialog(null, "Nenhum Automóvel cadastrado!","ATENÇÃO!",JOptionPane.ERROR_MESSAGE);
-        } 
      }//GEN-LAST:event_jbbuscatdsautosActionPerformed
 
     private void jbuscarautoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbuscarautoActionPerformed
 
-   automovel = AutomovelDao.getAutomovel(jfplaca.getText());
-   System.out.println(automovel.getStatus());
-   jbconfirmarautomovel.setEnabled(false);
-   limparTabelaAutomovel();  
-   
-        DefaultTableModel modelo = (DefaultTableModel)jtauto.getModel();
-        if (automovel != null)
-        { 
-            if (automovel.getStatus().equals("Disponível")){
-            modelo.addRow(automovel.getAutomovel());
-         jfplaca.setText(null); 
-        }
-        else
-            JOptionPane.showMessageDialog(null, "Automóvel Inexistente!\nNão foi possivel encontrar o automóvel especificado!","ATENÇÃO!",JOptionPane.ERROR_MESSAGE);
-    jfplaca.setText(null);
-        
+        automovel = AutomovelDao.getAutomovel(jfplaca.getText());
+        System.out.println(automovel.getStatus());
+        jbconfirmarautomovel.setEnabled(false);
+        limparTabelaAutomovel();
 
-        
+        DefaultTableModel modelo = (DefaultTableModel) jtauto.getModel();
+        if (automovel != null) {
+            if (automovel.getStatus().equals("Disponível")) {
+                modelo.addRow(automovel.getAutomovel());
+                jfplaca.setText(null);
+            } else {
+                JOptionPane.showMessageDialog(null, "Automóvel Inexistente!\nNão foi possivel encontrar o automóvel especificado!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
+            }
+            jfplaca.setText(null);
 
         }
- 
+
     }//GEN-LAST:event_jbuscarautoActionPerformed
 
     private void jbbuscarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscarclienteActionPerformed
-jbconfirmarcliente.setEnabled(false);
-limparTabelaCliente();
+        jbconfirmarcliente.setEnabled(false);
+        limparTabelaCliente();
         cliente = ClienteDao.getCliente(jfcpfbusca.getText());
-        
-        DefaultTableModel modelo = (DefaultTableModel)jtclientes.getModel();
-        if (cliente != null)
-        {
+
+        DefaultTableModel modelo = (DefaultTableModel) jtclientes.getModel();
+        if (cliente != null) {
             modelo.addRow(cliente.getCliente());
-         jfcpfbusca.setText(null); 
+            jfcpfbusca.setText(null);
+        } else {
+            JOptionPane.showMessageDialog(null, "Cliente Inexistente!\nNão foi possivel encontrar o Cliente especificado!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
         }
-        else
-            JOptionPane.showMessageDialog(null, "Cliente Inexistente!\nNão foi possivel encontrar o Cliente especificado!","ATENÇÃO!",JOptionPane.ERROR_MESSAGE);
-    jfcpfbusca.setText(null);
+        jfcpfbusca.setText(null);
     }//GEN-LAST:event_jbbuscarclienteActionPerformed
 
     private void jbbuscatdsclientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscatdsclientesActionPerformed
-jbconfirmarcliente.setEnabled(false);
+        jbconfirmarcliente.setEnabled(false);
         jfcpfbusca.setText("");
-      limparTabelaCliente();
-      
+        limparTabelaCliente();
+
         ArrayList<Cliente> lista = ClienteDao.getTodosClientes();
-        
-        DefaultTableModel modelo = (DefaultTableModel)jtclientes.getModel();
-        
-        if (!lista.isEmpty())
-        {
-            
-            for(int i=0;i<lista.size();i++)
-            {
-               
-                
+
+        DefaultTableModel modelo = (DefaultTableModel) jtclientes.getModel();
+
+        if (!lista.isEmpty()) {
+
+            for (int i = 0; i < lista.size(); i++) {
+
                 modelo.addRow(lista.get(i).getCliente());
-                         
-                
+
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum Cliente cadastrado!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
         }
-        else
-            JOptionPane.showMessageDialog(null, "Nenhum Cliente cadastrado!","ATENÇÃO!",JOptionPane.ERROR_MESSAGE);
-            
+
     }//GEN-LAST:event_jbbuscatdsclientesActionPerformed
 
     private void jbsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsairActionPerformed
-this.dispose();
+        this.dispose();
     }//GEN-LAST:event_jbsairActionPerformed
 
     private void jtnumaluguelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtnumaluguelActionPerformed
@@ -617,154 +603,142 @@ this.dispose();
     }//GEN-LAST:event_jtnumaluguelActionPerformed
 
     private void jbconfirmarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbconfirmarclienteActionPerformed
-int linha = jtclientes.getSelectedRow();
-String cpf = ((String)jtclientes.getModel().getValueAt(linha,2));
-limparTabelaCliente();
-DefaultTableModel modelo = (DefaultTableModel)jtclientes.getModel();
-cliente = ClienteDao.getCliente(cpf);
-modelo.addRow(cliente.getCliente());
-aluguel = new Aluguel();
-aluguel.setCliente(cliente);
+        int linha = jtclientes.getSelectedRow();
+        String cpf = ((String) jtclientes.getModel().getValueAt(linha, 2));
+        limparTabelaCliente();
+        DefaultTableModel modelo = (DefaultTableModel) jtclientes.getModel();
+        cliente = ClienteDao.getCliente(cpf);
+        modelo.addRow(cliente.getCliente());
+        aluguel = new Aluguel();
+        aluguel.setCliente(cliente);
 
-if (cliente != null){
-double random = Math.round(Math.random()*1000);
-checanumerolocacao(random);
-double numrandom = checanumerolocacao(random);
- jtnumaluguel.setText(Double.toString(numrandom));
- aluguel.setNumero(numrandom);
- jfcpfbusca.setEnabled(false);
- jbbuscarcliente.setEnabled(false);
- jbbuscatdsclientes.setEnabled(false);
-jfplaca.setEnabled(true);
-jbbuscatdsautos.setEnabled(true);
-jbuscarauto.setEnabled(true);
-jbuscaavancada.setEnabled(true);
-jbconfirmarcliente.setEnabled(false);
-jtclientes.setEnabled(false);
-jtclientes.setRowSelectionAllowed(false);
-okcliente = "ok";
-JOptionPane.showMessageDialog(null,"Cliente Inserido com Sucesso!");
-}
+        if (cliente != null) {
+            double random = Math.round(Math.random() * 1000);
+            checanumerolocacao(random);
+            double numrandom = checanumerolocacao(random);
+            jtnumaluguel.setText(Double.toString(numrandom));
+            aluguel.setNumero(numrandom);
+            jfcpfbusca.setEnabled(false);
+            jbbuscarcliente.setEnabled(false);
+            jbbuscatdsclientes.setEnabled(false);
+            jfplaca.setEnabled(true);
+            jbbuscatdsautos.setEnabled(true);
+            jbuscarauto.setEnabled(true);
+            jbuscaavancada.setEnabled(true);
+            jbconfirmarcliente.setEnabled(false);
+            jtclientes.setEnabled(false);
+            jtclientes.setRowSelectionAllowed(false);
+            okcliente = "ok";
+            JOptionPane.showMessageDialog(null, "Cliente Inserido com Sucesso!");
+        } else {
 
-
- else {
-    
-    JOptionPane.showMessageDialog(null,"Nenhum Cliente Selecionado!");
-}
+            JOptionPane.showMessageDialog(null, "Nenhum Cliente Selecionado!");
+        }
 
     }//GEN-LAST:event_jbconfirmarclienteActionPerformed
 
     private void jtclientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtclientesMouseClicked
- if (okcliente != "ok")
-         {
-             if (jtclientes.getSelectedRow()>=-1)
-             {
-                    jbconfirmarcliente.setEnabled(true);
-     } else 
-     {
-                
-     }
-         }
+        if (okcliente != "ok") {
+            if (jtclientes.getSelectedRow() >= -1) {
+                jbconfirmarcliente.setEnabled(true);
+            } else {
+
+            }
+        }
     }//GEN-LAST:event_jtclientesMouseClicked
 
     private void jtautoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtautoMouseClicked
-  if (jtauto.getSelectedRow()!= -1){
-                    jbconfirmarautomovel.setEnabled(true);
-     } else 
-     {
-         JOptionPane.showConfirmDialog(null,"Selecione um Automóvel!");
-         
-     }
-    
+        if (jtauto.getSelectedRow() != -1) {
+            jbconfirmarautomovel.setEnabled(true);
+        } else {
+            JOptionPane.showConfirmDialog(null, "Selecione um Automóvel!");
+
+        }
+
     }//GEN-LAST:event_jtautoMouseClicked
 
     private void jbconfirmarautomovelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbconfirmarautomovelActionPerformed
-int linha = jtauto.getSelectedRow();
-String placa = ((String)jtauto.getModel().getValueAt(linha,5));
-automovel = AutomovelDao.getAutomovel(placa);
-limparTabelaAutomovel();
-DefaultTableModel modelo = (DefaultTableModel)jtauto.getModel();
-modelo.addRow(automovel.getAutomovel());
-aluguel.setAutomovel(automovel);
-if (aluguel.validahabilitacao() == "ok"){
-                
-jfplaca.setEnabled(false);
-jbuscarauto.setEnabled(false);
-jbbuscatdsautos.setEnabled(false);
-jbconfirmarautomovel.setEnabled(false);
-jtauto.setEnabled(false);
-jtauto.setRowSelectionAllowed(false);
-jbcalcularvalorlocacao.setEnabled(true);
-jbconfirmarclocacao.setEnabled(false);
-jtdatadevolucao.setEnabled(true);        
- JOptionPane.showMessageDialog(null,"Automóvel Inserido com Sucesso!!!");
- }
-else 
-{
- JOptionPane.showMessageDialog(null,"Não é possível alugar este veículo com esta habilitação!");
-aluguel.setAutomovel(null);
-limparTabelaAutomovel();
-}
+        int linha = jtauto.getSelectedRow();
+        String placa = ((String) jtauto.getModel().getValueAt(linha, 5));
+        automovel = AutomovelDao.getAutomovel(placa);
+        limparTabelaAutomovel();
+        DefaultTableModel modelo = (DefaultTableModel) jtauto.getModel();
+        modelo.addRow(automovel.getAutomovel());
+        aluguel.setAutomovel(automovel);
+        if (aluguel.validahabilitacao() == "ok") {
+
+            jfplaca.setEnabled(false);
+            jbuscarauto.setEnabled(false);
+            jbbuscatdsautos.setEnabled(false);
+            jbconfirmarautomovel.setEnabled(false);
+            jtauto.setEnabled(false);
+            jtauto.setRowSelectionAllowed(false);
+            jbcalcularvalorlocacao.setEnabled(true);
+            jbconfirmarclocacao.setEnabled(false);
+            jtdatadevolucao.setEnabled(true);
+            JOptionPane.showMessageDialog(null, "Automóvel Inserido com Sucesso!!!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Não é possível alugar este veículo com esta habilitação!");
+            aluguel.setAutomovel(null);
+            limparTabelaAutomovel();
+        }
     }//GEN-LAST:event_jbconfirmarautomovelActionPerformed
 
     private void jbuscaavancadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbuscaavancadaActionPerformed
-if (jbuscaavancada.isSelected()){
-jlvalor.setEnabled(true);
-jtde.setEnabled(true);
-jtdevalor.setEnabled(true);
-jtate.setEnabled(true);
-jtatevalor.setEnabled(true);
-jctipo.setEnabled(true);
-jltipo.setEnabled(true);
-jbbuscaavancada.setEnabled(true);
-jbbuscatdsautos.setEnabled(false);
-jbuscarauto.setEnabled(false);
-}
-else
-{
-jlvalor.setEnabled(false);
-jtde.setEnabled(false);
-jtdevalor.setEnabled(false);
-jtate.setEnabled(false);
-jtatevalor.setEnabled(false);
-jctipo.setEnabled(false);
-jltipo.setEnabled(false);
-jtdevalor.setText(null);
-jtatevalor.setText(null);
-jctipo.setSelectedIndex(-1);
-jbbuscaavancada.setEnabled(false);
-jbbuscatdsautos.setEnabled(true);
-jbuscarauto.setEnabled(true);    
-}
+        if (jbuscaavancada.isSelected()) {
+            jlvalor.setEnabled(true);
+            jtde.setEnabled(true);
+            jtdevalor.setEnabled(true);
+            jtate.setEnabled(true);
+            jtatevalor.setEnabled(true);
+            jctipo.setEnabled(true);
+            jltipo.setEnabled(true);
+            jbbuscaavancada.setEnabled(true);
+            jbbuscatdsautos.setEnabled(false);
+            jbuscarauto.setEnabled(false);
+        } else {
+            jlvalor.setEnabled(false);
+            jtde.setEnabled(false);
+            jtdevalor.setEnabled(false);
+            jtate.setEnabled(false);
+            jtatevalor.setEnabled(false);
+            jctipo.setEnabled(false);
+            jltipo.setEnabled(false);
+            jtdevalor.setText(null);
+            jtatevalor.setText(null);
+            jctipo.setSelectedIndex(-1);
+            jbbuscaavancada.setEnabled(false);
+            jbbuscatdsautos.setEnabled(true);
+            jbuscarauto.setEnabled(true);
+        }
     }//GEN-LAST:event_jbuscaavancadaActionPerformed
 
     private void jbcalcularvalorlocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbcalcularvalorlocacaoActionPerformed
-if (jtdatadevolucao.getText().equals("  /  /    ")){
-    JOptionPane.showMessageDialog(null,"Preencha a Data de Devolução!");
-}
-else{ 
-    
-        try {    
+        if (jtdatadevolucao.getText().equals("  /  /    ")) {
+            JOptionPane.showMessageDialog(null, "Preencha a Data de Devolução!");
+        } else {
 
-            aluguel.setDatadevolucao(Utils.StrToDate(jtdatadevolucao.getText()));
-        } catch (ParseException ex) {
-            Logger.getLogger(FormAluguel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            aluguel.setDatalocacao(Utils.StrToDate(jtdataaluguel.getText()));
-        } catch (ParseException ex) {
-            Logger.getLogger(FormAluguel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            aluguel.diferencaDias(aluguel.getDatalocacao(),aluguel.getDatadevolucao());
-            if (aluguel.getNumerodias() <=0){
-                JOptionPane.showMessageDialog(null,"Data de Devolução Não pode ser anterior ou igual a data de Hoje!\n (Locação Mínima: 1 dia)");
+            try {
+
+                aluguel.setDatadevolucao(Utils.StrToDate(jtdatadevolucao.getText()));
+            } catch (ParseException ex) {
+                Logger.getLogger(FormAluguel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                aluguel.setDatalocacao(Utils.StrToDate(jtdataaluguel.getText()));
+            } catch (ParseException ex) {
+                Logger.getLogger(FormAluguel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            aluguel.diferencaDias(aluguel.getDatalocacao(), aluguel.getDatadevolucao());
+            if (aluguel.getNumerodias() <= 0) {
+                JOptionPane.showMessageDialog(null, "Data de Devolução Não pode ser anterior ou igual a data de Hoje!\n (Locação Mínima: 1 dia)");
             } else {
-            aluguel.calcularValorTotal();
-            
-    jtvalorlocacao.setText(Double.toString(aluguel.getValorTotal()));
-    jbconfirmarclocacao.setEnabled(true);
-}
-}
+                aluguel.calcularValorTotal();
+
+                jtvalorlocacao.setText(Double.toString(aluguel.getValorTotal()));
+                jbconfirmarclocacao.setEnabled(true);
+            }
+        }
     }//GEN-LAST:event_jbcalcularvalorlocacaoActionPerformed
 
     private void jfplacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jfplacaActionPerformed
@@ -777,29 +751,28 @@ else{
 
     private void jbconfirmarclocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbconfirmarclocacaoActionPerformed
 
-if (aluguel.getAutomovel()!=null){
-AluguelDao.addAluguel(aluguel);
-aluguel.getAutomovel().Alugar();
-AutomovelDao.atualizarAutomovel(automovel);
-JOptionPane.showMessageDialog(null,"Locação Efetuada com sucesso!!!");
-limparTabelaAutomovel();
-limparTabelaCliente();
-jfplaca.setEnabled(true);
-jbuscarauto.setEnabled(true);
-jbbuscatdsautos.setEnabled(true);
- jfcpfbusca.setEnabled(true);
- jbbuscarcliente.setEnabled(true);
- jbbuscatdsclientes.setEnabled(true);
- jtnumaluguel.setText(null);
- jbconfirmarautomovel.setEnabled(false);
- jbconfirmarcliente.setEnabled(false);
- jtdatadevolucao.setText(null);
- jtvalorlocacao.setText(null);
- this.dispose();
-}
-else{
-    JOptionPane.showMessageDialog(null,"Adicione um Automóvel!");
-}
+        if (aluguel.getAutomovel() != null) {
+            AluguelDao.addAluguel(aluguel);
+            aluguel.getAutomovel().Alugar();
+            AutomovelDao.atualizarAutomovel(automovel);
+            JOptionPane.showMessageDialog(null, "Locação Efetuada com sucesso!!!");
+            limparTabelaAutomovel();
+            limparTabelaCliente();
+            jfplaca.setEnabled(true);
+            jbuscarauto.setEnabled(true);
+            jbbuscatdsautos.setEnabled(true);
+            jfcpfbusca.setEnabled(true);
+            jbbuscarcliente.setEnabled(true);
+            jbbuscatdsclientes.setEnabled(true);
+            jtnumaluguel.setText(null);
+            jbconfirmarautomovel.setEnabled(false);
+            jbconfirmarcliente.setEnabled(false);
+            jtdatadevolucao.setText(null);
+            jtvalorlocacao.setText(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Adicione um Automóvel!");
+        }
 
 
     }//GEN-LAST:event_jbconfirmarclocacaoActionPerformed
@@ -809,65 +782,56 @@ else{
     }//GEN-LAST:event_jctipoActionPerformed
 
     private void jbbuscaavancadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscaavancadaActionPerformed
-float de = 0;
-float ate = 0;
-      jbconfirmarautomovel.setEnabled(false);
-      jfplaca.setText("");
-      limparTabelaAutomovel();
+        float de = 0;
+        float ate = 0;
+        jbconfirmarautomovel.setEnabled(false);
+        jfplaca.setText("");
+        limparTabelaAutomovel();
 
         ArrayList<Automovel> lista = AutomovelDao.getTodosAutomoveis();
-        
-        DefaultTableModel modelo = (DefaultTableModel)jtauto.getModel();
-        
-        if (!lista.isEmpty())
-            {
-              for(int i=0;i<lista.size();i++)
-                 {
-                    if (lista.get(i).getStatus().equals("Disponível"))
-                      { 
-                  if (jtdevalor.getText().equals("    .  ") && jtatevalor.getText().equals("    .  ")){
-                       de = 0;
-                       ate = 0;
-                  }  
-                  else {
-                  
-                de = Float.parseFloat(jtdevalor.getText());
-                ate = Float.parseFloat(jtatevalor.getText());
-                  }
-                
-                float precoprd = lista.get(i).getValor();
-                if (de == 0 && ate == 0 && jctipo.getSelectedIndex() == -1) {
-                    JOptionPane.showMessageDialog(null,"Para busca avançada, deve-se preencher as especificações!");
-                }
-                       if (de >= 0 && ate >= 0 && jctipo.getSelectedIndex() > -1)
-                          {
-                         if (de <= precoprd && ate >= precoprd && jctipo.getSelectedItem().equals(lista.get(i).getTipo()))
-                            {
-                               modelo.addRow(lista.get(i).getAutomovel());
-                                                                            }
-                                                                          }
-                         else {
-                           if (de > 0 && ate > 0 && jctipo.getSelectedIndex() == -1) {
-                             if (de <= precoprd && ate >= precoprd)
-                               {
-                                 modelo.addRow(lista.get(i).getAutomovel());
-                               }
-                            }
-                         } 
-               if (de == 0 && ate == 0 && jctipo.getSelectedIndex()> -1){
-                    if (jctipo.getSelectedItem().equals(lista.get(i).getTipo())){
-                       modelo.addRow(lista.get(i).getAutomovel());
+
+        DefaultTableModel modelo = (DefaultTableModel) jtauto.getModel();
+
+        if (!lista.isEmpty()) {
+            for (int i = 0; i < lista.size(); i++) {
+                if (lista.get(i).getStatus().equals("Disponível")) {
+                    if (jtdevalor.getText().equals("    .  ") && jtatevalor.getText().equals("    .  ")) {
+                        de = 0;
+                        ate = 0;
+                    } else {
+
+                        de = Float.parseFloat(jtdevalor.getText());
+                        ate = Float.parseFloat(jtatevalor.getText());
                     }
-                  } 
-        }
-     }
-   }
-  
-   else {
-        
-            JOptionPane.showMessageDialog(null, "Nenhum Automóvel cadastrado nestas condições!!!","ATENÇÃO!",JOptionPane.ERROR_MESSAGE); 
+
+                    float precoprd = lista.get(i).getValor();
+                    if (de == 0 && ate == 0 && jctipo.getSelectedIndex() == -1) {
+                        JOptionPane.showMessageDialog(null, "Para busca avançada, deve-se preencher as especificações!");
+                    }
+                    if (de >= 0 && ate >= 0 && jctipo.getSelectedIndex() > -1) {
+                        if (de <= precoprd && ate >= precoprd && jctipo.getSelectedItem().equals(lista.get(i).getTipo())) {
+                            modelo.addRow(lista.get(i).getAutomovel());
+                        }
+                    } else {
+                        if (de > 0 && ate > 0 && jctipo.getSelectedIndex() == -1) {
+                            if (de <= precoprd && ate >= precoprd) {
+                                modelo.addRow(lista.get(i).getAutomovel());
+                            }
+                        }
+                    }
+                    if (de == 0 && ate == 0 && jctipo.getSelectedIndex() > -1) {
+                        if (jctipo.getSelectedItem().equals(lista.get(i).getTipo())) {
+                            modelo.addRow(lista.get(i).getAutomovel());
+                        }
+                    }
+                }
+            }
+        } else {
+
+            JOptionPane.showMessageDialog(null, "Nenhum Automóvel cadastrado nestas condições!!!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_jbbuscaavancadaActionPerformed
     }
+
     /**
      * @param args the command line arguments
      */
@@ -941,30 +905,28 @@ float ate = 0;
     private javax.swing.JTextField jtvalorlocacao;
     // End of variables declaration//GEN-END:variables
 
-private void limparTabelaCliente()
-    {
-        DefaultTableModel modelo = (DefaultTableModel)jtclientes.getModel();
-        for (int i = jtclientes.getRowCount() -1; i >= 0; --i)
-        {
+    private void limparTabelaCliente() {
+        DefaultTableModel modelo = (DefaultTableModel) jtclientes.getModel();
+        for (int i = jtclientes.getRowCount() - 1; i >= 0; --i) {
             modelo.removeRow(i);
         }
-        
+
     }
-private void limparTabelaAutomovel()
-    {
-        DefaultTableModel modelo = (DefaultTableModel)jtauto.getModel();
-        for (int i = jtauto.getRowCount() -1; i >= 0; --i)
-        {
+
+    private void limparTabelaAutomovel() {
+        DefaultTableModel modelo = (DefaultTableModel) jtauto.getModel();
+        for (int i = jtauto.getRowCount() - 1; i >= 0; --i) {
             modelo.removeRow(i);
         }
-        
+
     }
 
-public double checanumerolocacao (double random){
+    public double checanumerolocacao(double random) {
 
-while (AluguelDao.getAluguel(random)!= null){
-    random +=1;}
-return random;
-}
+        while (AluguelDao.getAluguel(random) != null) {
+            random += 1;
+        }
+        return random;
+    }
 
 }

@@ -1,14 +1,10 @@
-
-
 package com.aluguelautomoveis.model;
-
 
 import java.io.Serializable;
 import java.util.Date;
 
+public class Cliente implements Serializable {
 
-
-public class Cliente implements Serializable{
     private String codigo;
     private String nome;
     private String cpf;
@@ -26,13 +22,13 @@ public class Cliente implements Serializable{
     private Date datanascimento;
     private String celular;
     private String sexo;
-    
-    
-    public Cliente(){
-        
+
+    public Cliente() {
+
     }
+
     public Cliente(String codigo, String nome, String cpf, String rua, String numero, String complemento, String bairro, String cidade,
-            String estado, String cep, String telefone,String email, String habilitacao, String tipo,Date datanascimento,String celular, String sexo){
+            String estado, String cep, String telefone, String email, String habilitacao, String tipo, Date datanascimento, String celular, String sexo) {
         this.codigo = codigo;
         this.nome = nome;
         this.cpf = cpf;
@@ -51,7 +47,7 @@ public class Cliente implements Serializable{
         this.celular = celular;
         this.sexo = sexo;
     }
-    
+
     public String getCodigo() {
         return codigo;
     }
@@ -76,8 +72,6 @@ public class Cliente implements Serializable{
         this.cpf = cpf;
     }
 
-
-
     public String getTelefone() {
         return telefone;
     }
@@ -94,22 +88,20 @@ public class Cliente implements Serializable{
         this.email = email;
     }
 
-
-    
-    public String Exibir(){
+    public String Exibir() {
         String str = "";
-        str+= "Código:"+codigo+"\nNome:"+nome+"\nSexo:"+sexo+"\nData Nascimento:"+datanascimento+"\nCPF:"+cpf+"\nRua:"+rua+"\nNúmero:"+numero+
-       "\nComplemento:"+complemento+"\nBairro:"+bairro+"\nCidade:"+cidade+"\nEstado:"+estado+"\nCep:"+cep+"\nTelefone:"+telefone+"\nCelular:"
-       +celular+"\nEmail:"+email+"\nHabilitação:"+habilitacao+"\nTipo:"+tipo+"\n";
+        str += "Código:" + codigo + "\nNome:" + nome + "\nSexo:" + sexo + "\nData Nascimento:" + datanascimento + "\nCPF:" + cpf + "\nRua:" + rua + "\nNúmero:" + numero
+                + "\nComplemento:" + complemento + "\nBairro:" + bairro + "\nCidade:" + cidade + "\nEstado:" + estado + "\nCep:" + cep + "\nTelefone:" + telefone + "\nCelular:"
+                + celular + "\nEmail:" + email + "\nHabilitação:" + habilitacao + "\nTipo:" + tipo + "\n";
         return str;
     }
-    
-    boolean validarCliente(String c){
-        if(c.equals(cpf)){
+
+    boolean validarCliente(String c) {
+        if (c.equals(cpf)) {
             return true;
-        }
-        else
+        } else {
             return false;
+        }
     }
 
     /**
@@ -279,46 +271,44 @@ public class Cliente implements Serializable{
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
-    public Object[] getCliente()
-    {
-        Object c[] = {codigo,nome,cpf,habilitacao,tipo,telefone};
+
+    public Object[] getCliente() {
+        Object c[] = {codigo, nome, cpf, habilitacao, tipo, telefone};
         return c;
     }
-    
+
     /**
      *
      * @return
      */
-    public String Cliente(){
+    public String Cliente() {
 
+        String str = "";
 
-       String str = "";
-   
-   str += "Aluguel Automóveis - Locação de Transportes Ltda.\t"+"\n";
-   str += "\n";
-   str += "Rua B, 112 - Centro - Juiz de Fora - MG - CEP: 36.000-000"+"\n";
-   str += "\n";
-   str += "Telefone: (32)3333-3333"+" Fax: (32)3333-3333";
-   str += "\n";
-   str += "CNPJ: 01.123.111.0000-99\t\t\t\t" + "\n";
-   str += "\n";
-   str += "\t \t \t \t  NOTA FISCAL";
-   str += "\t \t \t \t \t "+"\n";
-   
-   
-   str += "--------- Dados do Cliente: ----------------------------------------\t"+"\n";
-   str += " \t"+"\n";
-   str += "\n";
-   str += "Nome: "+getNome()+"\t CPF: "+getCpf()+ "\t Data de Nascimento: "+ Utils.DateToStr(getDatanascimento())+ "\n";
-   str += "Endereço: "+ "Rua: "+getRua()+"\t Nº. "+getNumero() + "\t Complemento: " +getComplemento()+"\n";
-   str += "CEP: "+getCep()+"\t Bairro: "+getBairro()+"\t Cidade: "+getCidade()+"\t Estado: "+getEstado()+ " \n";
-   str += "E-mail: "+getEmail()+"\n";
-   str += " \t"+"\n";
-   str += "--------- Dados do Automóvel: --------------------------------------\t"+"\n";
-   str += " \t"+"\n";
-   str += "\n";
-   
-       return str;
-   }
-    
+        str += "Aluguel Automóveis - Locação de Transportes Ltda.\t" + "\n";
+        str += "\n";
+        str += "Rua B, 112 - Centro - Juiz de Fora - MG - CEP: 36.000-000" + "\n";
+        str += "\n";
+        str += "Telefone: (32)3333-3333" + " Fax: (32)3333-3333";
+        str += "\n";
+        str += "CNPJ: 01.123.111.0000-99\t\t\t\t" + "\n";
+        str += "\n";
+        str += "\t \t \t \t  NOTA FISCAL";
+        str += "\t \t \t \t \t " + "\n";
+
+        str += "--------- Dados do Cliente: ----------------------------------------\t" + "\n";
+        str += " \t" + "\n";
+        str += "\n";
+        str += "Nome: " + getNome() + "\t CPF: " + getCpf() + "\t Data de Nascimento: " + Utils.DateToStr(getDatanascimento()) + "\n";
+        str += "Endereço: " + "Rua: " + getRua() + "\t Nº. " + getNumero() + "\t Complemento: " + getComplemento() + "\n";
+        str += "CEP: " + getCep() + "\t Bairro: " + getBairro() + "\t Cidade: " + getCidade() + "\t Estado: " + getEstado() + " \n";
+        str += "E-mail: " + getEmail() + "\n";
+        str += " \t" + "\n";
+        str += "--------- Dados do Automóvel: --------------------------------------\t" + "\n";
+        str += " \t" + "\n";
+        str += "\n";
+
+        return str;
+    }
+
 }

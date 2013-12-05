@@ -5,120 +5,108 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
+public class Aluguel implements Serializable {
 
+    private double numero;
+    private Cliente cliente;
+    private Automovel automovel;
+    private double valorTotal;
+    private int numerodias;
+    private Date datalocacao;
+    private Date datadevolucao;
+    private double multa;
+    private int diasmulta;
+    public String validacao;
 
-public class Aluguel implements Serializable{
-private double numero;
-private Cliente cliente;
-private Automovel automovel;
-private double valorTotal;
-private int numerodias;
-private Date datalocacao;
-private Date datadevolucao;
-private double multa;
-private int diasmulta;
-public String validacao;
+    public Aluguel() {
 
+    }
 
-public Aluguel (){
-    
-}
+    public String validahabilitacao() {
 
-public String validahabilitacao(){
+        String validacao = "NOTOK";
+        String a = "A - Moto";
+        String b = "B - Carro";
+        String c = "C - Caminhonete";
+        String d = "D - Ônibus";
+        String e = "E - Caminhões";
 
-String validacao = "NOTOK";
-String a = "A - Moto";
-String b = "B - Carro";
-String c = "C - Caminhonete";
-String d = "D - Ônibus";
-String e = "E - Caminhões"; 
+        String tipohabilitacao = getCliente().getTipo();
+        String tipoautomovel = getAutomovel().getTipo();
 
-  String tipohabilitacao = getCliente().getTipo();
-  String tipoautomovel = getAutomovel().getTipo();
-  
-   if (tipohabilitacao.equals("A") && tipoautomovel.equals(a)) {
-      validacao = "ok";
-   }
-        else if (tipohabilitacao.equals("B") && tipoautomovel.equals(b)){
-                 validacao = "ok";  
-       }
-                 else if  (tipohabilitacao.equals("C") && tipoautomovel.equals(b) || tipoautomovel.equals(c)){
-                           validacao = "ok";   
-           }
-              else if (tipohabilitacao.equals("D") && tipoautomovel.equals(b) || tipoautomovel.equals(c) || tipoautomovel.equals(d)){
-                                    validacao = "ok";        
-                 }
-                                    else if (tipohabilitacao.equals("E") && tipoautomovel.equals(b) || tipoautomovel.equals(c) || tipoautomovel.equals(d) || tipoautomovel.equals(e)) {
-                                    validacao = "ok";        
-                                    }
-                                    else {
-                                        validacao = "NOTOK";
-                                    }
+        if (tipohabilitacao.equals("A") && tipoautomovel.equals(a)) {
+            validacao = "ok";
+        } else if (tipohabilitacao.equals("B") && tipoautomovel.equals(b)) {
+            validacao = "ok";
+        } else if (tipohabilitacao.equals("C") && tipoautomovel.equals(b) || tipoautomovel.equals(c)) {
+            validacao = "ok";
+        } else if (tipohabilitacao.equals("D") && tipoautomovel.equals(b) || tipoautomovel.equals(c) || tipoautomovel.equals(d)) {
+            validacao = "ok";
+        } else if (tipohabilitacao.equals("E") && tipoautomovel.equals(b) || tipoautomovel.equals(c) || tipoautomovel.equals(d) || tipoautomovel.equals(e)) {
+            validacao = "ok";
+        } else {
+            validacao = "NOTOK";
+        }
 
-   return validacao;
-}
+        return validacao;
+    }
 
-public double calcularValorTotal(){
+    public double calcularValorTotal() {
         setValorTotal(getAutomovel().getValor() * getNumerodias());
-        
-return  getValorTotal();
-}
 
+        return getValorTotal();
+    }
 
-public int diferencaDias(Date d1, Date d2) {
-GregorianCalendar ini = new GregorianCalendar();
-GregorianCalendar fim = new GregorianCalendar();
-SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    public int diferencaDias(Date d1, Date d2) {
+        GregorianCalendar ini = new GregorianCalendar();
+        GregorianCalendar fim = new GregorianCalendar();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-ini.setTime(getDatalocacao());
-fim.setTime(getDatadevolucao());
+        ini.setTime(getDatalocacao());
+        fim.setTime(getDatadevolucao());
 
-long dt1 = ini.getTimeInMillis();
-long dt2 = fim.getTimeInMillis();
-long diferenca = (dt2-dt1)/86400000;
+        long dt1 = ini.getTimeInMillis();
+        long dt2 = fim.getTimeInMillis();
+        long diferenca = (dt2 - dt1) / 86400000;
 
-        setNumerodias((int)diferenca);
-return  getNumerodias();
+        setNumerodias((int) diferenca);
+        return getNumerodias();
 
-}
+    }
 
-public int diasMulta(Date d1, Date d2) {
-GregorianCalendar ini = new GregorianCalendar();
-GregorianCalendar fim = new GregorianCalendar();
-SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-Date hoje = new Date();
-ini.setTime(getDatadevolucao());
-fim.setTime(hoje);
+    public int diasMulta(Date d1, Date d2) {
+        GregorianCalendar ini = new GregorianCalendar();
+        GregorianCalendar fim = new GregorianCalendar();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date hoje = new Date();
+        ini.setTime(getDatadevolucao());
+        fim.setTime(hoje);
 
-long dt1 = ini.getTimeInMillis();
-long dt2 = fim.getTimeInMillis();
-long diferenca = (dt2-dt1)/86400000;
+        long dt1 = ini.getTimeInMillis();
+        long dt2 = fim.getTimeInMillis();
+        long diferenca = (dt2 - dt1) / 86400000;
 
-        setDiasmulta((int)diferenca);
-return  getDiasmulta();
+        setDiasmulta((int) diferenca);
+        return getDiasmulta();
 
-}
+    }
 
-public double calcularMulta(){
+    public double calcularMulta() {
         setMulta(getAutomovel().getValor() * getDiasmulta());
-       if (multa < 0){
-          multa = 0;
- }
-          return multa;
-}
+        if (multa < 0) {
+            multa = 0;
+        }
+        return multa;
+    }
 
+    public String getAlguel() {
+        String str = "";
+        str += (getNumero() + "\n" + getCliente() + "\n" + getAutomovel() + "\n" + getValorTotal() + "\n" + getDatalocacao() + "\n" + getDatadevolucao() + "\n" + getNumerodias());
+        return str;
+    }
 
-   public String getAlguel(){
- String str = "";
-  str+= (getNumero()+"\n"+getCliente()+"\n"+getAutomovel()+"\n"+getValorTotal()+"\n"+getDatalocacao()+"\n"+getDatadevolucao()+"\n"+getNumerodias());
-  return str;
-   }
-
-
-
-   public Object[] getAluguelo()
-    {
-        Object v[] = {getNumero(),getCliente().getNome(),getCliente().getCpf(),getCliente().getHabilitacao(),getAutomovel().getMarca(),getAutomovel().getModelo(),getAutomovel().getPlaca(),valorTotal,Utils.DateToStr(datalocacao),Utils.DateToStr(datadevolucao)};
+    public Object[] getAluguelo() {
+        Object v[] = {getNumero(), getCliente().getNome(), getCliente().getCpf(), getCliente().getHabilitacao(), getAutomovel().getMarca(), getAutomovel().getModelo(), getAutomovel().getPlaca(), valorTotal, Utils.DateToStr(datalocacao), Utils.DateToStr(datadevolucao)};
         return v;
     }
 
@@ -248,47 +236,47 @@ public double calcularMulta(){
         this.diasmulta = diasmulta;
     }
 
-   public String Locacao(){
-Date hoje = new Date();
-diasMulta(getDatadevolucao(),hoje);
-calcularMulta();
-       String str = "";
-   
-   str += "Aluguel Automóveis - Locação de Transportes Ltda.\t"+"\n";
-   str += "\n";
-   str += "Rua B, 112 - Centro - Juiz de Fora - MG - CEP: 36.000-000"+"\n";
-   str += "\n";
-   str += "Telefone: (32)3333-3333"+" Fax: (32)3333-3333";
-   str += "\n";
-   str += "CNPJ: 01.123.111.0000-99\t\t\t\t" + "\n";
-   str += "\n";
-   str += "\t \t \t \t  NOTA FISCAL";
-   str += "\t \t \t \t \t "+"\n";
-   str += "Data: " + Utils.DateToStr(getDatalocacao()) + "\t \t \t \t \t \t \t Número NF: " + getNumero()+"\n";
-   str += "\n";
-   str += "\n";
-   str += "--------- Dados do Cliente: ----------------------------------------\t"+"\n";
-   str += " \t"+"\n";
-   str += "\n";
-   str += "Nome: "+cliente.getNome()+"\t CPF: "+cliente.getCpf()+ "\t Data de Nascimento: "+ Utils.DateToStr(cliente.getDatanascimento())+ "\n";
-   str += "Endereço: "+ "Rua: "+cliente.getRua()+"\t Nº. "+ cliente.getNumero() + "\t Complemento: " +cliente.getComplemento()+"\n";
-   str += "CEP: "+cliente.getCep()+"\t Bairro: "+cliente.getBairro()+"\t Cidade: "+cliente.getCidade()+"\t Estado: "+cliente.getEstado()+ " \n";
-   str += "E-mail: "+cliente.getEmail()+"\n";
-   str += " \t"+"\n";
-   str += "--------- Dados do Automóvel: --------------------------------------\t"+"\n";
-   str += " \t"+"\n";
-   str += "\n";
-   str += getAutomovel().exibir();
-   str += "\n";
-   str += "--------- Dados da Locação: -----------------------------------------\n";
-   str += " \t"+"\n";
-   str += "\n";
-   str += "Data da Locação: " + Utils.DateToStr(getDatalocacao())+"\n";
-   str += "Data da Devolução: " +Utils.DateToStr(getDatadevolucao())+"\n";
-   str += "Valor Multa: "+getMulta()+"\n";
-   str += "Valor Total: " +getValorTotal()+ "\n";
-   
-       return str;
-   }
+    public String Locacao() {
+        Date hoje = new Date();
+        diasMulta(getDatadevolucao(), hoje);
+        calcularMulta();
+        String str = "";
+
+        str += "Aluguel Automóveis - Locação de Transportes Ltda.\t" + "\n";
+        str += "\n";
+        str += "Rua B, 112 - Centro - Juiz de Fora - MG - CEP: 36.000-000" + "\n";
+        str += "\n";
+        str += "Telefone: (32)3333-3333" + " Fax: (32)3333-3333";
+        str += "\n";
+        str += "CNPJ: 01.123.111.0000-99\t\t\t\t" + "\n";
+        str += "\n";
+        str += "\t \t \t \t  NOTA FISCAL";
+        str += "\t \t \t \t \t " + "\n";
+        str += "Data: " + Utils.DateToStr(getDatalocacao()) + "\t \t \t \t \t \t \t Número NF: " + getNumero() + "\n";
+        str += "\n";
+        str += "\n";
+        str += "--------- Dados do Cliente: ----------------------------------------\t" + "\n";
+        str += " \t" + "\n";
+        str += "\n";
+        str += "Nome: " + cliente.getNome() + "\t CPF: " + cliente.getCpf() + "\t Data de Nascimento: " + Utils.DateToStr(cliente.getDatanascimento()) + "\n";
+        str += "Endereço: " + "Rua: " + cliente.getRua() + "\t Nº. " + cliente.getNumero() + "\t Complemento: " + cliente.getComplemento() + "\n";
+        str += "CEP: " + cliente.getCep() + "\t Bairro: " + cliente.getBairro() + "\t Cidade: " + cliente.getCidade() + "\t Estado: " + cliente.getEstado() + " \n";
+        str += "E-mail: " + cliente.getEmail() + "\n";
+        str += " \t" + "\n";
+        str += "--------- Dados do Automóvel: --------------------------------------\t" + "\n";
+        str += " \t" + "\n";
+        str += "\n";
+        str += getAutomovel().exibir();
+        str += "\n";
+        str += "--------- Dados da Locação: -----------------------------------------\n";
+        str += " \t" + "\n";
+        str += "\n";
+        str += "Data da Locação: " + Utils.DateToStr(getDatalocacao()) + "\n";
+        str += "Data da Devolução: " + Utils.DateToStr(getDatadevolucao()) + "\n";
+        str += "Valor Multa: " + getMulta() + "\n";
+        str += "Valor Total: " + getValorTotal() + "\n";
+
+        return str;
+    }
 
 }

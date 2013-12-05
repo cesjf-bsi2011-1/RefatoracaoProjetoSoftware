@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.aluguelautomoveis.controllerview;
 
 import javax.swing.JOptionPane;
-import com.aluguelautomoveis.model.dao.FuncionarioDao;
 
 public class FormLogin extends javax.swing.JFrame {
 
-   
     public FormLogin() {
         initComponents();
     }
@@ -138,7 +135,7 @@ public class FormLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bLoginMouseClicked
-        
+
     }//GEN-LAST:event_bLoginMouseClicked
 
     private void bCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCancelarMouseClicked
@@ -146,18 +143,16 @@ public class FormLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_bCancelarMouseClicked
 
     private void bLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLoginActionPerformed
-                
-        
-        if (tNome.getText().equals("Admin") &&
-                tSenha.getText().equals("1234")){
-        
-        Principal p = new Principal(); //instancia da tela principal
-                        p.show(); //abre a tela principal
-                        this.dispose(); //fecha a tela de login
-      
-        }
-        else {  
-         JOptionPane.showMessageDialog(rootPane, "login não realizado!\n Favor conferir o usuario e senha digitado!");
+
+        if (tNome.getText().equals("Admin")
+                && tSenha.getText().equals("1234")) {
+
+            Principal p = new Principal(); //instancia da tela principal
+            p.show(); //abre a tela principal
+            this.dispose(); //fecha a tela de login
+
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "login não realizado!\n Favor conferir o usuario e senha digitado!");
         }
     }//GEN-LAST:event_bLoginActionPerformed
 

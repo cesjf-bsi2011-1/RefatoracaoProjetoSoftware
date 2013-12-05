@@ -1,4 +1,3 @@
-
 package com.aluguelautomoveis.model;
 
 import java.io.Serializable;
@@ -9,6 +8,7 @@ import java.util.Date;
  * @author curso
  */
 public class Funcionario implements Serializable {
+
     private String codigo;
     private String nome;
     private String cpf;
@@ -26,12 +26,12 @@ public class Funcionario implements Serializable {
     private String sexo;
     private String usuario;
     private String senha;
-    
-    public Funcionario(){
-        
+
+    public Funcionario() {
+
     }
-    
-    public Funcionario(String codigo, String nome, String cpf, String rua, String numero, String complemento, String bairro, String cidade, String estado, String cep, String telefone,String email, String habilitacao, String tipo,Date datanascimento,String celular, String sexo, String usuario, String senha){
+
+    public Funcionario(String codigo, String nome, String cpf, String rua, String numero, String complemento, String bairro, String cidade, String estado, String cep, String telefone, String email, String habilitacao, String tipo, Date datanascimento, String celular, String sexo, String usuario, String senha) {
         this.codigo = codigo;
         this.nome = nome;
         this.cpf = cpf;
@@ -50,7 +50,7 @@ public class Funcionario implements Serializable {
         this.usuario = usuario;
         this.senha = senha;
     }
-    
+
     public String getCodigo() {
         return codigo;
     }
@@ -91,7 +91,7 @@ public class Funcionario implements Serializable {
         this.email = email;
     }
 
-        public String getUsuario() {
+    public String getUsuario() {
         return usuario;
     }
 
@@ -107,26 +107,23 @@ public class Funcionario implements Serializable {
         this.senha = senha;
     }
 
-
-    
-    public String Exibir(){
+    public String Exibir() {
         String str = "";
-        str+= "Código:"+codigo+"\nNome:"+nome+"\nSexo:"+sexo+"\nData Nascimento:"+datanascimento+"\nCPF:"+cpf+"\nRua:"+rua+"\nNúmero:"+numero+
-       "\nComplemento:"+complemento+"\nBairro:"+bairro+"\nCidade:"+cidade+"\nEstado:"+estado+"\nCep:"+cep+"\nTelefone:"+telefone+"\nCelular:"
-       +celular+"\nEmail:"+email+"\nUsuario:"+usuario+"\nSenha:"+senha+"\n";
+        str += "Código:" + codigo + "\nNome:" + nome + "\nSexo:" + sexo + "\nData Nascimento:" + datanascimento + "\nCPF:" + cpf + "\nRua:" + rua + "\nNúmero:" + numero
+                + "\nComplemento:" + complemento + "\nBairro:" + bairro + "\nCidade:" + cidade + "\nEstado:" + estado + "\nCep:" + cep + "\nTelefone:" + telefone + "\nCelular:"
+                + celular + "\nEmail:" + email + "\nUsuario:" + usuario + "\nSenha:" + senha + "\n";
         return str;
     }
-    
-    boolean validarCliente(String c){
-        if(c.equals(cpf)){
+
+    boolean validarCliente(String c) {
+        if (c.equals(cpf)) {
             return true;
-        }
-        else
+        } else {
             return false;
+        }
     }
 
-   
-     /**
+    /**
      * @return the rua
      */
     public String getRua() {
@@ -262,14 +259,13 @@ public class Funcionario implements Serializable {
     /**
      * @param sexo the sexo to set
      */
-    
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
-    public Object[] getFuncionario()
-    {
-        Object c[] = {codigo,nome,cpf,telefone};
+
+    public Object[] getFuncionario() {
+        Object c[] = {codigo, nome, cpf, telefone};
         return c;
     }
-    
+
 }

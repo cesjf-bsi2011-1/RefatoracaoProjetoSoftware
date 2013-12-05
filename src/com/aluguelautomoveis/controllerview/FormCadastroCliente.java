@@ -1,8 +1,6 @@
-
 package com.aluguelautomoveis.controllerview;
 
 import com.aluguelautomoveis.model.Cliente;
-import java.util.Date;
 import javax.swing.JOptionPane;
 import com.aluguelautomoveis.model.Utils;
 import java.text.ParseException;
@@ -20,15 +18,13 @@ public class FormCadastroCliente extends javax.swing.JFrame {
 
     Cliente cliente = null;
     String okcliente = null;
-    
-    
+
     /**
      * Creates new form CadastroCliente
      */
     public FormCadastroCliente() {
         initComponents();
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -538,327 +534,310 @@ public class FormCadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jtdatanascimentoActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-this.dispose();        
+        this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jbbuscaclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscaclienteActionPerformed
-limparTabelaCliente();
+        limparTabelaCliente();
         cliente = ClienteDao.getCliente(jfcpfbusca.getText());
-        
-        DefaultTableModel modelo = (DefaultTableModel)jtclientes.getModel();
-        if (cliente != null)
-        {
-            modelo.addRow(cliente.getCliente());
-         jfcpfbusca.setText(null); 
-        }
-        else
-            JOptionPane.showMessageDialog(null, "Cliente Inexistente!\nNão foi possivel encontrar o Cliente especificado!","ATENÇÃO!",JOptionPane.ERROR_MESSAGE);
-    jfcpfbusca.setText(null);
 
-         
-      
+        DefaultTableModel modelo = (DefaultTableModel) jtclientes.getModel();
+        if (cliente != null) {
+            modelo.addRow(cliente.getCliente());
+            jfcpfbusca.setText(null);
+        } else {
+            JOptionPane.showMessageDialog(null, "Cliente Inexistente!\nNão foi possivel encontrar o Cliente especificado!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
+        }
+        jfcpfbusca.setText(null);
+
+
     }//GEN-LAST:event_jbbuscaclienteActionPerformed
 
     private void jbinserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbinserirActionPerformed
-if (checacampos(null) == true){
-double numercliente = Math.round(Math.random()*1000);    
-double random = checanumerocliente(numercliente);
-jtcodigo.setText(Double.toString(random));       
-Cliente cliente = new Cliente();
-cliente.setCodigo(jtcodigo.getText());
-cliente.setNome(jtnome.getText());
-cliente.setCpf(jfcpf.getText());
-cliente.setRua(jtrua.getText());
-cliente.setCelular(jfcelular.getText());
-        try {
-            cliente.setDatanascimento(Utils.StrToDate(jtdatanascimento.getText()));
-        } catch (ParseException ex) {
-            Logger.getLogger(FormCadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
+        if (checacampos(null) == true) {
+            double numercliente = Math.round(Math.random() * 1000);
+            double random = checanumerocliente(numercliente);
+            jtcodigo.setText(Double.toString(random));
+            Cliente cliente = new Cliente();
+            cliente.setCodigo(jtcodigo.getText());
+            cliente.setNome(jtnome.getText());
+            cliente.setCpf(jfcpf.getText());
+            cliente.setRua(jtrua.getText());
+            cliente.setCelular(jfcelular.getText());
+            try {
+                cliente.setDatanascimento(Utils.StrToDate(jtdatanascimento.getText()));
+            } catch (ParseException ex) {
+                Logger.getLogger(FormCadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            cliente.setNumero(jtnumero.getText());
+            cliente.setComplemento(jtcomplemento.getText());
+            cliente.setBairro(jtbairro.getText());
+            cliente.setCidade(jtcidade.getText());
+            cliente.setEstado(jcestado.getSelectedItem().toString());
+            cliente.setCep(jfcep.getText());
+            cliente.setTelefone(jftelefone.getText());
+            cliente.setEmail(jtemail.getText());
+            cliente.setHabilitacao(jtcnh.getText());
+            cliente.setTipo(jctipo.getSelectedItem().toString());
+            cliente.setSexo(jcsexo.getSelectedItem().toString());
+
+            if (ClienteDao.getCliente(cliente.getCpf()) == null) {
+
+                ClienteDao.addCliente(cliente);
+                JOptionPane.showMessageDialog(null, "Cliente Cadastrado com Sucesso!");
+
+                limpacampos();
+            } else {
+                JOptionPane.showMessageDialog(null, "Já existe Cliente Cadastrado com este CPF!!!");
+            }
         }
-cliente.setNumero(jtnumero.getText());
-cliente.setComplemento(jtcomplemento.getText());
-cliente.setBairro(jtbairro.getText());
-cliente.setCidade(jtcidade.getText());
-cliente.setEstado(jcestado.getSelectedItem().toString());
-cliente.setCep(jfcep.getText());
-cliente.setTelefone(jftelefone.getText());
-cliente.setEmail(jtemail.getText());
-cliente.setHabilitacao(jtcnh.getText());
-cliente.setTipo(jctipo.getSelectedItem().toString());
-cliente.setSexo(jcsexo.getSelectedItem().toString());
-
-if (ClienteDao.getCliente(cliente.getCpf()) == null){
-    
-
-ClienteDao.addCliente(cliente);
-JOptionPane.showMessageDialog(null,"Cliente Cadastrado com Sucesso!");
-
-limpacampos();
-}
-
-else 
-{
-    JOptionPane.showMessageDialog(null,"Já existe Cliente Cadastrado com este CPF!!!");
-}
-}
 
 
     }//GEN-LAST:event_jbinserirActionPerformed
 
     private void jcbuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbuscaActionPerformed
-limpacampos();
-limparTabelaCliente();
-if (jcbusca.isSelected())
-{jbbuscacliente.setEnabled(true);
-jbexcluir.setEnabled(false);
-jbatualizar.setEnabled(false);
-jbinserir.setEnabled(false);
-jfcpfbusca.setEnabled(true);
-jbbuscartodos.setEnabled(true);
-jtnome.setEnabled(false);
-jfcpf.setEnabled(false);
-jtrua.setEnabled(false);
-jtnumero.setEnabled(false);
-jtcomplemento.setEnabled(false);
-jtbairro.setEnabled(false);
-jtcidade.setEnabled(false);
-jcestado.setEnabled(false);
-jfcep.setEnabled(false);
-jftelefone.setEnabled(false);
-jtemail.setEnabled(false);
-jtcnh.setEnabled(false);
-jctipo.setEnabled(false);
-jtdatanascimento.setEnabled(false);
-jcsexo.setEnabled(false);
-jfcelular.setEnabled(false);}
+        limpacampos();
+        limparTabelaCliente();
+        if (jcbusca.isSelected()) {
+            jbbuscacliente.setEnabled(true);
+            jbexcluir.setEnabled(false);
+            jbatualizar.setEnabled(false);
+            jbinserir.setEnabled(false);
+            jfcpfbusca.setEnabled(true);
+            jbbuscartodos.setEnabled(true);
+            jtnome.setEnabled(false);
+            jfcpf.setEnabled(false);
+            jtrua.setEnabled(false);
+            jtnumero.setEnabled(false);
+            jtcomplemento.setEnabled(false);
+            jtbairro.setEnabled(false);
+            jtcidade.setEnabled(false);
+            jcestado.setEnabled(false);
+            jfcep.setEnabled(false);
+            jftelefone.setEnabled(false);
+            jtemail.setEnabled(false);
+            jtcnh.setEnabled(false);
+            jctipo.setEnabled(false);
+            jtdatanascimento.setEnabled(false);
+            jcsexo.setEnabled(false);
+            jfcelular.setEnabled(false);
+        } else {
 
-else
-{
-    
- {
-jbeditarcliente.setEnabled(false);
-jbinserir.setEnabled(true);
-jbexcluir.setEnabled(false);
-jbatualizar.setEnabled(false);
-jbbuscacliente.setEnabled(false);
-jfcpfbusca.setEnabled(false);
-jbbuscartodos.setEnabled(false);
-jtnome.setEnabled(true);
-jfcpf.setEnabled(true);
-jtrua.setEnabled(true);
-jtnumero.setEnabled(true);
-jtcomplemento.setEnabled(true);
-jtbairro.setEnabled(true);
-jtcidade.setEnabled(true);
-jcestado.setEnabled(true);
-jfcep.setEnabled(true);
-jftelefone.setEnabled(true);
-jtemail.setEnabled(true);
-jtcnh.setEnabled(true);
-jctipo.setEnabled(true);
-jtdatanascimento.setEnabled(true);
-jcsexo.setEnabled(true);
-jfcelular.setEnabled(true);
- }   
-}
+            {
+                jbeditarcliente.setEnabled(false);
+                jbinserir.setEnabled(true);
+                jbexcluir.setEnabled(false);
+                jbatualizar.setEnabled(false);
+                jbbuscacliente.setEnabled(false);
+                jfcpfbusca.setEnabled(false);
+                jbbuscartodos.setEnabled(false);
+                jtnome.setEnabled(true);
+                jfcpf.setEnabled(true);
+                jtrua.setEnabled(true);
+                jtnumero.setEnabled(true);
+                jtcomplemento.setEnabled(true);
+                jtbairro.setEnabled(true);
+                jtcidade.setEnabled(true);
+                jcestado.setEnabled(true);
+                jfcep.setEnabled(true);
+                jftelefone.setEnabled(true);
+                jtemail.setEnabled(true);
+                jtcnh.setEnabled(true);
+                jctipo.setEnabled(true);
+                jtdatanascimento.setEnabled(true);
+                jcsexo.setEnabled(true);
+                jfcelular.setEnabled(true);
+            }
+        }
     }//GEN-LAST:event_jcbuscaActionPerformed
 
     private void jbexcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbexcluirActionPerformed
-String cpf = jfcpf.getText(); 
-if (ClienteDao.getCliente(cpf) != null){
+        String cpf = jfcpf.getText();
+        if (ClienteDao.getCliente(cpf) != null) {
 
-int resposta = JOptionPane.showConfirmDialog(null,"Tem certeza que deseja remover este cliente?","Remover",JOptionPane.YES_NO_OPTION ,JOptionPane.WARNING_MESSAGE);
-if (resposta == 0){
-ClienteDao.removerCliente(cpf);
-JOptionPane.showMessageDialog(null,"O cliente foi removido com sucesso!!!");
-jcbusca.setSelected(false);
-jbeditarcliente.setEnabled(false);
-jbexcluir.setEnabled(false);
-jbatualizar.setEnabled(false);
-jbinserir.setEnabled(true);
-limparTabelaCliente();
-limpacampos();  
-}
-else {
-    JOptionPane.showMessageDialog(null,"O cliente não foi removido.");
-          }
-       }
+            int resposta = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover este cliente?", "Remover", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            if (resposta == 0) {
+                ClienteDao.removerCliente(cpf);
+                JOptionPane.showMessageDialog(null, "O cliente foi removido com sucesso!!!");
+                jcbusca.setSelected(false);
+                jbeditarcliente.setEnabled(false);
+                jbexcluir.setEnabled(false);
+                jbatualizar.setEnabled(false);
+                jbinserir.setEnabled(true);
+                limparTabelaCliente();
+                limpacampos();
+            } else {
+                JOptionPane.showMessageDialog(null, "O cliente não foi removido.");
+            }
+        }
     }//GEN-LAST:event_jbexcluirActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
- 
+
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-limpacampos();
-limparTabelaCliente();
-jbatualizar.setEnabled(false);
-jbexcluir.setEnabled(false);
-jbinserir.setEnabled(true);
-jcbusca.setSelected(false);
-jbeditarcliente.setEnabled(false);
-jbinserir.setEnabled(true);
-jbexcluir.setEnabled(false);
-jbatualizar.setEnabled(false);
-jbbuscacliente.setEnabled(false);
-jfcpfbusca.setEnabled(false);
-jbbuscartodos.setEnabled(false);
-jtnome.setEnabled(true);
-jfcpf.setEnabled(true);
-jtrua.setEnabled(true);
-jtnumero.setEnabled(true);
-jtcomplemento.setEnabled(true);
-jtbairro.setEnabled(true);
-jtcidade.setEnabled(true);
-jcestado.setEnabled(true);
-jfcep.setEnabled(true);
-jftelefone.setEnabled(true);
-jtemail.setEnabled(true);
-jtcnh.setEnabled(true);
-jctipo.setEnabled(true);
-jtdatanascimento.setEnabled(true);
-jcsexo.setEnabled(true);
-jfcelular.setEnabled(true);
+        limpacampos();
+        limparTabelaCliente();
+        jbatualizar.setEnabled(false);
+        jbexcluir.setEnabled(false);
+        jbinserir.setEnabled(true);
+        jcbusca.setSelected(false);
+        jbeditarcliente.setEnabled(false);
+        jbinserir.setEnabled(true);
+        jbexcluir.setEnabled(false);
+        jbatualizar.setEnabled(false);
+        jbbuscacliente.setEnabled(false);
+        jfcpfbusca.setEnabled(false);
+        jbbuscartodos.setEnabled(false);
+        jtnome.setEnabled(true);
+        jfcpf.setEnabled(true);
+        jtrua.setEnabled(true);
+        jtnumero.setEnabled(true);
+        jtcomplemento.setEnabled(true);
+        jtbairro.setEnabled(true);
+        jtcidade.setEnabled(true);
+        jcestado.setEnabled(true);
+        jfcep.setEnabled(true);
+        jftelefone.setEnabled(true);
+        jtemail.setEnabled(true);
+        jtcnh.setEnabled(true);
+        jctipo.setEnabled(true);
+        jtdatanascimento.setEnabled(true);
+        jcsexo.setEnabled(true);
+        jfcelular.setEnabled(true);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jbbuscartodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscartodosActionPerformed
-   jfcpfbusca.setText("");
-      limparTabelaCliente();
-      
+        jfcpfbusca.setText("");
+        limparTabelaCliente();
+
         ArrayList<Cliente> lista = ClienteDao.getTodosClientes();
-        
-        DefaultTableModel modelo = (DefaultTableModel)jtclientes.getModel();
-        
-        if (!lista.isEmpty())
-        {
-            
-            for(int i=0;i<lista.size();i++)
-            {
-               
-                
+
+        DefaultTableModel modelo = (DefaultTableModel) jtclientes.getModel();
+
+        if (!lista.isEmpty()) {
+
+            for (int i = 0; i < lista.size(); i++) {
+
                 modelo.addRow(lista.get(i).getCliente());
-                         
-                
+
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum Cliente cadastrado!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
         }
-        else
-            JOptionPane.showMessageDialog(null, "Nenhum Cliente cadastrado!","ATENÇÃO!",JOptionPane.ERROR_MESSAGE);
-            
-                
+
+
     }//GEN-LAST:event_jbbuscartodosActionPerformed
 
     private void jtclientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtclientesMouseClicked
-if (okcliente != "ok")
-         {
-             if (jtclientes.getSelectedRow()>=-1)
-             {
-                    jbeditarcliente.setEnabled(true);
-                    jbRelatorio.setEnabled(true);
-                    jbatualizar.setEnabled(false);
-                    jbexcluir.setEnabled(false);
-                    jbbuscacliente.setEnabled(false);
-                    jbbuscartodos.setEnabled(false);
-     } else 
-     {
-                
-     }
-         }
+        if (okcliente != "ok") {
+            if (jtclientes.getSelectedRow() >= -1) {
+                jbeditarcliente.setEnabled(true);
+                jbRelatorio.setEnabled(true);
+                jbatualizar.setEnabled(false);
+                jbexcluir.setEnabled(false);
+                jbbuscacliente.setEnabled(false);
+                jbbuscartodos.setEnabled(false);
+            } else {
+
+            }
+        }
     }//GEN-LAST:event_jtclientesMouseClicked
 
     private void jbeditarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbeditarclienteActionPerformed
-int linha = jtclientes.getSelectedRow();
-String cpf = ((String)jtclientes.getModel().getValueAt(linha,2));
-cliente = ClienteDao.getCliente(cpf);
-jtcodigo.setText(cliente.getCodigo());
-jtnome.setText(cliente.getNome());
-jfcpf.setText(cliente.getCpf());
-jtrua.setText(cliente.getRua());
-jtnumero.setText(cliente.getNumero());
-jtcomplemento.setText(cliente.getComplemento());
-jtbairro.setText(cliente.getBairro());
-jtcidade.setText(cliente.getCidade());
-jcestado.setSelectedItem(cliente.getEstado());
-jfcep.setText(cliente.getCep());
-jftelefone.setValue(cliente.getTelefone());
-jtemail.setText(cliente.getEmail());
-jtcnh.setText(cliente.getHabilitacao());
-jctipo.setSelectedItem(cliente.getTipo());
-jtdatanascimento.setText(Utils.DateToStr(cliente.getDatanascimento()));
-jcsexo.setSelectedItem(cliente.getSexo());
-jfcelular.setText(cliente.getCelular());
-jtnome.setEnabled(true);
-jfcpf.setEnabled(true);
-jtrua.setEnabled(true);
-jtnumero.setEnabled(true);
-jtcomplemento.setEnabled(true);
-jtbairro.setEnabled(true);
-jtcidade.setEnabled(true);
-jcestado.setEnabled(true);
-jfcep.setEnabled(true);
-jftelefone.setEnabled(true);
-jtemail.setEnabled(true);
-jtcnh.setEnabled(true);
-jctipo.setEnabled(true);
-jtdatanascimento.setEnabled(true);
-jcsexo.setEnabled(true);
-jfcelular.setEnabled(true);
-jcbusca.setSelected(false);
-limparTabelaCliente();
-jbeditarcliente.setEnabled(false);
-jbexcluir.setEnabled(true);
-jbatualizar.setEnabled(true);
+        int linha = jtclientes.getSelectedRow();
+        String cpf = ((String) jtclientes.getModel().getValueAt(linha, 2));
+        cliente = ClienteDao.getCliente(cpf);
+        jtcodigo.setText(cliente.getCodigo());
+        jtnome.setText(cliente.getNome());
+        jfcpf.setText(cliente.getCpf());
+        jtrua.setText(cliente.getRua());
+        jtnumero.setText(cliente.getNumero());
+        jtcomplemento.setText(cliente.getComplemento());
+        jtbairro.setText(cliente.getBairro());
+        jtcidade.setText(cliente.getCidade());
+        jcestado.setSelectedItem(cliente.getEstado());
+        jfcep.setText(cliente.getCep());
+        jftelefone.setValue(cliente.getTelefone());
+        jtemail.setText(cliente.getEmail());
+        jtcnh.setText(cliente.getHabilitacao());
+        jctipo.setSelectedItem(cliente.getTipo());
+        jtdatanascimento.setText(Utils.DateToStr(cliente.getDatanascimento()));
+        jcsexo.setSelectedItem(cliente.getSexo());
+        jfcelular.setText(cliente.getCelular());
+        jtnome.setEnabled(true);
+        jfcpf.setEnabled(true);
+        jtrua.setEnabled(true);
+        jtnumero.setEnabled(true);
+        jtcomplemento.setEnabled(true);
+        jtbairro.setEnabled(true);
+        jtcidade.setEnabled(true);
+        jcestado.setEnabled(true);
+        jfcep.setEnabled(true);
+        jftelefone.setEnabled(true);
+        jtemail.setEnabled(true);
+        jtcnh.setEnabled(true);
+        jctipo.setEnabled(true);
+        jtdatanascimento.setEnabled(true);
+        jcsexo.setEnabled(true);
+        jfcelular.setEnabled(true);
+        jcbusca.setSelected(false);
+        limparTabelaCliente();
+        jbeditarcliente.setEnabled(false);
+        jbexcluir.setEnabled(true);
+        jbatualizar.setEnabled(true);
     }//GEN-LAST:event_jbeditarclienteActionPerformed
 
     private void jbatualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbatualizarActionPerformed
-limparTabelaCliente();
-if (checacampos(null) == true){
-Cliente cliente = new Cliente();
-cliente.setCodigo(jtcodigo.getText());
-cliente.setNome(jtnome.getText());
-cliente.setCpf(jfcpf.getText());
-cliente.setRua(jtrua.getText());
-cliente.setCelular(jfcelular.getText());
-        try {
-            cliente.setDatanascimento(Utils.StrToDate(jtdatanascimento.getText()));
-        } catch (ParseException ex) {
-            Logger.getLogger(FormCadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-cliente.setNumero(jtnumero.getText());
-cliente.setComplemento(jtcomplemento.getText());
-cliente.setBairro(jtbairro.getText());
-cliente.setCidade(jtcidade.getText());
-cliente.setEstado(jcestado.getSelectedItem().toString());
-cliente.setCep(jfcep.getText());
-cliente.setTelefone(jftelefone.getText());
-cliente.setEmail(jtemail.getText());
-cliente.setHabilitacao(jtcnh.getText());
-cliente.setTipo(jctipo.getSelectedItem().toString());
-cliente.setSexo(jcsexo.getSelectedItem().toString());
+        limparTabelaCliente();
+        if (checacampos(null) == true) {
+            Cliente cliente = new Cliente();
+            cliente.setCodigo(jtcodigo.getText());
+            cliente.setNome(jtnome.getText());
+            cliente.setCpf(jfcpf.getText());
+            cliente.setRua(jtrua.getText());
+            cliente.setCelular(jfcelular.getText());
+            try {
+                cliente.setDatanascimento(Utils.StrToDate(jtdatanascimento.getText()));
+            } catch (ParseException ex) {
+                Logger.getLogger(FormCadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            cliente.setNumero(jtnumero.getText());
+            cliente.setComplemento(jtcomplemento.getText());
+            cliente.setBairro(jtbairro.getText());
+            cliente.setCidade(jtcidade.getText());
+            cliente.setEstado(jcestado.getSelectedItem().toString());
+            cliente.setCep(jfcep.getText());
+            cliente.setTelefone(jftelefone.getText());
+            cliente.setEmail(jtemail.getText());
+            cliente.setHabilitacao(jtcnh.getText());
+            cliente.setTipo(jctipo.getSelectedItem().toString());
+            cliente.setSexo(jcsexo.getSelectedItem().toString());
 
-ClienteDao.atualizarCliente(cliente);
-JOptionPane.showMessageDialog(null,"Cliente Atualizado com Sucesso!");
-jcbusca.setSelected(false);
-jbeditarcliente.setEnabled(false);
-jbexcluir.setEnabled(false);
-jbatualizar.setEnabled(false);
-jbinserir.setEnabled(true);
-limpacampos();
-   
-}
+            ClienteDao.atualizarCliente(cliente);
+            JOptionPane.showMessageDialog(null, "Cliente Atualizado com Sucesso!");
+            jcbusca.setSelected(false);
+            jbeditarcliente.setEnabled(false);
+            jbexcluir.setEnabled(false);
+            jbatualizar.setEnabled(false);
+            jbinserir.setEnabled(true);
+            limpacampos();
+
+        }
     }//GEN-LAST:event_jbatualizarActionPerformed
 
     private void jbRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRelatorioActionPerformed
         FormRelCliente frc = new FormRelCliente();
         frc.setVisible(true);
         int linha = jtclientes.getSelectedRow();
-        String cpf = ((String)jtclientes.getModel().getValueAt(linha,0));
+        String cpf = ((String) jtclientes.getModel().getValueAt(linha, 0));
         cliente = ClienteDao.getCliente(cpf);
-        FormRelCliente.cliente  = cliente;
+        FormRelCliente.cliente = cliente;
 
     }//GEN-LAST:event_jbRelatorioActionPerformed
-    
-   
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -942,132 +921,121 @@ limpacampos();
     private javax.swing.JTextField jtrua;
     // End of variables declaration//GEN-END:variables
 
-public void limpacampos(){
-jtcodigo.setText(null);
-jtnome.setText(null);
-jfcpf.setText(null);
-jtrua.setText(null);
-jtnumero.setText(null);
-jtcomplemento.setText(null);
-jtbairro.setText(null);
-jtcidade.setText(null);
-jcestado.setSelectedItem(null);
-jfcep.setText(null);
-jftelefone.setValue(null);
-jtemail.setText(null);
-jtcnh.setText(null);
-jctipo.setSelectedItem(null);
-jtdatanascimento.setText(null);
-jcsexo.setSelectedItem(null);
-jfcelular.setText(null);
-}
-
-public boolean checacampos(String str){
-str = "";
-  
-    if ( jtnome.getText().trim().isEmpty()){
-        str += "Nome\n";
-    }
-    
-    if (jtdatanascimento.getText().equals("  /  /    ")){
-    str += "Data de Nascimento\n";
-
-}
-    
-if (jcsexo.getSelectedItem()== null){
-    str += "Sexo\n";
-
-}
-
-    if (jfcpf.getText().equals("   .   .   -  ")){
-        str += "CPF\n";
-    }
-    
-    if (jftelefone.getText().equals("(  )     -    ")){
-    str += "Telefone\n";
-
-}
-    if (jtemail.getText().trim().isEmpty()){
-    str += "Email\n";
-
-}
-    if (jtcnh.getText().trim().isEmpty()){
-    str += "CNH\n";
-
-}
-    
-   if (jctipo.getSelectedItem()== null){
-    str += "Tipo\n";
-
-}
-   
-    if (jtrua.getText().trim().isEmpty()){
-        str += "Rua\n";
-    }
-    if (jtnumero.getText().trim().isEmpty()){
-        str += "Número\n";
+    public void limpacampos() {
+        jtcodigo.setText(null);
+        jtnome.setText(null);
+        jfcpf.setText(null);
+        jtrua.setText(null);
+        jtnumero.setText(null);
+        jtcomplemento.setText(null);
+        jtbairro.setText(null);
+        jtcidade.setText(null);
+        jcestado.setSelectedItem(null);
+        jfcep.setText(null);
+        jftelefone.setValue(null);
+        jtemail.setText(null);
+        jtcnh.setText(null);
+        jctipo.setSelectedItem(null);
+        jtdatanascimento.setText(null);
+        jcsexo.setSelectedItem(null);
+        jfcelular.setText(null);
     }
 
-if (jtbairro.getText().trim().isEmpty()){
-    str += "Bairro\n";
-}
-if (jtcidade.getText().trim().isEmpty()){
-    str += "Cidade\n";
+    public boolean checacampos(String str) {
+        str = "";
 
-}
+        if (jtnome.getText().trim().isEmpty()) {
+            str += "Nome\n";
+        }
 
-if (jfcep.getText().equals("     -   ")){
-    str += "CEP\n";
+        if (jtdatanascimento.getText().equals("  /  /    ")) {
+            str += "Data de Nascimento\n";
 
-}
+        }
 
+        if (jcsexo.getSelectedItem() == null) {
+            str += "Sexo\n";
 
-if (jcestado.getSelectedItem() == null){
-    str += "Estado\n";
+        }
 
-}
+        if (jfcpf.getText().equals("   .   .   -  ")) {
+            str += "CPF\n";
+        }
 
+        if (jftelefone.getText().equals("(  )     -    ")) {
+            str += "Telefone\n";
 
+        }
+        if (jtemail.getText().trim().isEmpty()) {
+            str += "Email\n";
 
+        }
+        if (jtcnh.getText().trim().isEmpty()) {
+            str += "CNH\n";
 
+        }
 
-if (str == ("")){
-    return true;
-}
-else {
-    
-    JOptionPane.showMessageDialog(null,"Favor preencher os seguintes campos: \n"+ str);
-    return false;
-}
+        if (jctipo.getSelectedItem() == null) {
+            str += "Tipo\n";
 
-}
+        }
 
-private void limparTabelaCliente()
-    {
-        DefaultTableModel modelo = (DefaultTableModel)jtclientes.getModel();
-        for (int i = jtclientes.getRowCount() -1; i >= 0; --i)
-        {
+        if (jtrua.getText().trim().isEmpty()) {
+            str += "Rua\n";
+        }
+        if (jtnumero.getText().trim().isEmpty()) {
+            str += "Número\n";
+        }
+
+        if (jtbairro.getText().trim().isEmpty()) {
+            str += "Bairro\n";
+        }
+        if (jtcidade.getText().trim().isEmpty()) {
+            str += "Cidade\n";
+
+        }
+
+        if (jfcep.getText().equals("     -   ")) {
+            str += "CEP\n";
+
+        }
+
+        if (jcestado.getSelectedItem() == null) {
+            str += "Estado\n";
+
+        }
+
+        if (str == ("")) {
+            return true;
+        } else {
+
+            JOptionPane.showMessageDialog(null, "Favor preencher os seguintes campos: \n" + str);
+            return false;
+        }
+
+    }
+
+    private void limparTabelaCliente() {
+        DefaultTableModel modelo = (DefaultTableModel) jtclientes.getModel();
+        for (int i = jtclientes.getRowCount() - 1; i >= 0; --i) {
             modelo.removeRow(i);
         }
-        
+
     }
 
-public double checanumerocliente (double numercliente){
-ArrayList<Cliente> lista = ClienteDao.getTodosClientes();
-      
-    if (!lista.isEmpty())
-        {
-          for(int i=0;i<lista.size();i++)
-             { 
-              double testenumero = Double.parseDouble(lista.get(i).getCodigo()); 
-                 while (testenumero == numercliente)
-                   {
-                   numercliente += 1;
-                                        
-                   }
-              }     
+    public double checanumerocliente(double numercliente) {
+        ArrayList<Cliente> lista = ClienteDao.getTodosClientes();
+
+        if (!lista.isEmpty()) {
+            for (int i = 0; i < lista.size(); i++) {
+                double testenumero = Double.parseDouble(lista.get(i).getCodigo());
+                while (testenumero == numercliente) {
+                    numercliente += 1;
+
+                }
+            }
         }
-return numercliente;
-}
+        return numercliente;
+    }
 
 }

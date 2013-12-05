@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package com.aluguelautomoveis.controllerview;
+
 import com.aluguelautomoveis.model.Cliente;
 
 /**
@@ -10,7 +11,9 @@ import com.aluguelautomoveis.model.Cliente;
  * @author curso
  */
 public class FormRelCliente extends javax.swing.JFrame {
-static Cliente cliente = null;
+
+    static Cliente cliente = null;
+
     /**
      * Creates new form FormRelCliente
      */
@@ -64,7 +67,7 @@ static Cliente cliente = null;
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         jtCli.setText(cliente.Cliente());
-        
+
     }//GEN-LAST:event_formWindowOpened
 
     /**

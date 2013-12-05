@@ -13,16 +13,15 @@ import javax.swing.table.DefaultTableModel;
 import com.aluguelautomoveis.model.dao.AluguelDao;
 import com.aluguelautomoveis.model.dao.AutomovelDao;
 
-
 /**
  *
  * @author Locadora de Veículo
  */
 public class FormConsultaLocacao extends javax.swing.JFrame {
 
-  Automovel automovel = null;
-  Aluguel aluguel = null;
-    
+    Automovel automovel = null;
+    Aluguel aluguel = null;
+
     public FormConsultaLocacao() {
         initComponents();
     }
@@ -219,74 +218,69 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbbuscartodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscartodosActionPerformed
-  limparTabela();
+        limparTabela();
         jtnumaluguel.setText("");
-        
+
         ArrayList<Aluguel> lista = AluguelDao.getTodosAlugueis();
-        
-        DefaultTableModel modelo = (DefaultTableModel)jtlocacoes.getModel();
-        
-        if (!lista.isEmpty())
-        {
-            
-            for(int i=0;i<lista.size();i++)
-            {
-              
+
+        DefaultTableModel modelo = (DefaultTableModel) jtlocacoes.getModel();
+
+        if (!lista.isEmpty()) {
+
+            for (int i = 0; i < lista.size(); i++) {
+
                 modelo.addRow(lista.get(i).getAluguelo());
-            
+
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhuma Locação Cadastrada!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
         }
-        else
-            JOptionPane.showMessageDialog(null, "Nenhuma Locação Cadastrada!","ATENÇÃO!",JOptionPane.ERROR_MESSAGE);
-            // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_jbbuscartodosActionPerformed
 
     private void jbbuscarautoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscarautoActionPerformed
-limparTabela();
-if (jtnumaluguel.getText().isEmpty()){
-    JOptionPane.showMessageDialog(null,"Digite o número da Locação!");
-    jtnumaluguel.requestFocus(true);
-}
-else
-{
- Aluguel aluguel = AluguelDao.getAluguel(Double.parseDouble(jtnumaluguel.getText()));
-DefaultTableModel modelo = (DefaultTableModel)jtlocacoes.getModel();
-if (aluguel != null)
-{
-    modelo.addRow(aluguel.getAluguelo());
-} 
-else
-    JOptionPane.showMessageDialog(null,"Locação Inexistente!\n Não foi possível encontrar a locação especificado!","Atenção",JOptionPane.ERROR_MESSAGE);
-      
+        limparTabela();
+        if (jtnumaluguel.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Digite o número da Locação!");
+            jtnumaluguel.requestFocus(true);
+        } else {
+            Aluguel aluguel = AluguelDao.getAluguel(Double.parseDouble(jtnumaluguel.getText()));
+            DefaultTableModel modelo = (DefaultTableModel) jtlocacoes.getModel();
+            if (aluguel != null) {
+                modelo.addRow(aluguel.getAluguelo());
+            } else {
+                JOptionPane.showMessageDialog(null, "Locação Inexistente!\n Não foi possível encontrar a locação especificado!", "Atenção", JOptionPane.ERROR_MESSAGE);
+            }
+
     }//GEN-LAST:event_jbbuscarautoActionPerformed
     }
     private void jbfinalizarlocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbfinalizarlocacaoActionPerformed
-int linha = jtlocacoes.getSelectedRow();
-double numero = ((Double)jtlocacoes.getModel().getValueAt(linha,0));
-aluguel = AluguelDao.getAluguel(numero);
-aluguel.getAutomovel().Devolver();
-automovel = aluguel.getAutomovel();
-AutomovelDao.atualizarAutomovel(automovel);
-AluguelDao.ConfirmaDevolucao(aluguel.getNumero());
-JOptionPane.showMessageDialog(null,"Locação Finalizada com Sucesso!!!");
-limparTabela();
-jbfinalizarlocacao.setEnabled(false);
-jbmulta.setEnabled(false);
-jButton1.setEnabled(false);
+        int linha = jtlocacoes.getSelectedRow();
+        double numero = ((Double) jtlocacoes.getModel().getValueAt(linha, 0));
+        aluguel = AluguelDao.getAluguel(numero);
+        aluguel.getAutomovel().Devolver();
+        automovel = aluguel.getAutomovel();
+        AutomovelDao.atualizarAutomovel(automovel);
+        AluguelDao.ConfirmaDevolucao(aluguel.getNumero());
+        JOptionPane.showMessageDialog(null, "Locação Finalizada com Sucesso!!!");
+        limparTabela();
+        jbfinalizarlocacao.setEnabled(false);
+        jbmulta.setEnabled(false);
+        jButton1.setEnabled(false);
     }//GEN-LAST:event_jbfinalizarlocacaoActionPerformed
 
     private void jbmultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbmultaActionPerformed
-int linha = jtlocacoes.getSelectedRow();
-double numero = ((Double)jtlocacoes.getModel().getValueAt(linha,0));
-aluguel = AluguelDao.getAluguel(numero);
-Date hoje = new Date();
-aluguel.diasMulta(aluguel.getDatadevolucao(),hoje);
-aluguel.calcularMulta();
-if (aluguel.getMulta()<=0){
-    JOptionPane.showMessageDialog(null,"Não existe Multa para esta locação!!!");
-}
-else{
-JOptionPane.showMessageDialog(null,"Valor da Multa: "+aluguel.getMulta());}
+        int linha = jtlocacoes.getSelectedRow();
+        double numero = ((Double) jtlocacoes.getModel().getValueAt(linha, 0));
+        aluguel = AluguelDao.getAluguel(numero);
+        Date hoje = new Date();
+        aluguel.diasMulta(aluguel.getDatadevolucao(), hoje);
+        aluguel.calcularMulta();
+        if (aluguel.getMulta() <= 0) {
+            JOptionPane.showMessageDialog(null, "Não existe Multa para esta locação!!!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Valor da Multa: " + aluguel.getMulta());
+        }
     }//GEN-LAST:event_jbmultaActionPerformed
 
     private void jScrollPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane1MouseClicked
@@ -294,31 +288,29 @@ JOptionPane.showMessageDialog(null,"Valor da Multa: "+aluguel.getMulta());}
     }//GEN-LAST:event_jScrollPane1MouseClicked
 
     private void jtlocacoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtlocacoesMouseClicked
-if (jtlocacoes.getSelectedRow()!= -1){
-                    jbfinalizarlocacao.setEnabled(true);
-                    jbmulta.setEnabled(true);
-                    jButton1.setEnabled(true);
-     } else 
-     {
-         JOptionPane.showConfirmDialog(null,"Selecione uma Locação!");
-         
-     }        // TODO add your handling code here:
+        if (jtlocacoes.getSelectedRow() != -1) {
+            jbfinalizarlocacao.setEnabled(true);
+            jbmulta.setEnabled(true);
+            jButton1.setEnabled(true);
+        } else {
+            JOptionPane.showConfirmDialog(null, "Selecione uma Locação!");
+
+        }        // TODO add your handling code here:
     }//GEN-LAST:event_jtlocacoesMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-FormNotaFiscal fnf = new FormNotaFiscal();
-fnf.setVisible(true);
-int linha = jtlocacoes.getSelectedRow();
-double numero = ((Double)jtlocacoes.getModel().getValueAt(linha,0));
-aluguel = AluguelDao.getAluguel(numero);
-FormNotaFiscal.aluguel  = aluguel;
+        FormNotaFiscal fnf = new FormNotaFiscal();
+        fnf.setVisible(true);
+        int linha = jtlocacoes.getSelectedRow();
+        double numero = ((Double) jtlocacoes.getModel().getValueAt(linha, 0));
+        aluguel = AluguelDao.getAluguel(numero);
+        FormNotaFiscal.aluguel = aluguel;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-this.dispose();
+        this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
-    
-  
+
     /**
      * @param args the command line arguments
      */
@@ -368,14 +360,12 @@ this.dispose();
     private javax.swing.JTextField jtnumaluguel;
     // End of variables declaration//GEN-END:variables
 
-  private void limparTabela()
-    {
-        DefaultTableModel modelo = (DefaultTableModel)jtlocacoes.getModel();
-        for (int i = jtlocacoes.getRowCount() -1; i >= 0; --i)
-        {
+    private void limparTabela() {
+        DefaultTableModel modelo = (DefaultTableModel) jtlocacoes.getModel();
+        for (int i = jtlocacoes.getRowCount() - 1; i >= 0; --i) {
             modelo.removeRow(i);
         }
-        
+
     }
 
 }

@@ -9,27 +9,22 @@ import java.util.Date;
 import com.aluguelautomoveis.model.Utils;
 import com.sun.security.auth.module.NTSystem;
 
-
-
-
 public class Principal extends javax.swing.JFrame {
-  
+
     public Principal() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
     }
 
-    
-    public String PegaData(){
+    public String PegaData() {
         Date hoje = new Date();
-  String today = "";
-  
-    
-  today += Utils.DateToStr(hoje);
-    
-  return today; 
-}
-    
+        String today = "";
+
+        today += Utils.DateToStr(hoje);
+
+        return today;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -187,37 +182,37 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-FormCadastroCliente fcc = new FormCadastroCliente();
-fcc.setVisible(true);
+        FormCadastroCliente fcc = new FormCadastroCliente();
+        fcc.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-FormConsultaLocacao fcl = new FormConsultaLocacao();
-fcl.setVisible(true);
+        FormConsultaLocacao fcl = new FormConsultaLocacao();
+        fcl.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-System.exit(0);        // TODO add your handling code here:
+        System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-FormCadastroAutomovel fca = new FormCadastroAutomovel();
-fca.setVisible(true);
+        FormCadastroAutomovel fca = new FormCadastroAutomovel();
+        fca.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-JOptionPane.showMessageDialog(null,"ALUGUEL DE AUTOMÓVEIS"+"\n"+"\nDesenvolvido por:  \nJoão Paulo   \nWashington\nVersão 1.0"+"\nCopyright© Todos os direitos reservados."+"\nHoje: "+PegaData(),
-"Sobre",JOptionPane.CLOSED_OPTION);
+        JOptionPane.showMessageDialog(null, "ALUGUEL DE AUTOMÓVEIS" + "\n" + "\nDesenvolvido por:  \nJoão Paulo   \nWashington\nVersão 1.0" + "\nCopyright© Todos os direitos reservados." + "\nHoje: " + PegaData(),
+                "Sobre", JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-FormAluguel fa = new FormAluguel();
-fa.setVisible(true);
+        FormAluguel fa = new FormAluguel();
+        fa.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-NTSystem infoSystem = new NTSystem();  
-JOptionPane.showMessageDialog(null, "Seja Bem Vindo(a): " +infoSystem.getName());
+        NTSystem infoSystem = new NTSystem();
+        JOptionPane.showMessageDialog(null, "Seja Bem Vindo(a): " + infoSystem.getName());
     }//GEN-LAST:event_formWindowOpened
 
     private void jLabel1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jLabel1ComponentShown

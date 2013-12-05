@@ -13,12 +13,12 @@ import java.util.Date;
  * @author Locadora de Veículo
  */
 public class Utils {
-    
+
     public static String DateToStr(Date data) {
         SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
         return formatador.format(data);
     }
-    
+
     public static Date StrToDate(String data) throws ParseException {
         SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
         return formatador.parse(data);

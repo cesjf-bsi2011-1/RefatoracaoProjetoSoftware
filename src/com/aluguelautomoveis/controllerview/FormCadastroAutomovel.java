@@ -24,7 +24,7 @@ public class FormCadastroAutomovel extends javax.swing.JFrame {
     }
 
     Automovel auto = null;
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -450,133 +450,128 @@ public class FormCadastroAutomovel extends javax.swing.JFrame {
 
     private void jbinserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbinserirActionPerformed
 
-   if (checacampos(null) == true){
-Automovel auto = new Automovel();
-auto.setMarca(jtmarca.getText());
-auto.setModelo(jtmodelo.getText());
-auto.setCor(jtcor.getText());
-auto.setAno(jfano.getText());
-auto.setCombustivel(jccombustivel.getSelectedItem().toString());
-auto.setValor(Float.parseFloat(jfvalor.getText()));
-auto.setPortas(jcportas.getSelectedItem().toString());
-auto.setChassi(jtchassi.getText());
-auto.setStatus("Disponível");
-auto.setPlaca(jfplaca.getText());
-auto.setTipo(jctipo.getSelectedItem().toString());
-         
-   
-if (AutomovelDao.getAutomovel(auto.getPlaca()) == null){
-AutomovelDao.addAutomovel(auto);
-JOptionPane.showMessageDialog(null,"Cadastro Efetuado com Sucesso!");
-limpacampos();
-}
-else {
-  JOptionPane.showMessageDialog(null,"Já existe Automóvel cadastrado com esta placa!");  
-}
-   }
-   else {
-       
-   }
+        if (checacampos(null) == true) {
+            Automovel auto = new Automovel();
+            auto.setMarca(jtmarca.getText());
+            auto.setModelo(jtmodelo.getText());
+            auto.setCor(jtcor.getText());
+            auto.setAno(jfano.getText());
+            auto.setCombustivel(jccombustivel.getSelectedItem().toString());
+            auto.setValor(Float.parseFloat(jfvalor.getText()));
+            auto.setPortas(jcportas.getSelectedItem().toString());
+            auto.setChassi(jtchassi.getText());
+            auto.setStatus("Disponível");
+            auto.setPlaca(jfplaca.getText());
+            auto.setTipo(jctipo.getSelectedItem().toString());
+
+            if (AutomovelDao.getAutomovel(auto.getPlaca()) == null) {
+                AutomovelDao.addAutomovel(auto);
+                JOptionPane.showMessageDialog(null, "Cadastro Efetuado com Sucesso!");
+                limpacampos();
+            } else {
+                JOptionPane.showMessageDialog(null, "Já existe Automóvel cadastrado com esta placa!");
+            }
+        } else {
+
+        }
     }//GEN-LAST:event_jbinserirActionPerformed
 
     private void jbsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsairActionPerformed
-this.dispose();
-        
+        this.dispose();
+
     }//GEN-LAST:event_jbsairActionPerformed
 
     private void btpesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btpesquisarActionPerformed
-limparTabelaAutomovel();
+        limparTabelaAutomovel();
         auto = AutomovelDao.getAutomovel(jfplacabusca.getText());
-        
-        DefaultTableModel modelo = (DefaultTableModel)jtauto.getModel();
-        if (auto != null)
-        {
+
+        DefaultTableModel modelo = (DefaultTableModel) jtauto.getModel();
+        if (auto != null) {
             modelo.addRow(auto.getAutomovel());
-         jfplacabusca.setText(null); 
+            jfplacabusca.setText(null);
+        } else {
+            JOptionPane.showMessageDialog(null, "Automóvel Inexistente!\nNão foi possivel encontrar o Automóvel especificado!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
         }
-        else
-            JOptionPane.showMessageDialog(null, "Automóvel Inexistente!\nNão foi possivel encontrar o Automóvel especificado!","ATENÇÃO!",JOptionPane.ERROR_MESSAGE);
-    jfplacabusca.setText(null);
+        jfplacabusca.setText(null);
     }//GEN-LAST:event_btpesquisarActionPerformed
-        
-    
+
+
     private void jfplacabuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jfplacabuscaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jfplacabuscaActionPerformed
 
     private void jbexcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbexcluirActionPerformed
 
-String placa = jfplaca.getText();
-if (AutomovelDao.getAutomovel(placa) != null){
+        String placa = jfplaca.getText();
+        if (AutomovelDao.getAutomovel(placa) != null) {
 
-int resposta = JOptionPane.showConfirmDialog(null,"Tem certeza que deseja remover este automóvel?","Remover",JOptionPane.YES_NO_OPTION ,JOptionPane.WARNING_MESSAGE);
-if (resposta == 0){
-    
-            if (auto.getStatus().equals("Alugado")){
-        
-           JOptionPane.showMessageDialog(null,"Automóvel não pode ser removido, pois encontra-se Alugado!","Atenção",JOptionPane.ERROR_MESSAGE);
-           }
-            else {
-                if (auto != null){
-              
-                 AutomovelDao.removerAutomovel(placa);
-JOptionPane.showMessageDialog(null,"O automóvel foi removido com sucesso!!!");
-limparTabelaAutomovel();
-limpacampos();
-jtmarca.setEnabled(true);
-jctipo.setEnabled(true);
-jtmodelo.setEnabled(true);
-jtcor.setEnabled(true);
-jfano.setEnabled(true);
-jccombustivel.setEnabled(true);
-jfvalor.setEnabled(true);
-jcportas.setEnabled(true);
-jtchassi.setEnabled(true);
-jfplaca.setEnabled(true);
+            int resposta = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover este automóvel?", "Remover", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            if (resposta == 0) {
+
+                if (auto.getStatus().equals("Alugado")) {
+
+                    JOptionPane.showMessageDialog(null, "Automóvel não pode ser removido, pois encontra-se Alugado!", "Atenção", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    if (auto != null) {
+
+                        AutomovelDao.removerAutomovel(placa);
+                        JOptionPane.showMessageDialog(null, "O automóvel foi removido com sucesso!!!");
+                        limparTabelaAutomovel();
+                        limpacampos();
+                        jtmarca.setEnabled(true);
+                        jctipo.setEnabled(true);
+                        jtmodelo.setEnabled(true);
+                        jtcor.setEnabled(true);
+                        jfano.setEnabled(true);
+                        jccombustivel.setEnabled(true);
+                        jfvalor.setEnabled(true);
+                        jcportas.setEnabled(true);
+                        jtchassi.setEnabled(true);
+                        jfplaca.setEnabled(true);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Automóvel não pode ser removido, pois não existe no sistema!", "Atenção", JOptionPane.ERROR_MESSAGE);
+                    }
+                    jbexcluir.setEnabled(false);
+                    jbatualizar.setEnabled(false);
+                    jbinserir.setEnabled(true);
+                    limpacampos();
+                    jfplaca.setEnabled(true);
+                }
             }
-       else
-            JOptionPane.showMessageDialog(null,"Automóvel não pode ser removido, pois não existe no sistema!","Atenção",JOptionPane.ERROR_MESSAGE);
-        jbexcluir.setEnabled(false);
-        jbatualizar.setEnabled(false);
-        jbinserir.setEnabled(true);
-        limpacampos(); 
-        jfplaca.setEnabled(true);}
-}
-}
+        }
     }//GEN-LAST:event_jbexcluirActionPerformed
 
     private void jbatualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbatualizarActionPerformed
-if (auto.getStatus()=="Alugado"){
-        
-           JOptionPane.showMessageDialog(null,"Automóvel não pode ser Atualizado pois encontra-se Alugado!","Atenção",JOptionPane.ERROR_MESSAGE);
-           }
-            else {
-        
-auto = new Automovel();
-auto.setMarca(jtmarca.getText());
-auto.setModelo(jtmodelo.getText());
-auto.setCor(jtcor.getText());
-auto.setAno(jfano.getText());
-auto.setCombustivel(jccombustivel.getSelectedItem().toString());
-auto.setValor(Float.parseFloat(jfvalor.getText()));
-auto.setPortas(jcportas.getSelectedItem().toString());
-auto.setChassi(jtchassi.getText());
-auto.setPlaca(jfplaca.getText());
-auto.setTipo(jctipo.getSelectedItem().toString());
-auto.setStatus(jtstatus.getText());
+        if (auto.getStatus() == "Alugado") {
 
-AutomovelDao.atualizarAutomovel(auto);
+            JOptionPane.showMessageDialog(null, "Automóvel não pode ser Atualizado pois encontra-se Alugado!", "Atenção", JOptionPane.ERROR_MESSAGE);
+        } else {
 
-JOptionPane.showMessageDialog(null,"Atualização efetuada com sucesso!");
-limparTabelaAutomovel();
-limpacampos();
-jbeditarauto.setEnabled(false);
-btpesquisar.setEnabled(false);
-btpesquisartodos.setEnabled(false);
-jbexcluir.setEnabled(false);
-jbatualizar.setEnabled(false);
-jCheckBox1.setSelected(false);
-jbinserir.setEnabled(true);
+            auto = new Automovel();
+            auto.setMarca(jtmarca.getText());
+            auto.setModelo(jtmodelo.getText());
+            auto.setCor(jtcor.getText());
+            auto.setAno(jfano.getText());
+            auto.setCombustivel(jccombustivel.getSelectedItem().toString());
+            auto.setValor(Float.parseFloat(jfvalor.getText()));
+            auto.setPortas(jcportas.getSelectedItem().toString());
+            auto.setChassi(jtchassi.getText());
+            auto.setPlaca(jfplaca.getText());
+            auto.setTipo(jctipo.getSelectedItem().toString());
+            auto.setStatus(jtstatus.getText());
+
+            AutomovelDao.atualizarAutomovel(auto);
+
+            JOptionPane.showMessageDialog(null, "Atualização efetuada com sucesso!");
+            limparTabelaAutomovel();
+            limpacampos();
+            jbeditarauto.setEnabled(false);
+            btpesquisar.setEnabled(false);
+            btpesquisartodos.setEnabled(false);
+            jbexcluir.setEnabled(false);
+            jbatualizar.setEnabled(false);
+            jCheckBox1.setSelected(false);
+            jbinserir.setEnabled(true);
 
     }//GEN-LAST:event_jbatualizarActionPerformed
     }
@@ -589,7 +584,7 @@ jbinserir.setEnabled(true);
     }//GEN-LAST:event_jtstatusActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-jtstatus.setText("Disponível");        // TODO add your handling code here:
+        jtstatus.setText("Disponível");        // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
 
     private void jfplacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jfplacaActionPerformed
@@ -597,42 +592,40 @@ jtstatus.setText("Disponível");        // TODO add your handling code here:
     }//GEN-LAST:event_jfplacaActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-if (jCheckBox1.isSelected()){
-jtmarca.setEnabled(false);
-jctipo.setEnabled(false);
-jtmodelo.setEnabled(false);
-jtcor.setEnabled(false);
-jfano.setEnabled(false);
-jccombustivel.setEnabled(false);
-jfvalor.setEnabled(false);
-jcportas.setEnabled(false);
-jtchassi.setEnabled(false);
-jfplaca.setEnabled(false);
-jfplacabusca.setEnabled(false);
-jfplacabusca.setEnabled(true);
-btpesquisar.setEnabled(true);
-btpesquisartodos.setEnabled(true);
-jblimpar.setEnabled(true);
-limpacampos();
-limparTabelaAutomovel();
-}
-else 
-{
- jfplacabusca.setEnabled(false);
- btpesquisar.setEnabled(false);
- btpesquisartodos.setEnabled(false);   
- jblimpar.setEnabled(false);
- jtmarca.setEnabled(true);
-jctipo.setEnabled(true);
-jtmodelo.setEnabled(true);
-jtcor.setEnabled(true);
-jfano.setEnabled(true);
-jccombustivel.setEnabled(true);
-jfvalor.setEnabled(true);
-jcportas.setEnabled(true);
-jtchassi.setEnabled(true);
-jfplaca.setEnabled(true);
-}
+        if (jCheckBox1.isSelected()) {
+            jtmarca.setEnabled(false);
+            jctipo.setEnabled(false);
+            jtmodelo.setEnabled(false);
+            jtcor.setEnabled(false);
+            jfano.setEnabled(false);
+            jccombustivel.setEnabled(false);
+            jfvalor.setEnabled(false);
+            jcportas.setEnabled(false);
+            jtchassi.setEnabled(false);
+            jfplaca.setEnabled(false);
+            jfplacabusca.setEnabled(false);
+            jfplacabusca.setEnabled(true);
+            btpesquisar.setEnabled(true);
+            btpesquisartodos.setEnabled(true);
+            jblimpar.setEnabled(true);
+            limpacampos();
+            limparTabelaAutomovel();
+        } else {
+            jfplacabusca.setEnabled(false);
+            btpesquisar.setEnabled(false);
+            btpesquisartodos.setEnabled(false);
+            jblimpar.setEnabled(false);
+            jtmarca.setEnabled(true);
+            jctipo.setEnabled(true);
+            jtmodelo.setEnabled(true);
+            jtcor.setEnabled(true);
+            jfano.setEnabled(true);
+            jccombustivel.setEnabled(true);
+            jfvalor.setEnabled(true);
+            jcportas.setEnabled(true);
+            jtchassi.setEnabled(true);
+            jfplaca.setEnabled(true);
+        }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jctipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jctipoActionPerformed
@@ -640,91 +633,86 @@ jfplaca.setEnabled(true);
     }//GEN-LAST:event_jctipoActionPerformed
 
     private void btpesquisartodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btpesquisartodosActionPerformed
-    limpacampos();
-    
+        limpacampos();
+
         jfplaca.setText("");
-            
+
         ArrayList<Automovel> lista = AutomovelDao.getTodosAutomoveis();
-        
-        DefaultTableModel modelo = (DefaultTableModel)jtauto.getModel();
-        
-        if (!lista.isEmpty())
-        {
-            
-            for(int i=0;i<lista.size();i++)
-            {
-                
+
+        DefaultTableModel modelo = (DefaultTableModel) jtauto.getModel();
+
+        if (!lista.isEmpty()) {
+
+            for (int i = 0; i < lista.size(); i++) {
+
                 modelo.addRow(lista.get(i).getAutomovel());
-            
-        } if (modelo.getRowCount() == 0){
-            JOptionPane.showMessageDialog(null,"Não existe Automóveis disponíveis para locação!!!");
+
+            }
+            if (modelo.getRowCount() == 0) {
+                JOptionPane.showMessageDialog(null, "Não existe Automóveis disponíveis para locação!!!");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum Automóvel cadastrado!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
         }
-        }else {
-          JOptionPane.showMessageDialog(null, "Nenhum Automóvel cadastrado!","ATENÇÃO!",JOptionPane.ERROR_MESSAGE);
-        }  
     }//GEN-LAST:event_btpesquisartodosActionPerformed
 
     private void jblimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jblimparActionPerformed
-limparTabelaAutomovel();
-limpacampos();
-jbeditarauto.setEnabled(false);
-btpesquisar.setEnabled(false);
-btpesquisartodos.setEnabled(false);
-jbexcluir.setEnabled(false);
-jbatualizar.setEnabled(false);
-jCheckBox1.setSelected(false);
-jbinserir.setEnabled(true);
+        limparTabelaAutomovel();
+        limpacampos();
+        jbeditarauto.setEnabled(false);
+        btpesquisar.setEnabled(false);
+        btpesquisartodos.setEnabled(false);
+        jbexcluir.setEnabled(false);
+        jbatualizar.setEnabled(false);
+        jCheckBox1.setSelected(false);
+        jbinserir.setEnabled(true);
     }//GEN-LAST:event_jblimparActionPerformed
 
     private void jtautoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtautoMouseClicked
- if (jtauto.getSelectedRow()>=-1)
-             {
-                    jbeditarauto.setEnabled(true);
-                    btpesquisar.setEnabled(false);
-                    btpesquisartodos.setEnabled(false);
-                    jbatualizar.setEnabled(false);
-                    jbexcluir.setEnabled(false);
-                    jbinserir.setEnabled(false);
-} else 
-     {
-                
-     }
-    
+        if (jtauto.getSelectedRow() >= -1) {
+            jbeditarauto.setEnabled(true);
+            btpesquisar.setEnabled(false);
+            btpesquisartodos.setEnabled(false);
+            jbatualizar.setEnabled(false);
+            jbexcluir.setEnabled(false);
+            jbinserir.setEnabled(false);
+        } else {
+
+        }
+
     }//GEN-LAST:event_jtautoMouseClicked
 
     private void jbeditarautoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbeditarautoActionPerformed
-int linha = jtauto.getSelectedRow();
-String placa = ((String)jtauto.getModel().getValueAt(linha,5));
-auto = AutomovelDao.getAutomovel(placa);
+        int linha = jtauto.getSelectedRow();
+        String placa = ((String) jtauto.getModel().getValueAt(linha, 5));
+        auto = AutomovelDao.getAutomovel(placa);
 
- 
-jtmarca.setText(auto.getMarca());
-jtstatus.setText(auto.getStatus());
-jtmodelo.setText(auto.getModelo());
-jtcor.setText(auto.getCor());
-jfano.setText(auto.getAno());
-jccombustivel.setSelectedItem(auto.getCombustivel());
-jfvalor.setText(String.valueOf(auto.getValor()));
-jcportas.setSelectedItem(auto.getPortas());
-jtchassi.setText(auto.getChassi());
-jfplaca.setText(auto.getPlaca());  
-jctipo.setSelectedItem(auto.getTipo()); 
-jtmarca.setEnabled(true);
-jctipo.setEnabled(true);
-jtmodelo.setEnabled(true);
-jtcor.setEnabled(true);
-jfano.setEnabled(true);
-jccombustivel.setEnabled(true);
-jfvalor.setEnabled(true);
-jcportas.setEnabled(true);
-jtchassi.setEnabled(true);
-jfplaca.setEnabled(true);
-jbexcluir.setEnabled(true);
-jbatualizar.setEnabled(true);
-jbeditarauto.setEnabled(false);
-jCheckBox1.setSelected(false);
+        jtmarca.setText(auto.getMarca());
+        jtstatus.setText(auto.getStatus());
+        jtmodelo.setText(auto.getModelo());
+        jtcor.setText(auto.getCor());
+        jfano.setText(auto.getAno());
+        jccombustivel.setSelectedItem(auto.getCombustivel());
+        jfvalor.setText(String.valueOf(auto.getValor()));
+        jcportas.setSelectedItem(auto.getPortas());
+        jtchassi.setText(auto.getChassi());
+        jfplaca.setText(auto.getPlaca());
+        jctipo.setSelectedItem(auto.getTipo());
+        jtmarca.setEnabled(true);
+        jctipo.setEnabled(true);
+        jtmodelo.setEnabled(true);
+        jtcor.setEnabled(true);
+        jfano.setEnabled(true);
+        jccombustivel.setEnabled(true);
+        jfvalor.setEnabled(true);
+        jcportas.setEnabled(true);
+        jtchassi.setEnabled(true);
+        jfplaca.setEnabled(true);
+        jbexcluir.setEnabled(true);
+        jbatualizar.setEnabled(true);
+        jbeditarauto.setEnabled(false);
+        jCheckBox1.setSelected(false);
     }//GEN-LAST:event_jbeditarautoActionPerformed
-
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -797,72 +785,77 @@ jCheckBox1.setSelected(false);
     private javax.swing.JTextField jtstatus;
     // End of variables declaration//GEN-END:variables
 
-public void limpacampos(){
-jtmarca.setText(null);
-jtmodelo.setText(null);
-jtcor.setText(null);
-jfano.setText(null);
-jccombustivel.setSelectedIndex(-1);
-jfvalor.setText(null);
-jcportas.setSelectedIndex(-1);
-jtchassi.setText(null);
-jfplaca.setText(null);  
-jfplacabusca.setText(null);
-jctipo.setSelectedIndex(-1);
-jtstatus.setText("Disponível");
-}
+    public void limpacampos() {
+        jtmarca.setText(null);
+        jtmodelo.setText(null);
+        jtcor.setText(null);
+        jfano.setText(null);
+        jccombustivel.setSelectedIndex(-1);
+        jfvalor.setText(null);
+        jcportas.setSelectedIndex(-1);
+        jtchassi.setText(null);
+        jfplaca.setText(null);
+        jfplacabusca.setText(null);
+        jctipo.setSelectedIndex(-1);
+        jtstatus.setText("Disponível");
+    }
 
-public boolean checacampos(String str){
-     str = "";
-        
-        if (jtmarca.getText().trim().isEmpty()){
-           str = "Marca\n";}
-        
-        if (jtmodelo.getText().trim().isEmpty()){
-            str+=  "Modelo\n";}
-        
-        if(jfplaca.getText().equals("   -    ")){
-            str+=  "Placa\n";} 
-        
-         if (jtcor.getText().trim().isEmpty()){
-            str+=  "Cor\n";}
-         
-                 
-         
-         if  (jfano.getText().trim().isEmpty()){
-          str+=  "Ano\n";}
-        
-         if (jccombustivel.getSelectedItem() == (null)){
-             str+=   "Combustível\n";}
-        
-                
-         if (jcportas.getSelectedItem() == (null)){
-             str+=  "Número de portas\n";}
-        
-         if (jtchassi.getText().trim().isEmpty()){
-             str+= "Chassi\n";}
-       
-          if   (jfvalor.getText().equals("    .  ")){
-               str+=  "Valor\n";}
-          
-         if (jctipo.getSelectedItem() == null){
-             str+=   "Tipo\n";}
-          
-        if (str == ""){
-            return  true;}
-        else {
-    JOptionPane.showMessageDialog(null,"Favor preencher os seguintes campos: \n"+ str);
-    return false;
-}
-}
+    public boolean checacampos(String str) {
+        str = "";
 
-private void limparTabelaAutomovel()
-    {
-        DefaultTableModel modelo = (DefaultTableModel)jtauto.getModel();
-        for (int i = jtauto.getRowCount() -1; i >= 0; --i)
-        {
+        if (jtmarca.getText().trim().isEmpty()) {
+            str = "Marca\n";
+        }
+
+        if (jtmodelo.getText().trim().isEmpty()) {
+            str += "Modelo\n";
+        }
+
+        if (jfplaca.getText().equals("   -    ")) {
+            str += "Placa\n";
+        }
+
+        if (jtcor.getText().trim().isEmpty()) {
+            str += "Cor\n";
+        }
+
+        if (jfano.getText().trim().isEmpty()) {
+            str += "Ano\n";
+        }
+
+        if (jccombustivel.getSelectedItem() == (null)) {
+            str += "Combustível\n";
+        }
+
+        if (jcportas.getSelectedItem() == (null)) {
+            str += "Número de portas\n";
+        }
+
+        if (jtchassi.getText().trim().isEmpty()) {
+            str += "Chassi\n";
+        }
+
+        if (jfvalor.getText().equals("    .  ")) {
+            str += "Valor\n";
+        }
+
+        if (jctipo.getSelectedItem() == null) {
+            str += "Tipo\n";
+        }
+
+        if (str == "") {
+            return true;
+        } else {
+            JOptionPane.showMessageDialog(null, "Favor preencher os seguintes campos: \n" + str);
+            return false;
+        }
+    }
+
+    private void limparTabelaAutomovel() {
+        DefaultTableModel modelo = (DefaultTableModel) jtauto.getModel();
+        for (int i = jtauto.getRowCount() - 1; i >= 0; --i) {
             modelo.removeRow(i);
         }
-        
+
     }
 }

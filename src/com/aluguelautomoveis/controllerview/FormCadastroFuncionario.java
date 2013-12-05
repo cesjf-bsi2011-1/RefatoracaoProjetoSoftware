@@ -1,8 +1,6 @@
-
 package com.aluguelautomoveis.controllerview;
 
 import com.aluguelautomoveis.model.Funcionario;
-import java.util.Date;
 import javax.swing.JOptionPane;
 import com.aluguelautomoveis.model.Utils;
 import java.text.ParseException;
@@ -24,8 +22,8 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
     public FormCadastroFuncionario() {
         initComponents();
     }
-Funcionario funcionario = null;
-String okfuncionario = null;
+    Funcionario funcionario = null;
+    String okfuncionario = null;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -513,312 +511,297 @@ String okfuncionario = null;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-this.dispose();        
+        this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jbbuscafuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscafuncionarioActionPerformed
-limparTabelaFuncionario();
+        limparTabelaFuncionario();
         funcionario = FuncionarioDao.getFuncionario(jfcpfbusca.getText());
-        
-        DefaultTableModel modelo = (DefaultTableModel)jtfuncionario.getModel();
-        if (funcionario != null)
-        {
+
+        DefaultTableModel modelo = (DefaultTableModel) jtfuncionario.getModel();
+        if (funcionario != null) {
             modelo.addRow(funcionario.getFuncionario());
-         jfcpfbusca.setText(null); 
+            jfcpfbusca.setText(null);
+        } else {
+            JOptionPane.showMessageDialog(null, "Funcionario Inexistente!\nNão foi possivel encontrar o Funcionario especificado!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
         }
-        else
-            JOptionPane.showMessageDialog(null, "Funcionario Inexistente!\nNão foi possivel encontrar o Funcionario especificado!","ATENÇÃO!",JOptionPane.ERROR_MESSAGE);
-    jfcpfbusca.setText(null);
-  
-      
+        jfcpfbusca.setText(null);
+
+
     }//GEN-LAST:event_jbbuscafuncionarioActionPerformed
 
     private void jbinserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbinserirActionPerformed
-if (checacampos(null) == true){
-double numerfuncionario = Math.round(Math.random()*1000);    
-double random = checanumerofuncionario(numerfuncionario);
-jtcodigo.setText(Double.toString(random));       
-Funcionario funcionario = new Funcionario();
-funcionario.setCodigo(jtcodigo.getText());
-funcionario.setNome(jtnome.getText());
-funcionario.setCpf(jfcpf.getText());
-funcionario.setRua(jtrua.getText());
-funcionario.setCelular(jfcelular.getText());
-        try {
-            funcionario.setDatanascimento(Utils.StrToDate(jtdatanascimento.getText()));
-        } catch (ParseException ex) {
-            Logger.getLogger(FormCadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+        if (checacampos(null) == true) {
+            double numerfuncionario = Math.round(Math.random() * 1000);
+            double random = checanumerofuncionario(numerfuncionario);
+            jtcodigo.setText(Double.toString(random));
+            Funcionario funcionario = new Funcionario();
+            funcionario.setCodigo(jtcodigo.getText());
+            funcionario.setNome(jtnome.getText());
+            funcionario.setCpf(jfcpf.getText());
+            funcionario.setRua(jtrua.getText());
+            funcionario.setCelular(jfcelular.getText());
+            try {
+                funcionario.setDatanascimento(Utils.StrToDate(jtdatanascimento.getText()));
+            } catch (ParseException ex) {
+                Logger.getLogger(FormCadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            funcionario.setNumero(jtnumero.getText());
+            funcionario.setComplemento(jtcomplemento.getText());
+            funcionario.setBairro(jtbairro.getText());
+            funcionario.setCidade(jtcidade.getText());
+            funcionario.setEstado(jcestado.getSelectedItem().toString());
+            funcionario.setCep(jfcep.getText());
+            funcionario.setTelefone(jftelefone.getText());
+            funcionario.setEmail(jtemail.getText());
+            funcionario.setSexo(jcsexo.getSelectedItem().toString());
+            funcionario.setUsuario(jtusuario.getText());
+            funcionario.setSenha(jtsenha.getText());
+
+            if (FuncionarioDao.getFuncionario(funcionario.getCpf()) == null) {
+
+                FuncionarioDao.addFuncionario(funcionario);
+                JOptionPane.showMessageDialog(null, "Funcionario Cadastrado com Sucesso!");
+
+                limpacampos();
+            } else {
+                JOptionPane.showMessageDialog(null, "Já existe Funcionario Cadastrado com este CPF!!!");
+            }
         }
-funcionario.setNumero(jtnumero.getText());
-funcionario.setComplemento(jtcomplemento.getText());
-funcionario.setBairro(jtbairro.getText());
-funcionario.setCidade(jtcidade.getText());
-funcionario.setEstado(jcestado.getSelectedItem().toString());
-funcionario.setCep(jfcep.getText());
-funcionario.setTelefone(jftelefone.getText());
-funcionario.setEmail(jtemail.getText());
-funcionario.setSexo(jcsexo.getSelectedItem().toString());
-funcionario.setUsuario(jtusuario.getText());
-funcionario.setSenha(jtsenha.getText());
-
-if (FuncionarioDao.getFuncionario(funcionario.getCpf()) == null){
-    
-
-FuncionarioDao.addFuncionario(funcionario);
-JOptionPane.showMessageDialog(null,"Funcionario Cadastrado com Sucesso!");
-
-limpacampos();
-}
-
-else 
-{
-    JOptionPane.showMessageDialog(null,"Já existe Funcionario Cadastrado com este CPF!!!");
-}
-}
 
 
     }//GEN-LAST:event_jbinserirActionPerformed
 
     private void jcbuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbuscaActionPerformed
-limpacampos();
-limparTabelaFuncionario();
-if (jcbusca.isSelected())
-{jbbuscafuncionario.setEnabled(true);
-jbexcluir.setEnabled(false);
-jbatualizar.setEnabled(false);
-jbinserir.setEnabled(false);
-jfcpfbusca.setEnabled(true);
-jbbuscartodos.setEnabled(true);
-jtnome.setEnabled(false);
-jfcpf.setEnabled(false);
-jtrua.setEnabled(false);
-jtnumero.setEnabled(false);
-jtcomplemento.setEnabled(false);
-jtbairro.setEnabled(false);
-jtcidade.setEnabled(false);
-jcestado.setEnabled(false);
-jfcep.setEnabled(false);
-jftelefone.setEnabled(false);
-jtemail.setEnabled(false);
-jtdatanascimento.setEnabled(false);
-jcsexo.setEnabled(false);
-jfcelular.setEnabled(false);
-jtusuario.setEnabled(false);
-jtsenha.setEnabled(false);}
+        limpacampos();
+        limparTabelaFuncionario();
+        if (jcbusca.isSelected()) {
+            jbbuscafuncionario.setEnabled(true);
+            jbexcluir.setEnabled(false);
+            jbatualizar.setEnabled(false);
+            jbinserir.setEnabled(false);
+            jfcpfbusca.setEnabled(true);
+            jbbuscartodos.setEnabled(true);
+            jtnome.setEnabled(false);
+            jfcpf.setEnabled(false);
+            jtrua.setEnabled(false);
+            jtnumero.setEnabled(false);
+            jtcomplemento.setEnabled(false);
+            jtbairro.setEnabled(false);
+            jtcidade.setEnabled(false);
+            jcestado.setEnabled(false);
+            jfcep.setEnabled(false);
+            jftelefone.setEnabled(false);
+            jtemail.setEnabled(false);
+            jtdatanascimento.setEnabled(false);
+            jcsexo.setEnabled(false);
+            jfcelular.setEnabled(false);
+            jtusuario.setEnabled(false);
+            jtsenha.setEnabled(false);
+        } else {
 
-else
-{
-    
- {
-jbeditarfuncionario.setEnabled(false);
-jbinserir.setEnabled(true);
-jbexcluir.setEnabled(false);
-jbatualizar.setEnabled(false);
-jbbuscafuncionario.setEnabled(false);
-jfcpfbusca.setEnabled(false);
-jbbuscartodos.setEnabled(false);
-jtnome.setEnabled(true);
-jfcpf.setEnabled(true);
-jtrua.setEnabled(true);
-jtnumero.setEnabled(true);
-jtcomplemento.setEnabled(true);
-jtbairro.setEnabled(true);
-jtcidade.setEnabled(true);
-jcestado.setEnabled(true);
-jfcep.setEnabled(true);
-jftelefone.setEnabled(true);
-jtemail.setEnabled(true);
-jtdatanascimento.setEnabled(true);
-jcsexo.setEnabled(true);
-jfcelular.setEnabled(true);
-jtusuario.setEnabled(true);
-jtsenha.setEnabled(true);
- }   
-}
+            {
+                jbeditarfuncionario.setEnabled(false);
+                jbinserir.setEnabled(true);
+                jbexcluir.setEnabled(false);
+                jbatualizar.setEnabled(false);
+                jbbuscafuncionario.setEnabled(false);
+                jfcpfbusca.setEnabled(false);
+                jbbuscartodos.setEnabled(false);
+                jtnome.setEnabled(true);
+                jfcpf.setEnabled(true);
+                jtrua.setEnabled(true);
+                jtnumero.setEnabled(true);
+                jtcomplemento.setEnabled(true);
+                jtbairro.setEnabled(true);
+                jtcidade.setEnabled(true);
+                jcestado.setEnabled(true);
+                jfcep.setEnabled(true);
+                jftelefone.setEnabled(true);
+                jtemail.setEnabled(true);
+                jtdatanascimento.setEnabled(true);
+                jcsexo.setEnabled(true);
+                jfcelular.setEnabled(true);
+                jtusuario.setEnabled(true);
+                jtsenha.setEnabled(true);
+            }
+        }
     }//GEN-LAST:event_jcbuscaActionPerformed
 
     private void jbexcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbexcluirActionPerformed
-String cpf = jfcpf.getText(); 
-if (FuncionarioDao.getFuncionario(cpf) != null){
+        String cpf = jfcpf.getText();
+        if (FuncionarioDao.getFuncionario(cpf) != null) {
 
-int resposta = JOptionPane.showConfirmDialog(null,"Tem certeza que deseja remover este funcionário?","Remover",JOptionPane.YES_NO_OPTION ,JOptionPane.WARNING_MESSAGE);
-if (resposta == 0){
-FuncionarioDao.removerFuncionario(cpf);
-JOptionPane.showMessageDialog(null,"O funcionario foi removido com sucesso!!!");
-jcbusca.setSelected(false);
-jbeditarfuncionario.setEnabled(false);
-jbexcluir.setEnabled(false);
-jbatualizar.setEnabled(false);
-jbinserir.setEnabled(true);
-limparTabelaFuncionario();
-limpacampos();  
-}
-else {
-    JOptionPane.showMessageDialog(null,"O funcionario não foi removido.");
-          }
-       }
+            int resposta = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover este funcionário?", "Remover", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            if (resposta == 0) {
+                FuncionarioDao.removerFuncionario(cpf);
+                JOptionPane.showMessageDialog(null, "O funcionario foi removido com sucesso!!!");
+                jcbusca.setSelected(false);
+                jbeditarfuncionario.setEnabled(false);
+                jbexcluir.setEnabled(false);
+                jbatualizar.setEnabled(false);
+                jbinserir.setEnabled(true);
+                limparTabelaFuncionario();
+                limpacampos();
+            } else {
+                JOptionPane.showMessageDialog(null, "O funcionario não foi removido.");
+            }
+        }
     }//GEN-LAST:event_jbexcluirActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
- 
+
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-limpacampos();
-limparTabelaFuncionario();
-jbatualizar.setEnabled(false);
-jbexcluir.setEnabled(false);
-jbinserir.setEnabled(true);
-jcbusca.setSelected(false);
-jbeditarfuncionario.setEnabled(false);
-jbinserir.setEnabled(true);
-jbexcluir.setEnabled(false);
-jbatualizar.setEnabled(false);
-jbbuscafuncionario.setEnabled(false);
-jfcpfbusca.setEnabled(false);
-jbbuscartodos.setEnabled(false);
-jtnome.setEnabled(true);
-jfcpf.setEnabled(true);
-jtrua.setEnabled(true);
-jtnumero.setEnabled(true);
-jtcomplemento.setEnabled(true);
-jtbairro.setEnabled(true);
-jtcidade.setEnabled(true);
-jcestado.setEnabled(true);
-jfcep.setEnabled(true);
-jftelefone.setEnabled(true);
-jtemail.setEnabled(true);
-jtdatanascimento.setEnabled(true);
-jcsexo.setEnabled(true);
-jfcelular.setEnabled(true);
-jtusuario.setEnabled(true);
-jtsenha.setEnabled(true);
+        limpacampos();
+        limparTabelaFuncionario();
+        jbatualizar.setEnabled(false);
+        jbexcluir.setEnabled(false);
+        jbinserir.setEnabled(true);
+        jcbusca.setSelected(false);
+        jbeditarfuncionario.setEnabled(false);
+        jbinserir.setEnabled(true);
+        jbexcluir.setEnabled(false);
+        jbatualizar.setEnabled(false);
+        jbbuscafuncionario.setEnabled(false);
+        jfcpfbusca.setEnabled(false);
+        jbbuscartodos.setEnabled(false);
+        jtnome.setEnabled(true);
+        jfcpf.setEnabled(true);
+        jtrua.setEnabled(true);
+        jtnumero.setEnabled(true);
+        jtcomplemento.setEnabled(true);
+        jtbairro.setEnabled(true);
+        jtcidade.setEnabled(true);
+        jcestado.setEnabled(true);
+        jfcep.setEnabled(true);
+        jftelefone.setEnabled(true);
+        jtemail.setEnabled(true);
+        jtdatanascimento.setEnabled(true);
+        jcsexo.setEnabled(true);
+        jfcelular.setEnabled(true);
+        jtusuario.setEnabled(true);
+        jtsenha.setEnabled(true);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jbbuscartodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscartodosActionPerformed
-   jfcpfbusca.setText("");
-      limparTabelaFuncionario();
-      
+        jfcpfbusca.setText("");
+        limparTabelaFuncionario();
+
         ArrayList<Funcionario> lista = FuncionarioDao.getTodosFuncionario();
-        
-        DefaultTableModel modelo = (DefaultTableModel)jtfuncionario.getModel();
-        
-        if (!lista.isEmpty())
-        {
-            
-            for(int i=0;i<lista.size();i++)
-            {
-               
-                
+
+        DefaultTableModel modelo = (DefaultTableModel) jtfuncionario.getModel();
+
+        if (!lista.isEmpty()) {
+
+            for (int i = 0; i < lista.size(); i++) {
+
                 modelo.addRow(lista.get(i).getFuncionario());
-                         
-                
+
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum Funcionario cadastrado!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
         }
-        else
-            JOptionPane.showMessageDialog(null, "Nenhum Funcionario cadastrado!","ATENÇÃO!",JOptionPane.ERROR_MESSAGE);
-            
-                
+
+
     }//GEN-LAST:event_jbbuscartodosActionPerformed
 
     private void jtfuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtfuncionarioMouseClicked
-if (okfuncionario != "ok")
-         {
-             if (jtfuncionario.getSelectedRow()>=-1)
-             {
-                    jbeditarfuncionario.setEnabled(true);
-                    jbatualizar.setEnabled(false);
-                    jbexcluir.setEnabled(false);
-                    jbbuscafuncionario.setEnabled(false);
-                    jbbuscartodos.setEnabled(false);
-     } else 
-     {
-                
-     }
-         }
+        if (okfuncionario != "ok") {
+            if (jtfuncionario.getSelectedRow() >= -1) {
+                jbeditarfuncionario.setEnabled(true);
+                jbatualizar.setEnabled(false);
+                jbexcluir.setEnabled(false);
+                jbbuscafuncionario.setEnabled(false);
+                jbbuscartodos.setEnabled(false);
+            } else {
+
+            }
+        }
     }//GEN-LAST:event_jtfuncionarioMouseClicked
 
     private void jbeditarfuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbeditarfuncionarioActionPerformed
-int linha = jtfuncionario.getSelectedRow();
-String cpf = ((String)jtfuncionario.getModel().getValueAt(linha,2));
-funcionario = FuncionarioDao.getFuncionario(cpf);
-jtcodigo.setText(funcionario.getCodigo());
-jtnome.setText(funcionario.getNome());
-jfcpf.setText(funcionario.getCpf());
-jtrua.setText(funcionario.getRua());
-jtnumero.setText(funcionario.getNumero());
-jtcomplemento.setText(funcionario.getComplemento());
-jtbairro.setText(funcionario.getBairro());
-jtcidade.setText(funcionario.getCidade());
-jcestado.setSelectedItem(funcionario.getEstado());
-jfcep.setText(funcionario.getCep());
-jftelefone.setValue(funcionario.getTelefone());
-jtemail.setText(funcionario.getEmail());
-jtdatanascimento.setText(Utils.DateToStr(funcionario.getDatanascimento()));
-jcsexo.setSelectedItem(funcionario.getSexo());
-jfcelular.setText(funcionario.getCelular());
-jtusuario.setText(funcionario.getUsuario());
-jtsenha.setText(funcionario.getSenha());
-jtnome.setEnabled(true);
-jfcpf.setEnabled(true);
-jtrua.setEnabled(true);
-jtnumero.setEnabled(true);
-jtcomplemento.setEnabled(true);
-jtbairro.setEnabled(true);
-jtcidade.setEnabled(true);
-jcestado.setEnabled(true);
-jfcep.setEnabled(true);
-jftelefone.setEnabled(true);
-jtemail.setEnabled(true);
-jtdatanascimento.setEnabled(true);
-jcsexo.setEnabled(true);
-jfcelular.setEnabled(true);
-jtusuario.setEnabled(true);
-jtsenha.setEnabled(true);
-jcbusca.setSelected(false);
-limparTabelaFuncionario();
-jbeditarfuncionario.setEnabled(false);
-jbexcluir.setEnabled(true);
-jbatualizar.setEnabled(true);
+        int linha = jtfuncionario.getSelectedRow();
+        String cpf = ((String) jtfuncionario.getModel().getValueAt(linha, 2));
+        funcionario = FuncionarioDao.getFuncionario(cpf);
+        jtcodigo.setText(funcionario.getCodigo());
+        jtnome.setText(funcionario.getNome());
+        jfcpf.setText(funcionario.getCpf());
+        jtrua.setText(funcionario.getRua());
+        jtnumero.setText(funcionario.getNumero());
+        jtcomplemento.setText(funcionario.getComplemento());
+        jtbairro.setText(funcionario.getBairro());
+        jtcidade.setText(funcionario.getCidade());
+        jcestado.setSelectedItem(funcionario.getEstado());
+        jfcep.setText(funcionario.getCep());
+        jftelefone.setValue(funcionario.getTelefone());
+        jtemail.setText(funcionario.getEmail());
+        jtdatanascimento.setText(Utils.DateToStr(funcionario.getDatanascimento()));
+        jcsexo.setSelectedItem(funcionario.getSexo());
+        jfcelular.setText(funcionario.getCelular());
+        jtusuario.setText(funcionario.getUsuario());
+        jtsenha.setText(funcionario.getSenha());
+        jtnome.setEnabled(true);
+        jfcpf.setEnabled(true);
+        jtrua.setEnabled(true);
+        jtnumero.setEnabled(true);
+        jtcomplemento.setEnabled(true);
+        jtbairro.setEnabled(true);
+        jtcidade.setEnabled(true);
+        jcestado.setEnabled(true);
+        jfcep.setEnabled(true);
+        jftelefone.setEnabled(true);
+        jtemail.setEnabled(true);
+        jtdatanascimento.setEnabled(true);
+        jcsexo.setEnabled(true);
+        jfcelular.setEnabled(true);
+        jtusuario.setEnabled(true);
+        jtsenha.setEnabled(true);
+        jcbusca.setSelected(false);
+        limparTabelaFuncionario();
+        jbeditarfuncionario.setEnabled(false);
+        jbexcluir.setEnabled(true);
+        jbatualizar.setEnabled(true);
     }//GEN-LAST:event_jbeditarfuncionarioActionPerformed
 
     private void jbatualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbatualizarActionPerformed
-limparTabelaFuncionario();
-if (checacampos(null) == true){
-Funcionario funcionario = new Funcionario();
-funcionario.setCodigo(jtcodigo.getText());
-funcionario.setNome(jtnome.getText());
-funcionario.setCpf(jfcpf.getText());
-funcionario.setRua(jtrua.getText());
-funcionario.setCelular(jfcelular.getText());
-        try {
-            funcionario.setDatanascimento(Utils.StrToDate(jtdatanascimento.getText()));
-        } catch (ParseException ex) {
-            Logger.getLogger(FormCadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
-        }
-funcionario.setNumero(jtnumero.getText());
-funcionario.setComplemento(jtcomplemento.getText());
-funcionario.setBairro(jtbairro.getText());
-funcionario.setCidade(jtcidade.getText());
-funcionario.setEstado(jcestado.getSelectedItem().toString());
-funcionario.setCep(jfcep.getText());
-funcionario.setTelefone(jftelefone.getText());
-funcionario.setEmail(jtemail.getText());
-funcionario.setSexo(jcsexo.getSelectedItem().toString());
-funcionario.setUsuario(jtusuario.getText());
-funcionario.setSenha(jtsenha.getText());
+        limparTabelaFuncionario();
+        if (checacampos(null) == true) {
+            Funcionario funcionario = new Funcionario();
+            funcionario.setCodigo(jtcodigo.getText());
+            funcionario.setNome(jtnome.getText());
+            funcionario.setCpf(jfcpf.getText());
+            funcionario.setRua(jtrua.getText());
+            funcionario.setCelular(jfcelular.getText());
+            try {
+                funcionario.setDatanascimento(Utils.StrToDate(jtdatanascimento.getText()));
+            } catch (ParseException ex) {
+                Logger.getLogger(FormCadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            funcionario.setNumero(jtnumero.getText());
+            funcionario.setComplemento(jtcomplemento.getText());
+            funcionario.setBairro(jtbairro.getText());
+            funcionario.setCidade(jtcidade.getText());
+            funcionario.setEstado(jcestado.getSelectedItem().toString());
+            funcionario.setCep(jfcep.getText());
+            funcionario.setTelefone(jftelefone.getText());
+            funcionario.setEmail(jtemail.getText());
+            funcionario.setSexo(jcsexo.getSelectedItem().toString());
+            funcionario.setUsuario(jtusuario.getText());
+            funcionario.setSenha(jtsenha.getText());
 
-FuncionarioDao.atualizarFuncionario(funcionario);
-JOptionPane.showMessageDialog(null,"funcionario Atualizado com Sucesso!");
-jcbusca.setSelected(false);
-jbeditarfuncionario.setEnabled(false);
-jbexcluir.setEnabled(false);
-jbatualizar.setEnabled(false);
-jbinserir.setEnabled(true);
-limpacampos();
-   
-}
+            FuncionarioDao.atualizarFuncionario(funcionario);
+            JOptionPane.showMessageDialog(null, "funcionario Atualizado com Sucesso!");
+            jcbusca.setSelected(false);
+            jbeditarfuncionario.setEnabled(false);
+            jbexcluir.setEnabled(false);
+            jbatualizar.setEnabled(false);
+            jbinserir.setEnabled(true);
+            limpacampos();
+
+        }
     }//GEN-LAST:event_jbatualizarActionPerformed
 
     private void jtdatanascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtdatanascimentoActionPerformed
@@ -828,8 +811,7 @@ limpacampos();
     private void jtnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtnomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtnomeActionPerformed
-    
-   
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -912,130 +894,122 @@ limpacampos();
     private javax.swing.JTextField jtusuario;
     // End of variables declaration//GEN-END:variables
 
-public void limpacampos(){
-jtcodigo.setText(null);
-jtnome.setText(null);
-jfcpf.setText(null);
-jtrua.setText(null);
-jtnumero.setText(null);
-jtcomplemento.setText(null);
-jtbairro.setText(null);
-jtcidade.setText(null);
-jcestado.setSelectedItem(null);
-jfcep.setText(null);
-jftelefone.setValue(null);
-jtemail.setText(null);
-jtdatanascimento.setText(null);
-jcsexo.setSelectedItem(null);
-jfcelular.setText(null);
-jtusuario.setText(null);
-jtsenha.setText(null);
-}
-
-public boolean checacampos(String str){
-str = "";
-  
-    if ( jtnome.getText().trim().isEmpty()){
-        str += "Nome\n";
-    }
-    
-    if (jtdatanascimento.getText().equals("  /  /    ")){
-    str += "Data de Nascimento\n";
-
-}
-    
-if (jcsexo.getSelectedItem()== null){
-    str += "Sexo\n";
-
-}
-
-    if (jfcpf.getText().equals("   .   .   -  ")){
-        str += "CPF\n";
-    }
-    
-    if (jftelefone.getText().equals("(  )     -    ")){
-    str += "Telefone\n";
-
-}
-    if (jtemail.getText().trim().isEmpty()){
-    str += "Email\n";
-
-}
-       
-    if (jtrua.getText().trim().isEmpty()){
-        str += "Rua\n";
-    }
-    if (jtnumero.getText().trim().isEmpty()){
-        str += "Número\n";
+    public void limpacampos() {
+        jtcodigo.setText(null);
+        jtnome.setText(null);
+        jfcpf.setText(null);
+        jtrua.setText(null);
+        jtnumero.setText(null);
+        jtcomplemento.setText(null);
+        jtbairro.setText(null);
+        jtcidade.setText(null);
+        jcestado.setSelectedItem(null);
+        jfcep.setText(null);
+        jftelefone.setValue(null);
+        jtemail.setText(null);
+        jtdatanascimento.setText(null);
+        jcsexo.setSelectedItem(null);
+        jfcelular.setText(null);
+        jtusuario.setText(null);
+        jtsenha.setText(null);
     }
 
-if (jtbairro.getText().trim().isEmpty()){
-    str += "Bairro\n";
-}
-if (jtcidade.getText().trim().isEmpty()){
-    str += "Cidade\n";
+    public boolean checacampos(String str) {
+        str = "";
 
-}
+        if (jtnome.getText().trim().isEmpty()) {
+            str += "Nome\n";
+        }
 
-if (jfcep.getText().equals("     -   ")){
-    str += "CEP\n";
+        if (jtdatanascimento.getText().equals("  /  /    ")) {
+            str += "Data de Nascimento\n";
 
-}
+        }
 
+        if (jcsexo.getSelectedItem() == null) {
+            str += "Sexo\n";
 
-if (jcestado.getSelectedItem() == null){
-    str += "Estado\n";
+        }
 
-}
+        if (jfcpf.getText().equals("   .   .   -  ")) {
+            str += "CPF\n";
+        }
 
-if (jtusuario.getText().trim().isEmpty()){
-    str += "Usuario\n";
+        if (jftelefone.getText().equals("(  )     -    ")) {
+            str += "Telefone\n";
 
-}
+        }
+        if (jtemail.getText().trim().isEmpty()) {
+            str += "Email\n";
 
-if (jtsenha.getText().trim().isEmpty()){
-    str += "Senha\n";
+        }
 
-}
+        if (jtrua.getText().trim().isEmpty()) {
+            str += "Rua\n";
+        }
+        if (jtnumero.getText().trim().isEmpty()) {
+            str += "Número\n";
+        }
 
+        if (jtbairro.getText().trim().isEmpty()) {
+            str += "Bairro\n";
+        }
+        if (jtcidade.getText().trim().isEmpty()) {
+            str += "Cidade\n";
 
-if (str == ("")){
-    return true;
-}
-else {
-    
-    JOptionPane.showMessageDialog(null,"Favor preencher os seguintes campos: \n"+ str);
-    return false;
-}
+        }
 
-}
+        if (jfcep.getText().equals("     -   ")) {
+            str += "CEP\n";
 
-private void limparTabelaFuncionario()
-    {
-        DefaultTableModel modelo = (DefaultTableModel)jtfuncionario.getModel();
-        for (int i = jtfuncionario.getRowCount() -1; i >= 0; --i)
-        {
+        }
+
+        if (jcestado.getSelectedItem() == null) {
+            str += "Estado\n";
+
+        }
+
+        if (jtusuario.getText().trim().isEmpty()) {
+            str += "Usuario\n";
+
+        }
+
+        if (jtsenha.getText().trim().isEmpty()) {
+            str += "Senha\n";
+
+        }
+
+        if (str == ("")) {
+            return true;
+        } else {
+
+            JOptionPane.showMessageDialog(null, "Favor preencher os seguintes campos: \n" + str);
+            return false;
+        }
+
+    }
+
+    private void limparTabelaFuncionario() {
+        DefaultTableModel modelo = (DefaultTableModel) jtfuncionario.getModel();
+        for (int i = jtfuncionario.getRowCount() - 1; i >= 0; --i) {
             modelo.removeRow(i);
         }
-        
+
     }
 
-public double checanumerofuncionario (double numerfuncionario){
-ArrayList<Funcionario> lista = FuncionarioDao.getTodosFuncionario();
-      
-    if (!lista.isEmpty())
-        {
-          for(int i=0;i<lista.size();i++)
-             { 
-              double testenumero = Double.parseDouble(lista.get(i).getCodigo()); 
-                 while (testenumero == numerfuncionario)
-                   {
-                   numerfuncionario += 1;
-                                        
-                   }
-              }     
+    public double checanumerofuncionario(double numerfuncionario) {
+        ArrayList<Funcionario> lista = FuncionarioDao.getTodosFuncionario();
+
+        if (!lista.isEmpty()) {
+            for (int i = 0; i < lista.size(); i++) {
+                double testenumero = Double.parseDouble(lista.get(i).getCodigo());
+                while (testenumero == numerfuncionario) {
+                    numerfuncionario += 1;
+
+                }
+            }
         }
-return numerfuncionario;
-}
+        return numerfuncionario;
+    }
 
 }
