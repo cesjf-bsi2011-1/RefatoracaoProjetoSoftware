@@ -1,0 +1,32 @@
+Alucar - Locação de Transportes Ltda.	
+
+Rua B, 512 - Centro - Juiz de Fora - MG - CEP: 36.026-340
+
+Telefone: (32)3234-5678 Fax: (32)3234-6789
+CNPJ: 01.123.456.0009-99				
+
+	 	 	 	  NOTA FISCAL	 	 	 	 	 
+Data: 19/11/2013	 	 	 	 	 	 	 Número NF: 42.0
+
+
+--------- Dados do Cliente: ----------------------------------------	
+ 	
+
+Nome: JP	 CPF: 111.111.111-11	 Data de Nascimento: 11/11/1990
+Endereço: Rua: teste	 Nº. 111	 Complemento: 111
+CEP: 11.111-111	 Bairro: teste	 Cidade: teste	 Estado: Minas Gerais 
+E-mail: jp@gmail.com
+ 	
+--------- Dados do Automóvel: --------------------------------------	
+ 	
+
+ Marca 	 Modelo 	 Cor 	 Ano 	 Combustível 	 Valor 	 Portas 	 Chassi 	 	 Placa 	 Tipo 
+ Wosk	Gol	Preta	2000	 Flex	150.0	4 Portas 	1aaaaa111aa111111	HGU-1111	B - Carro
+
+--------- Dados da Locação: -----------------------------------------
+ 	
+
+Data da Locação: 19/11/2013
+Data da Devolução: 20/11/2013
+Valor Multa: 0.0
+Valor Total: 150.0
