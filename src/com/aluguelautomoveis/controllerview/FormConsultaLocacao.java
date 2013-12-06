@@ -37,16 +37,16 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jbbuscartodos = new javax.swing.JButton();
+        buttonBuscarTodos = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jbbuscarauto = new javax.swing.JButton();
-        jtnumaluguel = new javax.swing.JTextField();
+        buttonBuscarPorNumero = new javax.swing.JButton();
+        textFieldNumeroAluguel = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtlocacoes = new javax.swing.JTable();
-        jbfinalizarlocacao = new javax.swing.JButton();
-        jbmulta = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        tableLocacoes = new javax.swing.JTable();
+        buttonFinalizarLocacao = new javax.swing.JButton();
+        buttonCalcularMulta = new javax.swing.JButton();
+        buttonGerarNotaFiscal = new javax.swing.JButton();
+        buttonSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Consuta Locações");
@@ -55,19 +55,19 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Consultar Locações"));
 
-        jbbuscartodos.setText("Buscar todos");
-        jbbuscartodos.addActionListener(new java.awt.event.ActionListener() {
+        buttonBuscarTodos.setText("Buscar todos");
+        buttonBuscarTodos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbbuscartodosActionPerformed(evt);
+                buttonBuscarTodosActionPerformed(evt);
             }
         });
 
         jLabel1.setText("Número Aluguel");
 
-        jbbuscarauto.setText("Buscar por número");
-        jbbuscarauto.addActionListener(new java.awt.event.ActionListener() {
+        buttonBuscarPorNumero.setText("Buscar por número");
+        buttonBuscarPorNumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbbuscarautoActionPerformed(evt);
+                buttonBuscarPorNumeroActionPerformed(evt);
             }
         });
 
@@ -79,11 +79,11 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jtnumaluguel))
+                    .addComponent(textFieldNumeroAluguel))
                 .addGap(6, 6, 6)
-                .addComponent(jbbuscarauto)
+                .addComponent(buttonBuscarPorNumero)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbbuscartodos, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonBuscarTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -93,9 +93,9 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbbuscarauto)
-                    .addComponent(jbbuscartodos)
-                    .addComponent(jtnumaluguel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonBuscarPorNumero)
+                    .addComponent(buttonBuscarTodos)
+                    .addComponent(textFieldNumeroAluguel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -105,7 +105,7 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
             }
         });
 
-        jtlocacoes.setModel(new javax.swing.table.DefaultTableModel(
+        tableLocacoes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -128,53 +128,53 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jtlocacoes.getTableHeader().setReorderingAllowed(false);
-        jtlocacoes.addMouseListener(new java.awt.event.MouseAdapter() {
+        tableLocacoes.getTableHeader().setReorderingAllowed(false);
+        tableLocacoes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jtlocacoesMouseClicked(evt);
+                tableLocacoesMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jtlocacoes);
-        if (jtlocacoes.getColumnModel().getColumnCount() > 0) {
-            jtlocacoes.getColumnModel().getColumn(0).setResizable(false);
-            jtlocacoes.getColumnModel().getColumn(1).setResizable(false);
-            jtlocacoes.getColumnModel().getColumn(2).setResizable(false);
-            jtlocacoes.getColumnModel().getColumn(3).setResizable(false);
-            jtlocacoes.getColumnModel().getColumn(4).setResizable(false);
-            jtlocacoes.getColumnModel().getColumn(5).setResizable(false);
-            jtlocacoes.getColumnModel().getColumn(7).setResizable(false);
-            jtlocacoes.getColumnModel().getColumn(8).setResizable(false);
-            jtlocacoes.getColumnModel().getColumn(9).setResizable(false);
+        jScrollPane1.setViewportView(tableLocacoes);
+        if (tableLocacoes.getColumnModel().getColumnCount() > 0) {
+            tableLocacoes.getColumnModel().getColumn(0).setResizable(false);
+            tableLocacoes.getColumnModel().getColumn(1).setResizable(false);
+            tableLocacoes.getColumnModel().getColumn(2).setResizable(false);
+            tableLocacoes.getColumnModel().getColumn(3).setResizable(false);
+            tableLocacoes.getColumnModel().getColumn(4).setResizable(false);
+            tableLocacoes.getColumnModel().getColumn(5).setResizable(false);
+            tableLocacoes.getColumnModel().getColumn(7).setResizable(false);
+            tableLocacoes.getColumnModel().getColumn(8).setResizable(false);
+            tableLocacoes.getColumnModel().getColumn(9).setResizable(false);
         }
 
-        jbfinalizarlocacao.setText("Finalizar Locação");
-        jbfinalizarlocacao.setEnabled(false);
-        jbfinalizarlocacao.addActionListener(new java.awt.event.ActionListener() {
+        buttonFinalizarLocacao.setText("Finalizar Locação");
+        buttonFinalizarLocacao.setEnabled(false);
+        buttonFinalizarLocacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbfinalizarlocacaoActionPerformed(evt);
+                buttonFinalizarLocacaoActionPerformed(evt);
             }
         });
 
-        jbmulta.setText("Calcular Multa");
-        jbmulta.setEnabled(false);
-        jbmulta.addActionListener(new java.awt.event.ActionListener() {
+        buttonCalcularMulta.setText("Calcular Multa");
+        buttonCalcularMulta.setEnabled(false);
+        buttonCalcularMulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbmultaActionPerformed(evt);
+                buttonCalcularMultaActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Gerar Nota Fiscal");
-        jButton1.setEnabled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGerarNotaFiscal.setText("Gerar Nota Fiscal");
+        buttonGerarNotaFiscal.setEnabled(false);
+        buttonGerarNotaFiscal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttonGerarNotaFiscalActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Sair");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonSair.setText("Sair");
+        buttonSair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                buttonSairMouseClicked(evt);
             }
         });
 
@@ -188,13 +188,13 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jbfinalizarlocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonFinalizarLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbmulta, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonCalcularMulta, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonGerarNotaFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(buttonSair, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -206,10 +206,10 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbfinalizarlocacao)
-                    .addComponent(jbmulta)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(buttonFinalizarLocacao)
+                    .addComponent(buttonCalcularMulta)
+                    .addComponent(buttonGerarNotaFiscal)
+                    .addComponent(buttonSair))
                 .addContainerGap())
         );
 
@@ -217,13 +217,13 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbbuscartodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscartodosActionPerformed
+    private void buttonBuscarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarTodosActionPerformed
         limparTabela();
-        jtnumaluguel.setText("");
+        textFieldNumeroAluguel.setText("");
 
         ArrayList<Aluguel> lista = AluguelDao.getTodosAlugueis();
 
-        DefaultTableModel modelo = (DefaultTableModel) jtlocacoes.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tableLocacoes.getModel();
 
         if (!lista.isEmpty()) {
 
@@ -236,27 +236,27 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Nenhuma Locação Cadastrada!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
         }
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbbuscartodosActionPerformed
+    }//GEN-LAST:event_buttonBuscarTodosActionPerformed
 
-    private void jbbuscarautoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscarautoActionPerformed
+    private void buttonBuscarPorNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarPorNumeroActionPerformed
         limparTabela();
-        if (jtnumaluguel.getText().isEmpty()) {
+        if (textFieldNumeroAluguel.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Digite o número da Locação!");
-            jtnumaluguel.requestFocus(true);
+            textFieldNumeroAluguel.requestFocus(true);
         } else {
-            Aluguel aluguel = AluguelDao.getAluguel(Double.parseDouble(jtnumaluguel.getText()));
-            DefaultTableModel modelo = (DefaultTableModel) jtlocacoes.getModel();
+            Aluguel aluguel = AluguelDao.getAluguel(Double.parseDouble(textFieldNumeroAluguel.getText()));
+            DefaultTableModel modelo = (DefaultTableModel) tableLocacoes.getModel();
             if (aluguel != null) {
                 modelo.addRow(aluguel.getAluguelo());
             } else {
                 JOptionPane.showMessageDialog(null, "Locação Inexistente!\n Não foi possível encontrar a locação especificado!", "Atenção", JOptionPane.ERROR_MESSAGE);
             }
 
-    }//GEN-LAST:event_jbbuscarautoActionPerformed
+    }//GEN-LAST:event_buttonBuscarPorNumeroActionPerformed
     }
-    private void jbfinalizarlocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbfinalizarlocacaoActionPerformed
-        int linha = jtlocacoes.getSelectedRow();
-        double numero = ((Double) jtlocacoes.getModel().getValueAt(linha, 0));
+    private void buttonFinalizarLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFinalizarLocacaoActionPerformed
+        int linha = tableLocacoes.getSelectedRow();
+        double numero = ((Double) tableLocacoes.getModel().getValueAt(linha, 0));
         aluguel = AluguelDao.getAluguel(numero);
         aluguel.getAutomovel().Devolver();
         automovel = aluguel.getAutomovel();
@@ -264,14 +264,14 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
         AluguelDao.ConfirmaDevolucao(aluguel.getNumero());
         JOptionPane.showMessageDialog(null, "Locação Finalizada com Sucesso!!!");
         limparTabela();
-        jbfinalizarlocacao.setEnabled(false);
-        jbmulta.setEnabled(false);
-        jButton1.setEnabled(false);
-    }//GEN-LAST:event_jbfinalizarlocacaoActionPerformed
+        buttonFinalizarLocacao.setEnabled(false);
+        buttonCalcularMulta.setEnabled(false);
+        buttonGerarNotaFiscal.setEnabled(false);
+    }//GEN-LAST:event_buttonFinalizarLocacaoActionPerformed
 
-    private void jbmultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbmultaActionPerformed
-        int linha = jtlocacoes.getSelectedRow();
-        double numero = ((Double) jtlocacoes.getModel().getValueAt(linha, 0));
+    private void buttonCalcularMultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCalcularMultaActionPerformed
+        int linha = tableLocacoes.getSelectedRow();
+        double numero = ((Double) tableLocacoes.getModel().getValueAt(linha, 0));
         aluguel = AluguelDao.getAluguel(numero);
         Date hoje = new Date();
         aluguel.diasMulta(aluguel.getDatadevolucao(), hoje);
@@ -281,35 +281,35 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Valor da Multa: " + aluguel.getMulta());
         }
-    }//GEN-LAST:event_jbmultaActionPerformed
+    }//GEN-LAST:event_buttonCalcularMultaActionPerformed
 
     private void jScrollPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane1MouseClicked
 
     }//GEN-LAST:event_jScrollPane1MouseClicked
 
-    private void jtlocacoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtlocacoesMouseClicked
-        if (jtlocacoes.getSelectedRow() != -1) {
-            jbfinalizarlocacao.setEnabled(true);
-            jbmulta.setEnabled(true);
-            jButton1.setEnabled(true);
+    private void tableLocacoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableLocacoesMouseClicked
+        if (tableLocacoes.getSelectedRow() != -1) {
+            buttonFinalizarLocacao.setEnabled(true);
+            buttonCalcularMulta.setEnabled(true);
+            buttonGerarNotaFiscal.setEnabled(true);
         } else {
             JOptionPane.showConfirmDialog(null, "Selecione uma Locação!");
 
         }        // TODO add your handling code here:
-    }//GEN-LAST:event_jtlocacoesMouseClicked
+    }//GEN-LAST:event_tableLocacoesMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buttonGerarNotaFiscalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGerarNotaFiscalActionPerformed
         FormNotaFiscal fnf = new FormNotaFiscal();
         fnf.setVisible(true);
-        int linha = jtlocacoes.getSelectedRow();
-        double numero = ((Double) jtlocacoes.getModel().getValueAt(linha, 0));
+        int linha = tableLocacoes.getSelectedRow();
+        double numero = ((Double) tableLocacoes.getModel().getValueAt(linha, 0));
         aluguel = AluguelDao.getAluguel(numero);
         FormNotaFiscal.aluguel = aluguel;
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_buttonGerarNotaFiscalActionPerformed
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void buttonSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSairMouseClicked
         this.dispose();
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_buttonSairMouseClicked
 
     /**
      * @param args the command line arguments
@@ -346,23 +346,23 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonBuscarPorNumero;
+    private javax.swing.JButton buttonBuscarTodos;
+    private javax.swing.JButton buttonCalcularMulta;
+    private javax.swing.JButton buttonFinalizarLocacao;
+    private javax.swing.JButton buttonGerarNotaFiscal;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton buttonSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton jbbuscarauto;
-    private javax.swing.JButton jbbuscartodos;
-    private javax.swing.JButton jbfinalizarlocacao;
-    private javax.swing.JButton jbmulta;
-    private javax.swing.JTable jtlocacoes;
-    private javax.swing.JTextField jtnumaluguel;
+    private javax.swing.JTable tableLocacoes;
+    private javax.swing.JTextField textFieldNumeroAluguel;
     // End of variables declaration//GEN-END:variables
 
     private void limparTabela() {
-        DefaultTableModel modelo = (DefaultTableModel) jtlocacoes.getModel();
-        for (int i = jtlocacoes.getRowCount() - 1; i >= 0; --i) {
+        DefaultTableModel modelo = (DefaultTableModel) tableLocacoes.getModel();
+        for (int i = tableLocacoes.getRowCount() - 1; i >= 0; --i) {
             modelo.removeRow(i);
         }
 

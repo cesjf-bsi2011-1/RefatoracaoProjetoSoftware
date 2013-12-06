@@ -43,40 +43,40 @@ public class FormAluguel extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtclientes = new javax.swing.JTable();
+        tableClientes = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
-        jfcpfbusca = new javax.swing.JFormattedTextField();
-        jbbuscarcliente = new javax.swing.JButton();
-        jbbuscatdsclientes = new javax.swing.JButton();
-        jbconfirmarcliente = new javax.swing.JButton();
+        textFieldCpf = new javax.swing.JFormattedTextField();
+        buttonBuscarCliente = new javax.swing.JButton();
+        buttonBuscarTodosClientes = new javax.swing.JButton();
+        buttonConfirmarCliente = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jtauto = new javax.swing.JTable();
-        jbbuscatdsautos = new javax.swing.JButton();
-        jbuscarauto = new javax.swing.JButton();
+        tableAutomovel = new javax.swing.JTable();
+        buttonBuscarTodosAutomoveis = new javax.swing.JButton();
+        buttonBuscarAutomovel = new javax.swing.JButton();
         jfplaca = new javax.swing.JFormattedTextField();
         jLabel3 = new javax.swing.JLabel();
         jbconfirmarautomovel = new javax.swing.JButton();
-        jbuscaavancada = new javax.swing.JCheckBox();
+        checkBoxBuscaAvancada = new javax.swing.JCheckBox();
         jtde = new javax.swing.JLabel();
         jtate = new javax.swing.JLabel();
         jlvalor = new javax.swing.JLabel();
-        jctipo = new javax.swing.JComboBox();
+        comboBoxTipoAutomovel = new javax.swing.JComboBox();
         jltipo = new javax.swing.JLabel();
-        jbbuscaavancada = new javax.swing.JButton();
-        jtdevalor = new javax.swing.JFormattedTextField();
-        jtatevalor = new javax.swing.JFormattedTextField();
+        buttonBuscaAvancada = new javax.swing.JButton();
+        textFormatterValorDe = new javax.swing.JFormattedTextField();
+        textFormatterValorAte = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
-        jtnumaluguel = new javax.swing.JTextField();
+        textFieldNumeroLocacao = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jtdataaluguel = new javax.swing.JTextField();
+        textFieldDataLocacao = new javax.swing.JTextField();
         jbconfirmarclocacao = new javax.swing.JButton();
         jfdatadevolucao = new javax.swing.JLabel();
-        jtdatadevolucao = new javax.swing.JFormattedTextField();
+        textFormattedDataDevolucao = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
-        jtvalorlocacao = new javax.swing.JTextField();
+        textFieldValorLocacao = new javax.swing.JTextField();
         jbsair = new javax.swing.JButton();
-        jbcalcularvalorlocacao = new javax.swing.JButton();
+        buttonCalcularValor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Locações");
@@ -90,7 +90,7 @@ public class FormAluguel extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cliente"));
 
-        jtclientes.setModel(new javax.swing.table.DefaultTableModel(
+        tableClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -106,41 +106,41 @@ public class FormAluguel extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jtclientes.getTableHeader().setReorderingAllowed(false);
-        jtclientes.addMouseListener(new java.awt.event.MouseAdapter() {
+        tableClientes.getTableHeader().setReorderingAllowed(false);
+        tableClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jtclientesMouseClicked(evt);
+                tableClientesMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jtclientes);
+        jScrollPane1.setViewportView(tableClientes);
 
         jLabel4.setText("CPF:");
 
         try {
-            jfcpfbusca.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            textFieldCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
-        jbbuscarcliente.setText("Buscar Cliente ");
-        jbbuscarcliente.addActionListener(new java.awt.event.ActionListener() {
+        buttonBuscarCliente.setText("Buscar Cliente ");
+        buttonBuscarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbbuscarclienteActionPerformed(evt);
+                buttonBuscarClienteActionPerformed(evt);
             }
         });
 
-        jbbuscatdsclientes.setText("Buscar Todos");
-        jbbuscatdsclientes.addActionListener(new java.awt.event.ActionListener() {
+        buttonBuscarTodosClientes.setText("Buscar Todos");
+        buttonBuscarTodosClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbbuscatdsclientesActionPerformed(evt);
+                buttonBuscarTodosClientesActionPerformed(evt);
             }
         });
 
-        jbconfirmarcliente.setText("Confirmar Cliente");
-        jbconfirmarcliente.setEnabled(false);
-        jbconfirmarcliente.addActionListener(new java.awt.event.ActionListener() {
+        buttonConfirmarCliente.setText("Confirmar Cliente");
+        buttonConfirmarCliente.setEnabled(false);
+        buttonConfirmarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbconfirmarclienteActionPerformed(evt);
+                buttonConfirmarClienteActionPerformed(evt);
             }
         });
 
@@ -151,16 +151,16 @@ public class FormAluguel extends javax.swing.JFrame {
             .addComponent(jScrollPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jbconfirmarcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(buttonConfirmarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jfcpfbusca, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jbbuscarcliente)
+                        .addComponent(buttonBuscarCliente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbbuscatdsclientes)))
+                        .addComponent(buttonBuscarTodosClientes)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -169,18 +169,18 @@ public class FormAluguel extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jfcpfbusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbbuscarcliente)
-                    .addComponent(jbbuscatdsclientes))
+                    .addComponent(textFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonBuscarCliente)
+                    .addComponent(buttonBuscarTodosClientes))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbconfirmarcliente))
+                .addComponent(buttonConfirmarCliente))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Automóvel"));
 
-        jtauto.setModel(new javax.swing.table.DefaultTableModel(
+        tableAutomovel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -196,26 +196,26 @@ public class FormAluguel extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jtauto.addMouseListener(new java.awt.event.MouseAdapter() {
+        tableAutomovel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jtautoMouseClicked(evt);
+                tableAutomovelMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(jtauto);
+        jScrollPane2.setViewportView(tableAutomovel);
 
-        jbbuscatdsautos.setText("Buscar Todos");
-        jbbuscatdsautos.setEnabled(false);
-        jbbuscatdsautos.addActionListener(new java.awt.event.ActionListener() {
+        buttonBuscarTodosAutomoveis.setText("Buscar Todos");
+        buttonBuscarTodosAutomoveis.setEnabled(false);
+        buttonBuscarTodosAutomoveis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbbuscatdsautosActionPerformed(evt);
+                buttonBuscarTodosAutomoveisActionPerformed(evt);
             }
         });
 
-        jbuscarauto.setText("Buscar Automóvel");
-        jbuscarauto.setEnabled(false);
-        jbuscarauto.addActionListener(new java.awt.event.ActionListener() {
+        buttonBuscarAutomovel.setText("Buscar Automóvel");
+        buttonBuscarAutomovel.setEnabled(false);
+        buttonBuscarAutomovel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbuscarautoActionPerformed(evt);
+                buttonBuscarAutomovelActionPerformed(evt);
             }
         });
 
@@ -241,11 +241,11 @@ public class FormAluguel extends javax.swing.JFrame {
             }
         });
 
-        jbuscaavancada.setText("Busca Avançada");
-        jbuscaavancada.setEnabled(false);
-        jbuscaavancada.addActionListener(new java.awt.event.ActionListener() {
+        checkBoxBuscaAvancada.setText("Busca Avançada");
+        checkBoxBuscaAvancada.setEnabled(false);
+        checkBoxBuscaAvancada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbuscaavancadaActionPerformed(evt);
+                checkBoxBuscaAvancadaActionPerformed(evt);
             }
         });
 
@@ -258,39 +258,39 @@ public class FormAluguel extends javax.swing.JFrame {
         jlvalor.setText("Valor R$:");
         jlvalor.setEnabled(false);
 
-        jctipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "A - Moto", "B - Carro", "C - Caminhonete", "D - Ônibus", "E - Caminhão" }));
-        jctipo.setSelectedIndex(-1);
-        jctipo.setEnabled(false);
-        jctipo.addActionListener(new java.awt.event.ActionListener() {
+        comboBoxTipoAutomovel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "A - Moto", "B - Carro", "C - Caminhonete", "D - Ônibus", "E - Caminhão" }));
+        comboBoxTipoAutomovel.setSelectedIndex(-1);
+        comboBoxTipoAutomovel.setEnabled(false);
+        comboBoxTipoAutomovel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jctipoActionPerformed(evt);
+                comboBoxTipoAutomovelActionPerformed(evt);
             }
         });
 
         jltipo.setText("Tipo");
         jltipo.setEnabled(false);
 
-        jbbuscaavancada.setText("Busca Avançada");
-        jbbuscaavancada.setEnabled(false);
-        jbbuscaavancada.addActionListener(new java.awt.event.ActionListener() {
+        buttonBuscaAvancada.setText("Busca Avançada");
+        buttonBuscaAvancada.setEnabled(false);
+        buttonBuscaAvancada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbbuscaavancadaActionPerformed(evt);
+                buttonBuscaAvancadaActionPerformed(evt);
             }
         });
 
         try {
-            jtdevalor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.##")));
+            textFormatterValorDe.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jtdevalor.setEnabled(false);
+        textFormatterValorDe.setEnabled(false);
 
         try {
-            jtatevalor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.##")));
+            textFormatterValorAte.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jtatevalor.setEnabled(false);
+        textFormatterValorAte.setEnabled(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -305,27 +305,27 @@ public class FormAluguel extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jbbuscatdsautos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbuscarauto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(buttonBuscarTodosAutomoveis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonBuscarAutomovel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jbuscaavancada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbbuscaavancada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(checkBoxBuscaAvancada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonBuscaAvancada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlvalor)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jtde)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtdevalor, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textFormatterValorDe, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jtate)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtatevalor, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(textFormatterValorAte, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jltipo)
-                            .addComponent(jctipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(comboBoxTipoAutomovel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -344,19 +344,19 @@ public class FormAluguel extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jtde)
                             .addComponent(jtate)
-                            .addComponent(jctipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtdevalor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtatevalor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(comboBoxTipoAutomovel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textFormatterValorDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textFormatterValorAte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jbbuscatdsautos)
+                            .addComponent(buttonBuscarTodosAutomoveis)
                             .addComponent(jLabel3)
-                            .addComponent(jbuscaavancada))
+                            .addComponent(checkBoxBuscaAvancada))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jbuscarauto)
+                            .addComponent(buttonBuscarAutomovel)
                             .addComponent(jfplaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbbuscaavancada))))
+                            .addComponent(buttonBuscaAvancada))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
@@ -366,19 +366,19 @@ public class FormAluguel extends javax.swing.JFrame {
 
         jLabel1.setText("Número de Locação");
 
-        jtnumaluguel.setEnabled(false);
-        jtnumaluguel.addActionListener(new java.awt.event.ActionListener() {
+        textFieldNumeroLocacao.setEnabled(false);
+        textFieldNumeroLocacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtnumaluguelActionPerformed(evt);
+                textFieldNumeroLocacaoActionPerformed(evt);
             }
         });
 
         jLabel2.setText("Data de Locação");
 
-        jtdataaluguel.setEnabled(false);
-        jtdataaluguel.addActionListener(new java.awt.event.ActionListener() {
+        textFieldDataLocacao.setEnabled(false);
+        textFieldDataLocacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtdataaluguelActionPerformed(evt);
+                textFieldDataLocacaoActionPerformed(evt);
             }
         });
 
@@ -393,18 +393,18 @@ public class FormAluguel extends javax.swing.JFrame {
         jfdatadevolucao.setText("Data de Devolução");
 
         try {
-            jtdatadevolucao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            textFormattedDataDevolucao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jtdatadevolucao.setEnabled(false);
+        textFormattedDataDevolucao.setEnabled(false);
 
         jLabel5.setText("Valor da Locação");
 
-        jtvalorlocacao.setEnabled(false);
-        jtvalorlocacao.addActionListener(new java.awt.event.ActionListener() {
+        textFieldValorLocacao.setEnabled(false);
+        textFieldValorLocacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtvalorlocacaoActionPerformed(evt);
+                textFieldValorLocacaoActionPerformed(evt);
             }
         });
 
@@ -415,11 +415,11 @@ public class FormAluguel extends javax.swing.JFrame {
             }
         });
 
-        jbcalcularvalorlocacao.setText("Calcular Valor Locação");
-        jbcalcularvalorlocacao.setEnabled(false);
-        jbcalcularvalorlocacao.addActionListener(new java.awt.event.ActionListener() {
+        buttonCalcularValor.setText("Calcular Valor Locação");
+        buttonCalcularValor.setEnabled(false);
+        buttonCalcularValor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbcalcularvalorlocacaoActionPerformed(evt);
+                buttonCalcularValorActionPerformed(evt);
             }
         });
 
@@ -436,7 +436,7 @@ public class FormAluguel extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jtnumaluguel))
+                                    .addComponent(textFieldNumeroLocacao))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -445,17 +445,17 @@ public class FormAluguel extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jtdataaluguel, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(textFieldDataLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jfdatadevolucao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jtdatadevolucao))
+                                    .addComponent(textFormattedDataDevolucao))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jtvalorlocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(textFieldValorLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(125, 125, 125)
-                                .addComponent(jbcalcularvalorlocacao)
+                                .addComponent(buttonCalcularValor)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jbconfirmarclocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -468,7 +468,7 @@ public class FormAluguel extends javax.swing.JFrame {
                 .addGap(5, 5, 5)
                 .addComponent(jLabel1)
                 .addGap(3, 3, 3)
-                .addComponent(jtnumaluguel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textFieldNumeroLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -478,7 +478,7 @@ public class FormAluguel extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jbconfirmarclocacao)
-                            .addComponent(jbcalcularvalorlocacao)
+                            .addComponent(buttonCalcularValor)
                             .addComponent(jbsair)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(9, 9, 9)
@@ -488,9 +488,9 @@ public class FormAluguel extends javax.swing.JFrame {
                             .addComponent(jLabel5))
                         .addGap(2, 2, 2)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtdataaluguel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtdatadevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtvalorlocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(textFieldDataLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textFormattedDataDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textFieldValorLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -498,26 +498,26 @@ public class FormAluguel extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtdataaluguelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtdataaluguelActionPerformed
+    private void textFieldDataLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldDataLocacaoActionPerformed
 
-    }//GEN-LAST:event_jtdataaluguelActionPerformed
+    }//GEN-LAST:event_textFieldDataLocacaoActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         Date data = new Date();
-        jtdataaluguel.setText(Utils.DateToStr(data));
-        jtdatadevolucao.setText(null);
-        jtdevalor.setText(null);
-        jtatevalor.setText(null);
+        textFieldDataLocacao.setText(Utils.DateToStr(data));
+        textFormattedDataDevolucao.setText(null);
+        textFormatterValorDe.setText(null);
+        textFormatterValorAte.setText(null);
 
     }//GEN-LAST:event_formWindowOpened
 
-    private void jbbuscatdsautosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscatdsautosActionPerformed
+    private void buttonBuscarTodosAutomoveisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarTodosAutomoveisActionPerformed
         limparTabelaAutomovel();
         jfplaca.setText("");
 
         ArrayList<Automovel> lista = AutomovelDao.getTodosAutomoveis();
 
-        DefaultTableModel modelo = (DefaultTableModel) jtauto.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tableAutomovel.getModel();
 
         if (!lista.isEmpty()) {
 
@@ -534,16 +534,16 @@ public class FormAluguel extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Nenhum Automóvel cadastrado!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
         }
-     }//GEN-LAST:event_jbbuscatdsautosActionPerformed
+     }//GEN-LAST:event_buttonBuscarTodosAutomoveisActionPerformed
 
-    private void jbuscarautoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbuscarautoActionPerformed
+    private void buttonBuscarAutomovelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarAutomovelActionPerformed
 
         automovel = AutomovelDao.getAutomovel(jfplaca.getText());
         System.out.println(automovel.getStatus());
         jbconfirmarautomovel.setEnabled(false);
         limparTabelaAutomovel();
 
-        DefaultTableModel modelo = (DefaultTableModel) jtauto.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tableAutomovel.getModel();
         if (automovel != null) {
             if (automovel.getStatus().equals("Disponível")) {
                 modelo.addRow(automovel.getAutomovel());
@@ -555,31 +555,31 @@ public class FormAluguel extends javax.swing.JFrame {
 
         }
 
-    }//GEN-LAST:event_jbuscarautoActionPerformed
+    }//GEN-LAST:event_buttonBuscarAutomovelActionPerformed
 
-    private void jbbuscarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscarclienteActionPerformed
-        jbconfirmarcliente.setEnabled(false);
+    private void buttonBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarClienteActionPerformed
+        buttonConfirmarCliente.setEnabled(false);
         limparTabelaCliente();
-        cliente = ClienteDao.getCliente(jfcpfbusca.getText());
+        cliente = ClienteDao.getCliente(textFieldCpf.getText());
 
-        DefaultTableModel modelo = (DefaultTableModel) jtclientes.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tableClientes.getModel();
         if (cliente != null) {
             modelo.addRow(cliente.getCliente());
-            jfcpfbusca.setText(null);
+            textFieldCpf.setText(null);
         } else {
             JOptionPane.showMessageDialog(null, "Cliente Inexistente!\nNão foi possivel encontrar o Cliente especificado!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
         }
-        jfcpfbusca.setText(null);
-    }//GEN-LAST:event_jbbuscarclienteActionPerformed
+        textFieldCpf.setText(null);
+    }//GEN-LAST:event_buttonBuscarClienteActionPerformed
 
-    private void jbbuscatdsclientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscatdsclientesActionPerformed
-        jbconfirmarcliente.setEnabled(false);
-        jfcpfbusca.setText("");
+    private void buttonBuscarTodosClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarTodosClientesActionPerformed
+        buttonConfirmarCliente.setEnabled(false);
+        textFieldCpf.setText("");
         limparTabelaCliente();
 
         ArrayList<Cliente> lista = ClienteDao.getTodosClientes();
 
-        DefaultTableModel modelo = (DefaultTableModel) jtclientes.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tableClientes.getModel();
 
         if (!lista.isEmpty()) {
 
@@ -592,21 +592,21 @@ public class FormAluguel extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Nenhum Cliente cadastrado!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
         }
 
-    }//GEN-LAST:event_jbbuscatdsclientesActionPerformed
+    }//GEN-LAST:event_buttonBuscarTodosClientesActionPerformed
 
     private void jbsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsairActionPerformed
         this.dispose();
     }//GEN-LAST:event_jbsairActionPerformed
 
-    private void jtnumaluguelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtnumaluguelActionPerformed
+    private void textFieldNumeroLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNumeroLocacaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtnumaluguelActionPerformed
+    }//GEN-LAST:event_textFieldNumeroLocacaoActionPerformed
 
-    private void jbconfirmarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbconfirmarclienteActionPerformed
-        int linha = jtclientes.getSelectedRow();
-        String cpf = ((String) jtclientes.getModel().getValueAt(linha, 2));
+    private void buttonConfirmarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConfirmarClienteActionPerformed
+        int linha = tableClientes.getSelectedRow();
+        String cpf = ((String) tableClientes.getModel().getValueAt(linha, 2));
         limparTabelaCliente();
-        DefaultTableModel modelo = (DefaultTableModel) jtclientes.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tableClientes.getModel();
         cliente = ClienteDao.getCliente(cpf);
         modelo.addRow(cliente.getCliente());
         aluguel = new Aluguel();
@@ -616,18 +616,18 @@ public class FormAluguel extends javax.swing.JFrame {
             double random = Math.round(Math.random() * 1000);
             checanumerolocacao(random);
             double numrandom = checanumerolocacao(random);
-            jtnumaluguel.setText(Double.toString(numrandom));
+            textFieldNumeroLocacao.setText(Double.toString(numrandom));
             aluguel.setNumero(numrandom);
-            jfcpfbusca.setEnabled(false);
-            jbbuscarcliente.setEnabled(false);
-            jbbuscatdsclientes.setEnabled(false);
+            textFieldCpf.setEnabled(false);
+            buttonBuscarCliente.setEnabled(false);
+            buttonBuscarTodosClientes.setEnabled(false);
             jfplaca.setEnabled(true);
-            jbbuscatdsautos.setEnabled(true);
-            jbuscarauto.setEnabled(true);
-            jbuscaavancada.setEnabled(true);
-            jbconfirmarcliente.setEnabled(false);
-            jtclientes.setEnabled(false);
-            jtclientes.setRowSelectionAllowed(false);
+            buttonBuscarTodosAutomoveis.setEnabled(true);
+            buttonBuscarAutomovel.setEnabled(true);
+            checkBoxBuscaAvancada.setEnabled(true);
+            buttonConfirmarCliente.setEnabled(false);
+            tableClientes.setEnabled(false);
+            tableClientes.setRowSelectionAllowed(false);
             okcliente = "ok";
             JOptionPane.showMessageDialog(null, "Cliente Inserido com Sucesso!");
         } else {
@@ -635,47 +635,47 @@ public class FormAluguel extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Nenhum Cliente Selecionado!");
         }
 
-    }//GEN-LAST:event_jbconfirmarclienteActionPerformed
+    }//GEN-LAST:event_buttonConfirmarClienteActionPerformed
 
-    private void jtclientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtclientesMouseClicked
+    private void tableClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableClientesMouseClicked
         if (okcliente != "ok") {
-            if (jtclientes.getSelectedRow() >= -1) {
-                jbconfirmarcliente.setEnabled(true);
+            if (tableClientes.getSelectedRow() >= -1) {
+                buttonConfirmarCliente.setEnabled(true);
             } else {
 
             }
         }
-    }//GEN-LAST:event_jtclientesMouseClicked
+    }//GEN-LAST:event_tableClientesMouseClicked
 
-    private void jtautoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtautoMouseClicked
-        if (jtauto.getSelectedRow() != -1) {
+    private void tableAutomovelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableAutomovelMouseClicked
+        if (tableAutomovel.getSelectedRow() != -1) {
             jbconfirmarautomovel.setEnabled(true);
         } else {
             JOptionPane.showConfirmDialog(null, "Selecione um Automóvel!");
 
         }
 
-    }//GEN-LAST:event_jtautoMouseClicked
+    }//GEN-LAST:event_tableAutomovelMouseClicked
 
     private void jbconfirmarautomovelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbconfirmarautomovelActionPerformed
-        int linha = jtauto.getSelectedRow();
-        String placa = ((String) jtauto.getModel().getValueAt(linha, 5));
+        int linha = tableAutomovel.getSelectedRow();
+        String placa = ((String) tableAutomovel.getModel().getValueAt(linha, 5));
         automovel = AutomovelDao.getAutomovel(placa);
         limparTabelaAutomovel();
-        DefaultTableModel modelo = (DefaultTableModel) jtauto.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tableAutomovel.getModel();
         modelo.addRow(automovel.getAutomovel());
         aluguel.setAutomovel(automovel);
         if (aluguel.validahabilitacao() == "ok") {
 
             jfplaca.setEnabled(false);
-            jbuscarauto.setEnabled(false);
-            jbbuscatdsautos.setEnabled(false);
+            buttonBuscarAutomovel.setEnabled(false);
+            buttonBuscarTodosAutomoveis.setEnabled(false);
             jbconfirmarautomovel.setEnabled(false);
-            jtauto.setEnabled(false);
-            jtauto.setRowSelectionAllowed(false);
-            jbcalcularvalorlocacao.setEnabled(true);
+            tableAutomovel.setEnabled(false);
+            tableAutomovel.setRowSelectionAllowed(false);
+            buttonCalcularValor.setEnabled(true);
             jbconfirmarclocacao.setEnabled(false);
-            jtdatadevolucao.setEnabled(true);
+            textFormattedDataDevolucao.setEnabled(true);
             JOptionPane.showMessageDialog(null, "Automóvel Inserido com Sucesso!!!");
         } else {
             JOptionPane.showMessageDialog(null, "Não é possível alugar este veículo com esta habilitação!");
@@ -684,48 +684,48 @@ public class FormAluguel extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jbconfirmarautomovelActionPerformed
 
-    private void jbuscaavancadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbuscaavancadaActionPerformed
-        if (jbuscaavancada.isSelected()) {
+    private void checkBoxBuscaAvancadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxBuscaAvancadaActionPerformed
+        if (checkBoxBuscaAvancada.isSelected()) {
             jlvalor.setEnabled(true);
             jtde.setEnabled(true);
-            jtdevalor.setEnabled(true);
+            textFormatterValorDe.setEnabled(true);
             jtate.setEnabled(true);
-            jtatevalor.setEnabled(true);
-            jctipo.setEnabled(true);
+            textFormatterValorAte.setEnabled(true);
+            comboBoxTipoAutomovel.setEnabled(true);
             jltipo.setEnabled(true);
-            jbbuscaavancada.setEnabled(true);
-            jbbuscatdsautos.setEnabled(false);
-            jbuscarauto.setEnabled(false);
+            buttonBuscaAvancada.setEnabled(true);
+            buttonBuscarTodosAutomoveis.setEnabled(false);
+            buttonBuscarAutomovel.setEnabled(false);
         } else {
             jlvalor.setEnabled(false);
             jtde.setEnabled(false);
-            jtdevalor.setEnabled(false);
+            textFormatterValorDe.setEnabled(false);
             jtate.setEnabled(false);
-            jtatevalor.setEnabled(false);
-            jctipo.setEnabled(false);
+            textFormatterValorAte.setEnabled(false);
+            comboBoxTipoAutomovel.setEnabled(false);
             jltipo.setEnabled(false);
-            jtdevalor.setText(null);
-            jtatevalor.setText(null);
-            jctipo.setSelectedIndex(-1);
-            jbbuscaavancada.setEnabled(false);
-            jbbuscatdsautos.setEnabled(true);
-            jbuscarauto.setEnabled(true);
+            textFormatterValorDe.setText(null);
+            textFormatterValorAte.setText(null);
+            comboBoxTipoAutomovel.setSelectedIndex(-1);
+            buttonBuscaAvancada.setEnabled(false);
+            buttonBuscarTodosAutomoveis.setEnabled(true);
+            buttonBuscarAutomovel.setEnabled(true);
         }
-    }//GEN-LAST:event_jbuscaavancadaActionPerformed
+    }//GEN-LAST:event_checkBoxBuscaAvancadaActionPerformed
 
-    private void jbcalcularvalorlocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbcalcularvalorlocacaoActionPerformed
-        if (jtdatadevolucao.getText().equals("  /  /    ")) {
+    private void buttonCalcularValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCalcularValorActionPerformed
+        if (textFormattedDataDevolucao.getText().equals("  /  /    ")) {
             JOptionPane.showMessageDialog(null, "Preencha a Data de Devolução!");
         } else {
 
             try {
 
-                aluguel.setDatadevolucao(Utils.StrToDate(jtdatadevolucao.getText()));
+                aluguel.setDatadevolucao(Utils.StrToDate(textFormattedDataDevolucao.getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(FormAluguel.class.getName()).log(Level.SEVERE, null, ex);
             }
             try {
-                aluguel.setDatalocacao(Utils.StrToDate(jtdataaluguel.getText()));
+                aluguel.setDatalocacao(Utils.StrToDate(textFieldDataLocacao.getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(FormAluguel.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -735,19 +735,19 @@ public class FormAluguel extends javax.swing.JFrame {
             } else {
                 aluguel.calcularValorTotal();
 
-                jtvalorlocacao.setText(Double.toString(aluguel.getValorTotal()));
+                textFieldValorLocacao.setText(Double.toString(aluguel.getValorTotal()));
                 jbconfirmarclocacao.setEnabled(true);
             }
         }
-    }//GEN-LAST:event_jbcalcularvalorlocacaoActionPerformed
+    }//GEN-LAST:event_buttonCalcularValorActionPerformed
 
     private void jfplacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jfplacaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jfplacaActionPerformed
 
-    private void jtvalorlocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtvalorlocacaoActionPerformed
+    private void textFieldValorLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldValorLocacaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtvalorlocacaoActionPerformed
+    }//GEN-LAST:event_textFieldValorLocacaoActionPerformed
 
     private void jbconfirmarclocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbconfirmarclocacaoActionPerformed
 
@@ -759,16 +759,16 @@ public class FormAluguel extends javax.swing.JFrame {
             limparTabelaAutomovel();
             limparTabelaCliente();
             jfplaca.setEnabled(true);
-            jbuscarauto.setEnabled(true);
-            jbbuscatdsautos.setEnabled(true);
-            jfcpfbusca.setEnabled(true);
-            jbbuscarcliente.setEnabled(true);
-            jbbuscatdsclientes.setEnabled(true);
-            jtnumaluguel.setText(null);
+            buttonBuscarAutomovel.setEnabled(true);
+            buttonBuscarTodosAutomoveis.setEnabled(true);
+            textFieldCpf.setEnabled(true);
+            buttonBuscarCliente.setEnabled(true);
+            buttonBuscarTodosClientes.setEnabled(true);
+            textFieldNumeroLocacao.setText(null);
             jbconfirmarautomovel.setEnabled(false);
-            jbconfirmarcliente.setEnabled(false);
-            jtdatadevolucao.setText(null);
-            jtvalorlocacao.setText(null);
+            buttonConfirmarCliente.setEnabled(false);
+            textFormattedDataDevolucao.setText(null);
+            textFieldValorLocacao.setText(null);
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Adicione um Automóvel!");
@@ -777,11 +777,11 @@ public class FormAluguel extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbconfirmarclocacaoActionPerformed
 
-    private void jctipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jctipoActionPerformed
+    private void comboBoxTipoAutomovelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxTipoAutomovelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jctipoActionPerformed
+    }//GEN-LAST:event_comboBoxTipoAutomovelActionPerformed
 
-    private void jbbuscaavancadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscaavancadaActionPerformed
+    private void buttonBuscaAvancadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscaAvancadaActionPerformed
         float de = 0;
         float ate = 0;
         jbconfirmarautomovel.setEnabled(false);
@@ -790,37 +790,37 @@ public class FormAluguel extends javax.swing.JFrame {
 
         ArrayList<Automovel> lista = AutomovelDao.getTodosAutomoveis();
 
-        DefaultTableModel modelo = (DefaultTableModel) jtauto.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tableAutomovel.getModel();
 
         if (!lista.isEmpty()) {
             for (int i = 0; i < lista.size(); i++) {
                 if (lista.get(i).getStatus().equals("Disponível")) {
-                    if (jtdevalor.getText().equals("    .  ") && jtatevalor.getText().equals("    .  ")) {
+                    if (textFormatterValorDe.getText().equals("    .  ") && textFormatterValorAte.getText().equals("    .  ")) {
                         de = 0;
                         ate = 0;
                     } else {
 
-                        de = Float.parseFloat(jtdevalor.getText());
-                        ate = Float.parseFloat(jtatevalor.getText());
+                        de = Float.parseFloat(textFormatterValorDe.getText());
+                        ate = Float.parseFloat(textFormatterValorAte.getText());
                     }
 
                     float precoprd = lista.get(i).getValor();
-                    if (de == 0 && ate == 0 && jctipo.getSelectedIndex() == -1) {
+                    if (de == 0 && ate == 0 && comboBoxTipoAutomovel.getSelectedIndex() == -1) {
                         JOptionPane.showMessageDialog(null, "Para busca avançada, deve-se preencher as especificações!");
                     }
-                    if (de >= 0 && ate >= 0 && jctipo.getSelectedIndex() > -1) {
-                        if (de <= precoprd && ate >= precoprd && jctipo.getSelectedItem().equals(lista.get(i).getTipo())) {
+                    if (de >= 0 && ate >= 0 && comboBoxTipoAutomovel.getSelectedIndex() > -1) {
+                        if (de <= precoprd && ate >= precoprd && comboBoxTipoAutomovel.getSelectedItem().equals(lista.get(i).getTipo())) {
                             modelo.addRow(lista.get(i).getAutomovel());
                         }
                     } else {
-                        if (de > 0 && ate > 0 && jctipo.getSelectedIndex() == -1) {
+                        if (de > 0 && ate > 0 && comboBoxTipoAutomovel.getSelectedIndex() == -1) {
                             if (de <= precoprd && ate >= precoprd) {
                                 modelo.addRow(lista.get(i).getAutomovel());
                             }
                         }
                     }
-                    if (de == 0 && ate == 0 && jctipo.getSelectedIndex() > -1) {
-                        if (jctipo.getSelectedItem().equals(lista.get(i).getTipo())) {
+                    if (de == 0 && ate == 0 && comboBoxTipoAutomovel.getSelectedIndex() > -1) {
+                        if (comboBoxTipoAutomovel.getSelectedItem().equals(lista.get(i).getTipo())) {
                             modelo.addRow(lista.get(i).getAutomovel());
                         }
                     }
@@ -829,7 +829,7 @@ public class FormAluguel extends javax.swing.JFrame {
         } else {
 
             JOptionPane.showMessageDialog(null, "Nenhum Automóvel cadastrado nestas condições!!!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
-    }//GEN-LAST:event_jbbuscaavancadaActionPerformed
+    }//GEN-LAST:event_buttonBuscaAvancadaActionPerformed
     }
 
     /**
@@ -867,6 +867,15 @@ public class FormAluguel extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonBuscaAvancada;
+    private javax.swing.JButton buttonBuscarAutomovel;
+    private javax.swing.JButton buttonBuscarCliente;
+    private javax.swing.JButton buttonBuscarTodosAutomoveis;
+    private javax.swing.JButton buttonBuscarTodosClientes;
+    private javax.swing.JButton buttonCalcularValor;
+    private javax.swing.JButton buttonConfirmarCliente;
+    private javax.swing.JCheckBox checkBoxBuscaAvancada;
+    private javax.swing.JComboBox comboBoxTipoAutomovel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -876,46 +885,37 @@ public class FormAluguel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton jbbuscaavancada;
-    private javax.swing.JButton jbbuscarcliente;
-    private javax.swing.JButton jbbuscatdsautos;
-    private javax.swing.JButton jbbuscatdsclientes;
-    private javax.swing.JButton jbcalcularvalorlocacao;
     private javax.swing.JButton jbconfirmarautomovel;
-    private javax.swing.JButton jbconfirmarcliente;
     private javax.swing.JButton jbconfirmarclocacao;
     private javax.swing.JButton jbsair;
-    private javax.swing.JCheckBox jbuscaavancada;
-    private javax.swing.JButton jbuscarauto;
-    private javax.swing.JComboBox jctipo;
-    private javax.swing.JFormattedTextField jfcpfbusca;
     private javax.swing.JLabel jfdatadevolucao;
     private javax.swing.JFormattedTextField jfplaca;
     private javax.swing.JLabel jltipo;
     private javax.swing.JLabel jlvalor;
     private javax.swing.JLabel jtate;
-    private javax.swing.JFormattedTextField jtatevalor;
-    private javax.swing.JTable jtauto;
-    private javax.swing.JTable jtclientes;
-    private javax.swing.JTextField jtdataaluguel;
-    private javax.swing.JFormattedTextField jtdatadevolucao;
     private javax.swing.JLabel jtde;
-    private javax.swing.JFormattedTextField jtdevalor;
-    private javax.swing.JTextField jtnumaluguel;
-    private javax.swing.JTextField jtvalorlocacao;
+    private javax.swing.JTable tableAutomovel;
+    private javax.swing.JTable tableClientes;
+    private javax.swing.JFormattedTextField textFieldCpf;
+    private javax.swing.JTextField textFieldDataLocacao;
+    private javax.swing.JTextField textFieldNumeroLocacao;
+    private javax.swing.JTextField textFieldValorLocacao;
+    private javax.swing.JFormattedTextField textFormattedDataDevolucao;
+    private javax.swing.JFormattedTextField textFormatterValorAte;
+    private javax.swing.JFormattedTextField textFormatterValorDe;
     // End of variables declaration//GEN-END:variables
 
     private void limparTabelaCliente() {
-        DefaultTableModel modelo = (DefaultTableModel) jtclientes.getModel();
-        for (int i = jtclientes.getRowCount() - 1; i >= 0; --i) {
+        DefaultTableModel modelo = (DefaultTableModel) tableClientes.getModel();
+        for (int i = tableClientes.getRowCount() - 1; i >= 0; --i) {
             modelo.removeRow(i);
         }
 
     }
 
     private void limparTabelaAutomovel() {
-        DefaultTableModel modelo = (DefaultTableModel) jtauto.getModel();
-        for (int i = jtauto.getRowCount() - 1; i >= 0; --i) {
+        DefaultTableModel modelo = (DefaultTableModel) tableAutomovel.getModel();
+        for (int i = tableAutomovel.getRowCount() - 1; i >= 0; --i) {
             modelo.removeRow(i);
         }
 

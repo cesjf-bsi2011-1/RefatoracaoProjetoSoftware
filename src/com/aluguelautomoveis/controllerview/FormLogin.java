@@ -24,12 +24,12 @@ public class FormLogin extends javax.swing.JFrame {
 
         pDados = new javax.swing.JPanel();
         lNome = new javax.swing.JLabel();
-        tNome = new javax.swing.JTextField();
+        textFieldLogin = new javax.swing.JTextField();
         lSenha = new javax.swing.JLabel();
-        tSenha = new javax.swing.JPasswordField();
+        textFieldSenha = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
-        bLogin = new javax.swing.JButton();
-        bCancelar = new javax.swing.JButton();
+        buttonLogin = new javax.swing.JButton();
+        buttonAcessar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
@@ -41,11 +41,11 @@ public class FormLogin extends javax.swing.JFrame {
 
         lNome.setText("Nome:");
 
-        tNome.setText("Admin");
+        textFieldLogin.setText("Admin");
 
         lSenha.setText("Senha:");
 
-        tSenha.setText("1234");
+        textFieldSenha.setText("1234");
 
         javax.swing.GroupLayout pDadosLayout = new javax.swing.GroupLayout(pDados);
         pDados.setLayout(pDadosLayout);
@@ -55,9 +55,9 @@ public class FormLogin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lNome)
-                    .addComponent(tNome, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lSenha)
-                    .addComponent(tSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(121, Short.MAX_VALUE))
         );
         pDadosLayout.setVerticalGroup(
@@ -65,35 +65,35 @@ public class FormLogin extends javax.swing.JFrame {
             .addGroup(pDadosLayout.createSequentialGroup()
                 .addComponent(lNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textFieldLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lSenha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setText("Login");
 
-        bLogin.setText("Login");
-        bLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        bLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonLogin.setText("Login");
+        buttonLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buttonLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bLoginMouseClicked(evt);
+                buttonLoginMouseClicked(evt);
             }
         });
-        bLogin.addActionListener(new java.awt.event.ActionListener() {
+        buttonLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bLoginActionPerformed(evt);
+                buttonLoginActionPerformed(evt);
             }
         });
 
-        bCancelar.setText("Cancelar");
-        bCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        bCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonAcessar.setText("Cancelar");
+        buttonAcessar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buttonAcessar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bCancelarMouseClicked(evt);
+                buttonAcessarMouseClicked(evt);
             }
         });
 
@@ -111,9 +111,9 @@ public class FormLogin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(bCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
         );
         layout.setVerticalGroup(
@@ -125,8 +125,8 @@ public class FormLogin extends javax.swing.JFrame {
                 .addComponent(pDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -134,18 +134,18 @@ public class FormLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bLoginMouseClicked
+    private void buttonLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonLoginMouseClicked
 
-    }//GEN-LAST:event_bLoginMouseClicked
+    }//GEN-LAST:event_buttonLoginMouseClicked
 
-    private void bCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCancelarMouseClicked
+    private void buttonAcessarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonAcessarMouseClicked
         System.exit(0);
-    }//GEN-LAST:event_bCancelarMouseClicked
+    }//GEN-LAST:event_buttonAcessarMouseClicked
 
-    private void bLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLoginActionPerformed
+    private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
 
-        if (tNome.getText().equals("Admin")
-                && tSenha.getText().equals("1234")) {
+        if (textFieldLogin.getText().equals("Admin")
+                && textFieldSenha.getText().equals("1234")) {
 
             Principal p = new Principal(); //instancia da tela principal
             p.show(); //abre a tela principal
@@ -154,7 +154,7 @@ public class FormLogin extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(rootPane, "login não realizado!\n Favor conferir o usuario e senha digitado!");
         }
-    }//GEN-LAST:event_bLoginActionPerformed
+    }//GEN-LAST:event_buttonLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,13 +192,13 @@ public class FormLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bCancelar;
-    private javax.swing.JButton bLogin;
+    private javax.swing.JButton buttonAcessar;
+    private javax.swing.JButton buttonLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lNome;
     private javax.swing.JLabel lSenha;
     private javax.swing.JPanel pDados;
-    private javax.swing.JTextField tNome;
-    private javax.swing.JPasswordField tSenha;
+    private javax.swing.JTextField textFieldLogin;
+    private javax.swing.JPasswordField textFieldSenha;
     // End of variables declaration//GEN-END:variables
 }

@@ -39,13 +39,13 @@
                   <Component id="jScrollPane1" alignment="1" pref="900" max="32767" attributes="0"/>
                   <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jbfinalizarlocacao" min="-2" pref="140" max="-2" attributes="0"/>
+                      <Component id="buttonFinalizarLocacao" min="-2" pref="140" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jbmulta" min="-2" pref="158" max="-2" attributes="0"/>
+                      <Component id="buttonCalcularMulta" min="-2" pref="158" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="185" max="-2" attributes="0"/>
+                      <Component id="buttonGerarNotaFiscal" min="-2" pref="185" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton2" min="-2" pref="77" max="-2" attributes="0"/>
+                      <Component id="buttonSair" min="-2" pref="77" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -61,10 +61,10 @@
               <Component id="jScrollPane1" pref="391" max="32767" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jbfinalizarlocacao" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jbmulta" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonFinalizarLocacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonCalcularMulta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonGerarNotaFiscal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonSair" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -88,12 +88,12 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel1" max="32767" attributes="0"/>
-                      <Component id="jtnumaluguel" max="32767" attributes="0"/>
+                      <Component id="textFieldNumeroAluguel" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                  <Component id="jbbuscarauto" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonBuscarPorNumero" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jbbuscartodos" min="-2" pref="162" max="-2" attributes="0"/>
+                  <Component id="buttonBuscarTodos" min="-2" pref="162" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -105,9 +105,9 @@
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jbbuscarauto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jbbuscartodos" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtnumaluguel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonBuscarPorNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonBuscarTodos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldNumeroAluguel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="14" max="32767" attributes="0"/>
               </Group>
@@ -115,12 +115,12 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jbbuscartodos">
+        <Component class="javax.swing.JButton" name="buttonBuscarTodos">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar todos"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbbuscartodosActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBuscarTodosActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
@@ -128,15 +128,15 @@
             <Property name="text" type="java.lang.String" value="N&#xfa;mero Aluguel"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jbbuscarauto">
+        <Component class="javax.swing.JButton" name="buttonBuscarPorNumero">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar por n&#xfa;mero"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbbuscarautoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBuscarPorNumeroActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtnumaluguel">
+        <Component class="javax.swing.JTextField" name="textFieldNumeroAluguel">
         </Component>
       </SubComponents>
     </Container>
@@ -147,7 +147,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jtlocacoes">
+        <Component class="javax.swing.JTable" name="tableLocacoes">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="10" rowCount="0">
@@ -222,44 +222,44 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jtlocacoesMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableLocacoesMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jbfinalizarlocacao">
+    <Component class="javax.swing.JButton" name="buttonFinalizarLocacao">
       <Properties>
         <Property name="text" type="java.lang.String" value="Finalizar Loca&#xe7;&#xe3;o"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbfinalizarlocacaoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonFinalizarLocacaoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jbmulta">
+    <Component class="javax.swing.JButton" name="buttonCalcularMulta">
       <Properties>
         <Property name="text" type="java.lang.String" value="Calcular Multa"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbmultaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCalcularMultaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="buttonGerarNotaFiscal">
       <Properties>
         <Property name="text" type="java.lang.String" value="Gerar Nota Fiscal"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonGerarNotaFiscalActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="buttonSair">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton2MouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="buttonSairMouseClicked"/>
       </Events>
     </Component>
   </SubComponents>

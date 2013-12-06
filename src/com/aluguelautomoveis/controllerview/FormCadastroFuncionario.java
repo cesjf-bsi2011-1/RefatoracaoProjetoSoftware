@@ -36,52 +36,52 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jtnome = new javax.swing.JTextField();
+        textFieldNomeCompleto = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jtdatanascimento = new javax.swing.JFormattedTextField();
+        textFieldDataNascimento = new javax.swing.JFormattedTextField();
         jLabel4 = new javax.swing.JLabel();
-        jcsexo = new javax.swing.JComboBox();
+        comboBoxSexo = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
-        jfcpf = new javax.swing.JFormattedTextField();
+        textFieldCPF = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
-        jftelefone = new javax.swing.JFormattedTextField();
+        textFieldTelefone = new javax.swing.JFormattedTextField();
         jLabel7 = new javax.swing.JLabel();
-        jfcelular = new javax.swing.JFormattedTextField();
+        textFieldCelular = new javax.swing.JFormattedTextField();
         jLabel9 = new javax.swing.JLabel();
-        jtemail = new javax.swing.JTextField();
-        jtcodigo = new javax.swing.JTextField();
-        jtusuario = new javax.swing.JTextField();
+        textFieldEmail = new javax.swing.JTextField();
+        textFieldCodigo = new javax.swing.JTextField();
+        textFieldUsuario = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jtsenha = new javax.swing.JPasswordField();
+        textFieldSenha = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jtrua = new javax.swing.JTextField();
+        textFieldRua = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        jtnumero = new javax.swing.JTextField();
+        textFieldNumero = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jtcomplemento = new javax.swing.JTextField();
+        textFieldComplemento = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        jtbairro = new javax.swing.JTextField();
+        textFieldBairro = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        jtcidade = new javax.swing.JTextField();
+        textFieldCidade = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jfcep = new javax.swing.JFormattedTextField();
+        textFieldCEP = new javax.swing.JFormattedTextField();
         jLabel18 = new javax.swing.JLabel();
-        jcestado = new javax.swing.JComboBox();
-        jbinserir = new javax.swing.JButton();
-        jbexcluir = new javax.swing.JButton();
-        jbatualizar = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jcbusca = new javax.swing.JCheckBox();
-        jfcpfbusca = new javax.swing.JFormattedTextField();
-        jbbuscafuncionario = new javax.swing.JButton();
+        comboBoxUF = new javax.swing.JComboBox();
+        buttonInserir = new javax.swing.JButton();
+        buttonExcluir = new javax.swing.JButton();
+        buttonAtualizar = new javax.swing.JButton();
+        buttonSair = new javax.swing.JButton();
+        buttonLimpar = new javax.swing.JButton();
+        checkBoxBuscarFuncionario = new javax.swing.JCheckBox();
+        textFieldBuscarCPF = new javax.swing.JFormattedTextField();
+        buttonBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtfuncionario = new javax.swing.JTable();
-        jbbuscartodos = new javax.swing.JButton();
-        jbeditarfuncionario = new javax.swing.JButton();
+        tableFuncionarios = new javax.swing.JTable();
+        buttonBuscarTodos = new javax.swing.JButton();
+        buttonEditarFuncionario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 750));
@@ -96,9 +96,9 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
 
         jLabel1.setText("Nome Completo:");
 
-        jtnome.addActionListener(new java.awt.event.ActionListener() {
+        textFieldNomeCompleto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtnomeActionPerformed(evt);
+                textFieldNomeCompletoActionPerformed(evt);
             }
         });
 
@@ -107,26 +107,26 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
         jLabel3.setText("Código:");
 
         try {
-            jtdatanascimento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            textFieldDataNascimento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jtdatanascimento.addActionListener(new java.awt.event.ActionListener() {
+        textFieldDataNascimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtdatanascimentoActionPerformed(evt);
+                textFieldDataNascimentoActionPerformed(evt);
             }
         });
 
         jLabel4.setText("Sexo:");
 
-        jcsexo.setMaximumRowCount(3);
-        jcsexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Feminino", "Masculino", " " }));
-        jcsexo.setSelectedIndex(-1);
+        comboBoxSexo.setMaximumRowCount(3);
+        comboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Feminino", "Masculino", " " }));
+        comboBoxSexo.setSelectedIndex(-1);
 
         jLabel5.setText("CPF:");
 
         try {
-            jfcpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            textFieldCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -134,7 +134,7 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
         jLabel6.setText("Telefone:");
 
         try {
-            jftelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
+            textFieldTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -142,14 +142,14 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
         jLabel7.setText("Celular:");
 
         try {
-            jfcelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
+            textFieldCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         jLabel9.setText("Email:");
 
-        jtcodigo.setEnabled(false);
+        textFieldCodigo.setEnabled(false);
 
         jLabel10.setText("Usuário");
 
@@ -166,53 +166,53 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
                             .add(jLabel3)
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(1, 1, 1)
-                                .add(jtcodigo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 66, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                .add(textFieldCodigo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 66, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jtnome, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 330, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(textFieldNomeCompleto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 330, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jLabel1))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jtdatanascimento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 123, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                            .add(textFieldDataNascimento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 123, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(1, 1, 1)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(2, 2, 2)
-                                .add(jftelefone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 103, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .add(textFieldTelefone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 103, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(jLabel6))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel7)
-                            .add(jfcelular, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 104, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(textFieldCelular, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 104, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .add(18, 18, 18)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(jLabel9)
                                 .add(0, 0, Short.MAX_VALUE))
-                            .add(jtemail))))
+                            .add(textFieldEmail))))
                 .add(8, 8, 8)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel4)
-                            .add(jcsexo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(comboBoxSexo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jLabel10))
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jfcpf, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 123, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(textFieldCPF, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 123, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                     .add(jLabel5)))
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(40, 40, 40)
                                 .add(jLabel8)
                                 .add(0, 74, Short.MAX_VALUE))))
                     .add(jPanel1Layout.createSequentialGroup()
-                        .add(jtusuario, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 101, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(textFieldUsuario, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 101, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jtsenha)))
+                        .add(textFieldSenha)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -226,17 +226,17 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
                             .add(jLabel1))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jtnome, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jtdatanascimento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jtcodigo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                            .add(textFieldNomeCompleto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(textFieldDataNascimento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(textFieldCodigo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                             .add(jLabel5)
                             .add(jLabel4))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jfcpf, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jcsexo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                            .add(textFieldCPF, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(comboBoxSexo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel6)
@@ -246,11 +246,11 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
                     .add(jLabel8))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jftelefone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jfcelular, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jtemail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jtusuario, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jtsenha, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(textFieldTelefone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(textFieldCelular, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(textFieldEmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(textFieldUsuario, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(textFieldSenha, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(0, 14, Short.MAX_VALUE))
         );
 
@@ -269,15 +269,15 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
         jLabel17.setText("CEP");
 
         try {
-            jfcep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###-###")));
+            textFieldCEP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###-###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         jLabel18.setText("UF");
 
-        jcestado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Distrito Federal", "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Paraná", "Paraíba", "Pará", "Pernambuco", "Piauí", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Rondonia", "Roraima", "Santa Catarina", "Sergipe", "São Paulo", "Tocantins" }));
-        jcestado.setSelectedIndex(-1);
+        comboBoxUF.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Distrito Federal", "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Paraná", "Paraíba", "Pará", "Pernambuco", "Piauí", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Rondonia", "Roraima", "Santa Catarina", "Sergipe", "São Paulo", "Tocantins" }));
+        comboBoxUF.setSelectedIndex(-1);
 
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -289,28 +289,28 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel12)
                             .add(jLabel15)
-                            .add(jtbairro))
+                            .add(textFieldBairro))
                         .add(18, 18, 18)
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jtcidade, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 152, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(textFieldCidade, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 152, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jLabel16))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jfcep, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 94, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(textFieldCEP, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 94, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jLabel17))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel18)
-                            .add(jcestado, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                            .add(comboBoxUF, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                     .add(jPanel2Layout.createSequentialGroup()
-                        .add(jtrua)
+                        .add(textFieldRua)
                         .add(18, 18, 18)
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jtnumero, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(textFieldNumero, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jLabel13))
                         .add(18, 18, 18)
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jtcomplemento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 52, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(textFieldComplemento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 52, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jLabel14))))
                 .addContainerGap())
         );
@@ -323,9 +323,9 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
                     .add(jLabel14))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jtrua, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jtnumero, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jtcomplemento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(textFieldRua, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(textFieldNumero, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(textFieldComplemento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel15)
@@ -334,72 +334,72 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
                     .add(jLabel18))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jtbairro, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jtcidade, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jfcep, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jcestado, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                    .add(textFieldBairro, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(textFieldCidade, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(textFieldCEP, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(comboBoxUF, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
         );
 
-        jbinserir.setText("Inserir Funcionario");
-        jbinserir.addActionListener(new java.awt.event.ActionListener() {
+        buttonInserir.setText("Inserir Funcionario");
+        buttonInserir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbinserirActionPerformed(evt);
+                buttonInserirActionPerformed(evt);
             }
         });
 
-        jbexcluir.setText("Excluir Funcionario");
-        jbexcluir.setEnabled(false);
-        jbexcluir.addActionListener(new java.awt.event.ActionListener() {
+        buttonExcluir.setText("Excluir Funcionario");
+        buttonExcluir.setEnabled(false);
+        buttonExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbexcluirActionPerformed(evt);
+                buttonExcluirActionPerformed(evt);
             }
         });
 
-        jbatualizar.setText("Atualizar Funcionario");
-        jbatualizar.setEnabled(false);
-        jbatualizar.addActionListener(new java.awt.event.ActionListener() {
+        buttonAtualizar.setText("Atualizar Funcionario");
+        buttonAtualizar.setEnabled(false);
+        buttonAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbatualizarActionPerformed(evt);
+                buttonAtualizarActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Sair");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        buttonSair.setText("Sair");
+        buttonSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                buttonSairActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Limpar Funcionario");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonLimpar.setText("Limpar Funcionario");
+        buttonLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttonLimparActionPerformed(evt);
             }
         });
 
-        jcbusca.setText("Buscar Funcionario");
-        jcbusca.addActionListener(new java.awt.event.ActionListener() {
+        checkBoxBuscarFuncionario.setText("Buscar Funcionario");
+        checkBoxBuscarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcbuscaActionPerformed(evt);
+                checkBoxBuscarFuncionarioActionPerformed(evt);
             }
         });
 
         try {
-            jfcpfbusca.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            textFieldBuscarCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jfcpfbusca.setEnabled(false);
+        textFieldBuscarCPF.setEnabled(false);
 
-        jbbuscafuncionario.setText("Buscar");
-        jbbuscafuncionario.setEnabled(false);
-        jbbuscafuncionario.addActionListener(new java.awt.event.ActionListener() {
+        buttonBuscar.setText("Buscar");
+        buttonBuscar.setEnabled(false);
+        buttonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbbuscafuncionarioActionPerformed(evt);
+                buttonBuscarActionPerformed(evt);
             }
         });
 
-        jtfuncionario.setModel(new javax.swing.table.DefaultTableModel(
+        tableFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -415,33 +415,33 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jtfuncionario.getTableHeader().setReorderingAllowed(false);
-        jtfuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
+        tableFuncionarios.getTableHeader().setReorderingAllowed(false);
+        tableFuncionarios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jtfuncionarioMouseClicked(evt);
+                tableFuncionariosMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jtfuncionario);
-        if (jtfuncionario.getColumnModel().getColumnCount() > 0) {
-            jtfuncionario.getColumnModel().getColumn(0).setResizable(false);
-            jtfuncionario.getColumnModel().getColumn(1).setResizable(false);
-            jtfuncionario.getColumnModel().getColumn(2).setResizable(false);
-            jtfuncionario.getColumnModel().getColumn(3).setResizable(false);
+        jScrollPane1.setViewportView(tableFuncionarios);
+        if (tableFuncionarios.getColumnModel().getColumnCount() > 0) {
+            tableFuncionarios.getColumnModel().getColumn(0).setResizable(false);
+            tableFuncionarios.getColumnModel().getColumn(1).setResizable(false);
+            tableFuncionarios.getColumnModel().getColumn(2).setResizable(false);
+            tableFuncionarios.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jbbuscartodos.setText("Buscar Todos");
-        jbbuscartodos.setEnabled(false);
-        jbbuscartodos.addActionListener(new java.awt.event.ActionListener() {
+        buttonBuscarTodos.setText("Buscar Todos");
+        buttonBuscarTodos.setEnabled(false);
+        buttonBuscarTodos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbbuscartodosActionPerformed(evt);
+                buttonBuscarTodosActionPerformed(evt);
             }
         });
 
-        jbeditarfuncionario.setText("Editar Funcionario");
-        jbeditarfuncionario.setEnabled(false);
-        jbeditarfuncionario.addActionListener(new java.awt.event.ActionListener() {
+        buttonEditarFuncionario.setText("Editar Funcionario");
+        buttonEditarFuncionario.setEnabled(false);
+        buttonEditarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbeditarfuncionarioActionPerformed(evt);
+                buttonEditarFuncionarioActionPerformed(evt);
             }
         });
 
@@ -453,28 +453,28 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
                 .addContainerGap()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
-                        .add(jcbusca)
+                        .add(checkBoxBuscarFuncionario)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jfcpfbusca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(textFieldBuscarCPF, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jbbuscafuncionario, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 94, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(buttonBuscar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 94, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jbbuscartodos)
+                        .add(buttonBuscarTodos)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jbeditarfuncionario)
+                        .add(buttonEditarFuncionario)
                         .add(0, 0, Short.MAX_VALUE))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(layout.createSequentialGroup()
-                        .add(jbinserir)
+                        .add(buttonInserir)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jbexcluir)
+                        .add(buttonExcluir)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jbatualizar)
+                        .add(buttonAtualizar)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jButton1)
+                        .add(buttonLimpar)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jButton4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(buttonSair, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jScrollPane1))
                 .addContainerGap())
         );
@@ -487,20 +487,20 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
                 .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jcbusca)
-                    .add(jfcpfbusca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jbbuscafuncionario)
-                    .add(jbbuscartodos)
-                    .add(jbeditarfuncionario))
+                    .add(checkBoxBuscarFuncionario)
+                    .add(textFieldBuscarCPF, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(buttonBuscar)
+                    .add(buttonBuscarTodos)
+                    .add(buttonEditarFuncionario))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jButton4)
-                    .add(jButton1)
-                    .add(jbinserir)
-                    .add(jbexcluir)
-                    .add(jbatualizar))
+                    .add(buttonSair)
+                    .add(buttonLimpar)
+                    .add(buttonInserir)
+                    .add(buttonExcluir)
+                    .add(buttonAtualizar))
                 .addContainerGap())
         );
 
@@ -510,53 +510,53 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSairActionPerformed
         this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_buttonSairActionPerformed
 
-    private void jbbuscafuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscafuncionarioActionPerformed
+    private void buttonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarActionPerformed
         limparTabelaFuncionario();
-        funcionario = FuncionarioDao.getFuncionario(jfcpfbusca.getText());
+        funcionario = FuncionarioDao.getFuncionario(textFieldBuscarCPF.getText());
 
-        DefaultTableModel modelo = (DefaultTableModel) jtfuncionario.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tableFuncionarios.getModel();
         if (funcionario != null) {
             modelo.addRow(funcionario.getFuncionario());
-            jfcpfbusca.setText(null);
+            textFieldBuscarCPF.setText(null);
         } else {
             JOptionPane.showMessageDialog(null, "Funcionario Inexistente!\nNão foi possivel encontrar o Funcionario especificado!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
         }
-        jfcpfbusca.setText(null);
+        textFieldBuscarCPF.setText(null);
 
 
-    }//GEN-LAST:event_jbbuscafuncionarioActionPerformed
+    }//GEN-LAST:event_buttonBuscarActionPerformed
 
-    private void jbinserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbinserirActionPerformed
+    private void buttonInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInserirActionPerformed
         if (checacampos(null) == true) {
             double numerfuncionario = Math.round(Math.random() * 1000);
             double random = checanumerofuncionario(numerfuncionario);
-            jtcodigo.setText(Double.toString(random));
+            textFieldCodigo.setText(Double.toString(random));
             Funcionario funcionario = new Funcionario();
-            funcionario.setCodigo(jtcodigo.getText());
-            funcionario.setNome(jtnome.getText());
-            funcionario.setCpf(jfcpf.getText());
-            funcionario.setRua(jtrua.getText());
-            funcionario.setCelular(jfcelular.getText());
+            funcionario.setCodigo(textFieldCodigo.getText());
+            funcionario.setNome(textFieldNomeCompleto.getText());
+            funcionario.setCpf(textFieldCPF.getText());
+            funcionario.setRua(textFieldRua.getText());
+            funcionario.setCelular(textFieldCelular.getText());
             try {
-                funcionario.setDatanascimento(Utils.StrToDate(jtdatanascimento.getText()));
+                funcionario.setDatanascimento(Utils.StrToDate(textFieldDataNascimento.getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(FormCadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
             }
-            funcionario.setNumero(jtnumero.getText());
-            funcionario.setComplemento(jtcomplemento.getText());
-            funcionario.setBairro(jtbairro.getText());
-            funcionario.setCidade(jtcidade.getText());
-            funcionario.setEstado(jcestado.getSelectedItem().toString());
-            funcionario.setCep(jfcep.getText());
-            funcionario.setTelefone(jftelefone.getText());
-            funcionario.setEmail(jtemail.getText());
-            funcionario.setSexo(jcsexo.getSelectedItem().toString());
-            funcionario.setUsuario(jtusuario.getText());
-            funcionario.setSenha(jtsenha.getText());
+            funcionario.setNumero(textFieldNumero.getText());
+            funcionario.setComplemento(textFieldComplemento.getText());
+            funcionario.setBairro(textFieldBairro.getText());
+            funcionario.setCidade(textFieldCidade.getText());
+            funcionario.setEstado(comboBoxUF.getSelectedItem().toString());
+            funcionario.setCep(textFieldCEP.getText());
+            funcionario.setTelefone(textFieldTelefone.getText());
+            funcionario.setEmail(textFieldEmail.getText());
+            funcionario.setSexo(comboBoxSexo.getSelectedItem().toString());
+            funcionario.setUsuario(textFieldUsuario.getText());
+            funcionario.setSenha(textFieldSenha.getText());
 
             if (FuncionarioDao.getFuncionario(funcionario.getCpf()) == null) {
 
@@ -570,129 +570,129 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_jbinserirActionPerformed
+    }//GEN-LAST:event_buttonInserirActionPerformed
 
-    private void jcbuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbuscaActionPerformed
+    private void checkBoxBuscarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxBuscarFuncionarioActionPerformed
         limpacampos();
         limparTabelaFuncionario();
-        if (jcbusca.isSelected()) {
-            jbbuscafuncionario.setEnabled(true);
-            jbexcluir.setEnabled(false);
-            jbatualizar.setEnabled(false);
-            jbinserir.setEnabled(false);
-            jfcpfbusca.setEnabled(true);
-            jbbuscartodos.setEnabled(true);
-            jtnome.setEnabled(false);
-            jfcpf.setEnabled(false);
-            jtrua.setEnabled(false);
-            jtnumero.setEnabled(false);
-            jtcomplemento.setEnabled(false);
-            jtbairro.setEnabled(false);
-            jtcidade.setEnabled(false);
-            jcestado.setEnabled(false);
-            jfcep.setEnabled(false);
-            jftelefone.setEnabled(false);
-            jtemail.setEnabled(false);
-            jtdatanascimento.setEnabled(false);
-            jcsexo.setEnabled(false);
-            jfcelular.setEnabled(false);
-            jtusuario.setEnabled(false);
-            jtsenha.setEnabled(false);
+        if (checkBoxBuscarFuncionario.isSelected()) {
+            buttonBuscar.setEnabled(true);
+            buttonExcluir.setEnabled(false);
+            buttonAtualizar.setEnabled(false);
+            buttonInserir.setEnabled(false);
+            textFieldBuscarCPF.setEnabled(true);
+            buttonBuscarTodos.setEnabled(true);
+            textFieldNomeCompleto.setEnabled(false);
+            textFieldCPF.setEnabled(false);
+            textFieldRua.setEnabled(false);
+            textFieldNumero.setEnabled(false);
+            textFieldComplemento.setEnabled(false);
+            textFieldBairro.setEnabled(false);
+            textFieldCidade.setEnabled(false);
+            comboBoxUF.setEnabled(false);
+            textFieldCEP.setEnabled(false);
+            textFieldTelefone.setEnabled(false);
+            textFieldEmail.setEnabled(false);
+            textFieldDataNascimento.setEnabled(false);
+            comboBoxSexo.setEnabled(false);
+            textFieldCelular.setEnabled(false);
+            textFieldUsuario.setEnabled(false);
+            textFieldSenha.setEnabled(false);
         } else {
 
             {
-                jbeditarfuncionario.setEnabled(false);
-                jbinserir.setEnabled(true);
-                jbexcluir.setEnabled(false);
-                jbatualizar.setEnabled(false);
-                jbbuscafuncionario.setEnabled(false);
-                jfcpfbusca.setEnabled(false);
-                jbbuscartodos.setEnabled(false);
-                jtnome.setEnabled(true);
-                jfcpf.setEnabled(true);
-                jtrua.setEnabled(true);
-                jtnumero.setEnabled(true);
-                jtcomplemento.setEnabled(true);
-                jtbairro.setEnabled(true);
-                jtcidade.setEnabled(true);
-                jcestado.setEnabled(true);
-                jfcep.setEnabled(true);
-                jftelefone.setEnabled(true);
-                jtemail.setEnabled(true);
-                jtdatanascimento.setEnabled(true);
-                jcsexo.setEnabled(true);
-                jfcelular.setEnabled(true);
-                jtusuario.setEnabled(true);
-                jtsenha.setEnabled(true);
+                buttonEditarFuncionario.setEnabled(false);
+                buttonInserir.setEnabled(true);
+                buttonExcluir.setEnabled(false);
+                buttonAtualizar.setEnabled(false);
+                buttonBuscar.setEnabled(false);
+                textFieldBuscarCPF.setEnabled(false);
+                buttonBuscarTodos.setEnabled(false);
+                textFieldNomeCompleto.setEnabled(true);
+                textFieldCPF.setEnabled(true);
+                textFieldRua.setEnabled(true);
+                textFieldNumero.setEnabled(true);
+                textFieldComplemento.setEnabled(true);
+                textFieldBairro.setEnabled(true);
+                textFieldCidade.setEnabled(true);
+                comboBoxUF.setEnabled(true);
+                textFieldCEP.setEnabled(true);
+                textFieldTelefone.setEnabled(true);
+                textFieldEmail.setEnabled(true);
+                textFieldDataNascimento.setEnabled(true);
+                comboBoxSexo.setEnabled(true);
+                textFieldCelular.setEnabled(true);
+                textFieldUsuario.setEnabled(true);
+                textFieldSenha.setEnabled(true);
             }
         }
-    }//GEN-LAST:event_jcbuscaActionPerformed
+    }//GEN-LAST:event_checkBoxBuscarFuncionarioActionPerformed
 
-    private void jbexcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbexcluirActionPerformed
-        String cpf = jfcpf.getText();
+    private void buttonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExcluirActionPerformed
+        String cpf = textFieldCPF.getText();
         if (FuncionarioDao.getFuncionario(cpf) != null) {
 
             int resposta = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover este funcionário?", "Remover", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if (resposta == 0) {
                 FuncionarioDao.removerFuncionario(cpf);
                 JOptionPane.showMessageDialog(null, "O funcionario foi removido com sucesso!!!");
-                jcbusca.setSelected(false);
-                jbeditarfuncionario.setEnabled(false);
-                jbexcluir.setEnabled(false);
-                jbatualizar.setEnabled(false);
-                jbinserir.setEnabled(true);
+                checkBoxBuscarFuncionario.setSelected(false);
+                buttonEditarFuncionario.setEnabled(false);
+                buttonExcluir.setEnabled(false);
+                buttonAtualizar.setEnabled(false);
+                buttonInserir.setEnabled(true);
                 limparTabelaFuncionario();
                 limpacampos();
             } else {
                 JOptionPane.showMessageDialog(null, "O funcionario não foi removido.");
             }
         }
-    }//GEN-LAST:event_jbexcluirActionPerformed
+    }//GEN-LAST:event_buttonExcluirActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
 
     }//GEN-LAST:event_formWindowActivated
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buttonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLimparActionPerformed
         limpacampos();
         limparTabelaFuncionario();
-        jbatualizar.setEnabled(false);
-        jbexcluir.setEnabled(false);
-        jbinserir.setEnabled(true);
-        jcbusca.setSelected(false);
-        jbeditarfuncionario.setEnabled(false);
-        jbinserir.setEnabled(true);
-        jbexcluir.setEnabled(false);
-        jbatualizar.setEnabled(false);
-        jbbuscafuncionario.setEnabled(false);
-        jfcpfbusca.setEnabled(false);
-        jbbuscartodos.setEnabled(false);
-        jtnome.setEnabled(true);
-        jfcpf.setEnabled(true);
-        jtrua.setEnabled(true);
-        jtnumero.setEnabled(true);
-        jtcomplemento.setEnabled(true);
-        jtbairro.setEnabled(true);
-        jtcidade.setEnabled(true);
-        jcestado.setEnabled(true);
-        jfcep.setEnabled(true);
-        jftelefone.setEnabled(true);
-        jtemail.setEnabled(true);
-        jtdatanascimento.setEnabled(true);
-        jcsexo.setEnabled(true);
-        jfcelular.setEnabled(true);
-        jtusuario.setEnabled(true);
-        jtsenha.setEnabled(true);
+        buttonAtualizar.setEnabled(false);
+        buttonExcluir.setEnabled(false);
+        buttonInserir.setEnabled(true);
+        checkBoxBuscarFuncionario.setSelected(false);
+        buttonEditarFuncionario.setEnabled(false);
+        buttonInserir.setEnabled(true);
+        buttonExcluir.setEnabled(false);
+        buttonAtualizar.setEnabled(false);
+        buttonBuscar.setEnabled(false);
+        textFieldBuscarCPF.setEnabled(false);
+        buttonBuscarTodos.setEnabled(false);
+        textFieldNomeCompleto.setEnabled(true);
+        textFieldCPF.setEnabled(true);
+        textFieldRua.setEnabled(true);
+        textFieldNumero.setEnabled(true);
+        textFieldComplemento.setEnabled(true);
+        textFieldBairro.setEnabled(true);
+        textFieldCidade.setEnabled(true);
+        comboBoxUF.setEnabled(true);
+        textFieldCEP.setEnabled(true);
+        textFieldTelefone.setEnabled(true);
+        textFieldEmail.setEnabled(true);
+        textFieldDataNascimento.setEnabled(true);
+        comboBoxSexo.setEnabled(true);
+        textFieldCelular.setEnabled(true);
+        textFieldUsuario.setEnabled(true);
+        textFieldSenha.setEnabled(true);
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_buttonLimparActionPerformed
 
-    private void jbbuscartodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscartodosActionPerformed
-        jfcpfbusca.setText("");
+    private void buttonBuscarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarTodosActionPerformed
+        textFieldBuscarCPF.setText("");
         limparTabelaFuncionario();
 
         ArrayList<Funcionario> lista = FuncionarioDao.getTodosFuncionario();
 
-        DefaultTableModel modelo = (DefaultTableModel) jtfuncionario.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tableFuncionarios.getModel();
 
         if (!lista.isEmpty()) {
 
@@ -706,111 +706,111 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_jbbuscartodosActionPerformed
+    }//GEN-LAST:event_buttonBuscarTodosActionPerformed
 
-    private void jtfuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtfuncionarioMouseClicked
+    private void tableFuncionariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableFuncionariosMouseClicked
         if (okfuncionario != "ok") {
-            if (jtfuncionario.getSelectedRow() >= -1) {
-                jbeditarfuncionario.setEnabled(true);
-                jbatualizar.setEnabled(false);
-                jbexcluir.setEnabled(false);
-                jbbuscafuncionario.setEnabled(false);
-                jbbuscartodos.setEnabled(false);
+            if (tableFuncionarios.getSelectedRow() >= -1) {
+                buttonEditarFuncionario.setEnabled(true);
+                buttonAtualizar.setEnabled(false);
+                buttonExcluir.setEnabled(false);
+                buttonBuscar.setEnabled(false);
+                buttonBuscarTodos.setEnabled(false);
             } else {
 
             }
         }
-    }//GEN-LAST:event_jtfuncionarioMouseClicked
+    }//GEN-LAST:event_tableFuncionariosMouseClicked
 
-    private void jbeditarfuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbeditarfuncionarioActionPerformed
-        int linha = jtfuncionario.getSelectedRow();
-        String cpf = ((String) jtfuncionario.getModel().getValueAt(linha, 2));
+    private void buttonEditarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditarFuncionarioActionPerformed
+        int linha = tableFuncionarios.getSelectedRow();
+        String cpf = ((String) tableFuncionarios.getModel().getValueAt(linha, 2));
         funcionario = FuncionarioDao.getFuncionario(cpf);
-        jtcodigo.setText(funcionario.getCodigo());
-        jtnome.setText(funcionario.getNome());
-        jfcpf.setText(funcionario.getCpf());
-        jtrua.setText(funcionario.getRua());
-        jtnumero.setText(funcionario.getNumero());
-        jtcomplemento.setText(funcionario.getComplemento());
-        jtbairro.setText(funcionario.getBairro());
-        jtcidade.setText(funcionario.getCidade());
-        jcestado.setSelectedItem(funcionario.getEstado());
-        jfcep.setText(funcionario.getCep());
-        jftelefone.setValue(funcionario.getTelefone());
-        jtemail.setText(funcionario.getEmail());
-        jtdatanascimento.setText(Utils.DateToStr(funcionario.getDatanascimento()));
-        jcsexo.setSelectedItem(funcionario.getSexo());
-        jfcelular.setText(funcionario.getCelular());
-        jtusuario.setText(funcionario.getUsuario());
-        jtsenha.setText(funcionario.getSenha());
-        jtnome.setEnabled(true);
-        jfcpf.setEnabled(true);
-        jtrua.setEnabled(true);
-        jtnumero.setEnabled(true);
-        jtcomplemento.setEnabled(true);
-        jtbairro.setEnabled(true);
-        jtcidade.setEnabled(true);
-        jcestado.setEnabled(true);
-        jfcep.setEnabled(true);
-        jftelefone.setEnabled(true);
-        jtemail.setEnabled(true);
-        jtdatanascimento.setEnabled(true);
-        jcsexo.setEnabled(true);
-        jfcelular.setEnabled(true);
-        jtusuario.setEnabled(true);
-        jtsenha.setEnabled(true);
-        jcbusca.setSelected(false);
+        textFieldCodigo.setText(funcionario.getCodigo());
+        textFieldNomeCompleto.setText(funcionario.getNome());
+        textFieldCPF.setText(funcionario.getCpf());
+        textFieldRua.setText(funcionario.getRua());
+        textFieldNumero.setText(funcionario.getNumero());
+        textFieldComplemento.setText(funcionario.getComplemento());
+        textFieldBairro.setText(funcionario.getBairro());
+        textFieldCidade.setText(funcionario.getCidade());
+        comboBoxUF.setSelectedItem(funcionario.getEstado());
+        textFieldCEP.setText(funcionario.getCep());
+        textFieldTelefone.setValue(funcionario.getTelefone());
+        textFieldEmail.setText(funcionario.getEmail());
+        textFieldDataNascimento.setText(Utils.DateToStr(funcionario.getDatanascimento()));
+        comboBoxSexo.setSelectedItem(funcionario.getSexo());
+        textFieldCelular.setText(funcionario.getCelular());
+        textFieldUsuario.setText(funcionario.getUsuario());
+        textFieldSenha.setText(funcionario.getSenha());
+        textFieldNomeCompleto.setEnabled(true);
+        textFieldCPF.setEnabled(true);
+        textFieldRua.setEnabled(true);
+        textFieldNumero.setEnabled(true);
+        textFieldComplemento.setEnabled(true);
+        textFieldBairro.setEnabled(true);
+        textFieldCidade.setEnabled(true);
+        comboBoxUF.setEnabled(true);
+        textFieldCEP.setEnabled(true);
+        textFieldTelefone.setEnabled(true);
+        textFieldEmail.setEnabled(true);
+        textFieldDataNascimento.setEnabled(true);
+        comboBoxSexo.setEnabled(true);
+        textFieldCelular.setEnabled(true);
+        textFieldUsuario.setEnabled(true);
+        textFieldSenha.setEnabled(true);
+        checkBoxBuscarFuncionario.setSelected(false);
         limparTabelaFuncionario();
-        jbeditarfuncionario.setEnabled(false);
-        jbexcluir.setEnabled(true);
-        jbatualizar.setEnabled(true);
-    }//GEN-LAST:event_jbeditarfuncionarioActionPerformed
+        buttonEditarFuncionario.setEnabled(false);
+        buttonExcluir.setEnabled(true);
+        buttonAtualizar.setEnabled(true);
+    }//GEN-LAST:event_buttonEditarFuncionarioActionPerformed
 
-    private void jbatualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbatualizarActionPerformed
+    private void buttonAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAtualizarActionPerformed
         limparTabelaFuncionario();
         if (checacampos(null) == true) {
             Funcionario funcionario = new Funcionario();
-            funcionario.setCodigo(jtcodigo.getText());
-            funcionario.setNome(jtnome.getText());
-            funcionario.setCpf(jfcpf.getText());
-            funcionario.setRua(jtrua.getText());
-            funcionario.setCelular(jfcelular.getText());
+            funcionario.setCodigo(textFieldCodigo.getText());
+            funcionario.setNome(textFieldNomeCompleto.getText());
+            funcionario.setCpf(textFieldCPF.getText());
+            funcionario.setRua(textFieldRua.getText());
+            funcionario.setCelular(textFieldCelular.getText());
             try {
-                funcionario.setDatanascimento(Utils.StrToDate(jtdatanascimento.getText()));
+                funcionario.setDatanascimento(Utils.StrToDate(textFieldDataNascimento.getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(FormCadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
             }
-            funcionario.setNumero(jtnumero.getText());
-            funcionario.setComplemento(jtcomplemento.getText());
-            funcionario.setBairro(jtbairro.getText());
-            funcionario.setCidade(jtcidade.getText());
-            funcionario.setEstado(jcestado.getSelectedItem().toString());
-            funcionario.setCep(jfcep.getText());
-            funcionario.setTelefone(jftelefone.getText());
-            funcionario.setEmail(jtemail.getText());
-            funcionario.setSexo(jcsexo.getSelectedItem().toString());
-            funcionario.setUsuario(jtusuario.getText());
-            funcionario.setSenha(jtsenha.getText());
+            funcionario.setNumero(textFieldNumero.getText());
+            funcionario.setComplemento(textFieldComplemento.getText());
+            funcionario.setBairro(textFieldBairro.getText());
+            funcionario.setCidade(textFieldCidade.getText());
+            funcionario.setEstado(comboBoxUF.getSelectedItem().toString());
+            funcionario.setCep(textFieldCEP.getText());
+            funcionario.setTelefone(textFieldTelefone.getText());
+            funcionario.setEmail(textFieldEmail.getText());
+            funcionario.setSexo(comboBoxSexo.getSelectedItem().toString());
+            funcionario.setUsuario(textFieldUsuario.getText());
+            funcionario.setSenha(textFieldSenha.getText());
 
             FuncionarioDao.atualizarFuncionario(funcionario);
             JOptionPane.showMessageDialog(null, "funcionario Atualizado com Sucesso!");
-            jcbusca.setSelected(false);
-            jbeditarfuncionario.setEnabled(false);
-            jbexcluir.setEnabled(false);
-            jbatualizar.setEnabled(false);
-            jbinserir.setEnabled(true);
+            checkBoxBuscarFuncionario.setSelected(false);
+            buttonEditarFuncionario.setEnabled(false);
+            buttonExcluir.setEnabled(false);
+            buttonAtualizar.setEnabled(false);
+            buttonInserir.setEnabled(true);
             limpacampos();
 
         }
-    }//GEN-LAST:event_jbatualizarActionPerformed
+    }//GEN-LAST:event_buttonAtualizarActionPerformed
 
-    private void jtdatanascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtdatanascimentoActionPerformed
+    private void textFieldDataNascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldDataNascimentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtdatanascimentoActionPerformed
+    }//GEN-LAST:event_textFieldDataNascimentoActionPerformed
 
-    private void jtnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtnomeActionPerformed
+    private void textFieldNomeCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNomeCompletoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtnomeActionPerformed
+    }//GEN-LAST:event_textFieldNomeCompletoActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -844,8 +844,17 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton buttonAtualizar;
+    private javax.swing.JButton buttonBuscar;
+    private javax.swing.JButton buttonBuscarTodos;
+    private javax.swing.JButton buttonEditarFuncionario;
+    private javax.swing.JButton buttonExcluir;
+    private javax.swing.JButton buttonInserir;
+    private javax.swing.JButton buttonLimpar;
+    private javax.swing.JButton buttonSair;
+    private javax.swing.JCheckBox checkBoxBuscarFuncionario;
+    private javax.swing.JComboBox comboBoxSexo;
+    private javax.swing.JComboBox comboBoxUF;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -866,115 +875,106 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton jbatualizar;
-    private javax.swing.JButton jbbuscafuncionario;
-    private javax.swing.JButton jbbuscartodos;
-    private javax.swing.JButton jbeditarfuncionario;
-    private javax.swing.JButton jbexcluir;
-    private javax.swing.JButton jbinserir;
-    private javax.swing.JCheckBox jcbusca;
-    private javax.swing.JComboBox jcestado;
-    private javax.swing.JComboBox jcsexo;
-    private javax.swing.JFormattedTextField jfcelular;
-    private javax.swing.JFormattedTextField jfcep;
-    private javax.swing.JFormattedTextField jfcpf;
-    private javax.swing.JFormattedTextField jfcpfbusca;
-    private javax.swing.JFormattedTextField jftelefone;
-    private javax.swing.JTextField jtbairro;
-    private javax.swing.JTextField jtcidade;
-    private javax.swing.JTextField jtcodigo;
-    private javax.swing.JTextField jtcomplemento;
-    private javax.swing.JFormattedTextField jtdatanascimento;
-    private javax.swing.JTextField jtemail;
-    private javax.swing.JTable jtfuncionario;
-    private javax.swing.JTextField jtnome;
-    private javax.swing.JTextField jtnumero;
-    private javax.swing.JTextField jtrua;
-    private javax.swing.JPasswordField jtsenha;
-    private javax.swing.JTextField jtusuario;
+    private javax.swing.JTable tableFuncionarios;
+    private javax.swing.JTextField textFieldBairro;
+    private javax.swing.JFormattedTextField textFieldBuscarCPF;
+    private javax.swing.JFormattedTextField textFieldCEP;
+    private javax.swing.JFormattedTextField textFieldCPF;
+    private javax.swing.JFormattedTextField textFieldCelular;
+    private javax.swing.JTextField textFieldCidade;
+    private javax.swing.JTextField textFieldCodigo;
+    private javax.swing.JTextField textFieldComplemento;
+    private javax.swing.JFormattedTextField textFieldDataNascimento;
+    private javax.swing.JTextField textFieldEmail;
+    private javax.swing.JTextField textFieldNomeCompleto;
+    private javax.swing.JTextField textFieldNumero;
+    private javax.swing.JTextField textFieldRua;
+    private javax.swing.JPasswordField textFieldSenha;
+    private javax.swing.JFormattedTextField textFieldTelefone;
+    private javax.swing.JTextField textFieldUsuario;
     // End of variables declaration//GEN-END:variables
 
     public void limpacampos() {
-        jtcodigo.setText(null);
-        jtnome.setText(null);
-        jfcpf.setText(null);
-        jtrua.setText(null);
-        jtnumero.setText(null);
-        jtcomplemento.setText(null);
-        jtbairro.setText(null);
-        jtcidade.setText(null);
-        jcestado.setSelectedItem(null);
-        jfcep.setText(null);
-        jftelefone.setValue(null);
-        jtemail.setText(null);
-        jtdatanascimento.setText(null);
-        jcsexo.setSelectedItem(null);
-        jfcelular.setText(null);
-        jtusuario.setText(null);
-        jtsenha.setText(null);
+        textFieldCodigo.setText(null);
+        textFieldNomeCompleto.setText(null);
+        textFieldCPF.setText(null);
+        textFieldRua.setText(null);
+        textFieldNumero.setText(null);
+        textFieldComplemento.setText(null);
+        textFieldBairro.setText(null);
+        textFieldCidade.setText(null);
+        comboBoxUF.setSelectedItem(null);
+        textFieldCEP.setText(null);
+        textFieldTelefone.setValue(null);
+        textFieldEmail.setText(null);
+        textFieldDataNascimento.setText(null);
+        comboBoxSexo.setSelectedItem(null);
+        textFieldCelular.setText(null);
+        textFieldUsuario.setText(null);
+        textFieldSenha.setText(null);
     }
 
     public boolean checacampos(String str) {
         str = "";
 
-        if (jtnome.getText().trim().isEmpty()) {
+        if (textFieldNomeCompleto.getText().trim().isEmpty()) {
             str += "Nome\n";
         }
 
-        if (jtdatanascimento.getText().equals("  /  /    ")) {
+        if (textFieldDataNascimento.getText().equals("  /  /    ")) {
             str += "Data de Nascimento\n";
 
         }
 
-        if (jcsexo.getSelectedItem() == null) {
+        if (comboBoxSexo.getSelectedItem() == null) {
             str += "Sexo\n";
 
         }
 
-        if (jfcpf.getText().equals("   .   .   -  ")) {
+        if (textFieldCPF.getText().equals("   .   .   -  ")) {
             str += "CPF\n";
         }
 
-        if (jftelefone.getText().equals("(  )     -    ")) {
+        if (textFieldTelefone.getText().equals("(  )     -    ")) {
             str += "Telefone\n";
 
         }
-        if (jtemail.getText().trim().isEmpty()) {
+        if (textFieldEmail.getText().trim().isEmpty()) {
             str += "Email\n";
 
         }
 
-        if (jtrua.getText().trim().isEmpty()) {
+        if (textFieldRua.getText().trim().isEmpty()) {
             str += "Rua\n";
         }
-        if (jtnumero.getText().trim().isEmpty()) {
+        if (textFieldNumero.getText().trim().isEmpty()) {
             str += "Número\n";
         }
 
-        if (jtbairro.getText().trim().isEmpty()) {
+        if (textFieldBairro.getText().trim().isEmpty()) {
             str += "Bairro\n";
         }
-        if (jtcidade.getText().trim().isEmpty()) {
+        if (textFieldCidade.getText().trim().isEmpty()) {
             str += "Cidade\n";
 
         }
 
-        if (jfcep.getText().equals("     -   ")) {
+        if (textFieldCEP.getText().equals("     -   ")) {
             str += "CEP\n";
 
         }
 
-        if (jcestado.getSelectedItem() == null) {
+        if (comboBoxUF.getSelectedItem() == null) {
             str += "Estado\n";
 
         }
 
-        if (jtusuario.getText().trim().isEmpty()) {
+        if (textFieldUsuario.getText().trim().isEmpty()) {
             str += "Usuario\n";
 
         }
 
-        if (jtsenha.getText().trim().isEmpty()) {
+        if (textFieldSenha.getText().trim().isEmpty()) {
             str += "Senha\n";
 
         }
@@ -990,8 +990,8 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
     }
 
     private void limparTabelaFuncionario() {
-        DefaultTableModel modelo = (DefaultTableModel) jtfuncionario.getModel();
-        for (int i = jtfuncionario.getRowCount() - 1; i >= 0; --i) {
+        DefaultTableModel modelo = (DefaultTableModel) tableFuncionarios.getModel();
+        for (int i = tableFuncionarios.getRowCount() - 1; i >= 0; --i) {
             modelo.removeRow(i);
         }
 

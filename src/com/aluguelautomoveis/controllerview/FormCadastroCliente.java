@@ -37,53 +37,53 @@ public class FormCadastroCliente extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jtnome = new javax.swing.JTextField();
+        textFieldNomeCliente = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jtdatanascimento = new javax.swing.JFormattedTextField();
+        textFormattedDataNascimento = new javax.swing.JFormattedTextField();
         jLabel4 = new javax.swing.JLabel();
-        jcsexo = new javax.swing.JComboBox();
+        textFieldSexo = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
-        jfcpf = new javax.swing.JFormattedTextField();
+        textFormattedCPF = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
-        jftelefone = new javax.swing.JFormattedTextField();
+        textFormattedTelefone = new javax.swing.JFormattedTextField();
         jLabel7 = new javax.swing.JLabel();
-        jfcelular = new javax.swing.JFormattedTextField();
+        textFormatedCelular = new javax.swing.JFormattedTextField();
         jLabel9 = new javax.swing.JLabel();
-        jtemail = new javax.swing.JTextField();
+        textFieldEmail = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jtcnh = new javax.swing.JTextField();
+        textFieldCNH = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jctipo = new javax.swing.JComboBox();
-        jtcodigo = new javax.swing.JTextField();
+        comboBoxTipo = new javax.swing.JComboBox();
+        textFieldCodigoCliente = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jtrua = new javax.swing.JTextField();
+        textFieldLogradouro = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        jtnumero = new javax.swing.JTextField();
+        textFieldNumero = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jtcomplemento = new javax.swing.JTextField();
+        textFieldComplemento = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        jtbairro = new javax.swing.JTextField();
+        textFieldBairro = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        jtcidade = new javax.swing.JTextField();
+        textFieldCidade = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jfcep = new javax.swing.JFormattedTextField();
+        textFormattedCEP = new javax.swing.JFormattedTextField();
         jLabel18 = new javax.swing.JLabel();
         jcestado = new javax.swing.JComboBox();
-        jbinserir = new javax.swing.JButton();
-        jbexcluir = new javax.swing.JButton();
-        jbatualizar = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jcbusca = new javax.swing.JCheckBox();
-        jfcpfbusca = new javax.swing.JFormattedTextField();
-        jbbuscacliente = new javax.swing.JButton();
+        buttonInserirCliente = new javax.swing.JButton();
+        buttonExcluirCliente = new javax.swing.JButton();
+        buttonAtualizarCliente = new javax.swing.JButton();
+        buttonSair = new javax.swing.JButton();
+        buttonCliente = new javax.swing.JButton();
+        checkBoxBusca = new javax.swing.JCheckBox();
+        textFormattedCPFBusca = new javax.swing.JFormattedTextField();
+        buttonBuscarPorCPF = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtclientes = new javax.swing.JTable();
-        jbbuscartodos = new javax.swing.JButton();
-        jbeditarcliente = new javax.swing.JButton();
-        jbRelatorio = new javax.swing.JButton();
+        tableClientes = new javax.swing.JTable();
+        buttonBuscarTodosClientes = new javax.swing.JButton();
+        buttonEditarClienteTable = new javax.swing.JButton();
+        buttonRelatotorioCliente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 700));
@@ -98,9 +98,9 @@ public class FormCadastroCliente extends javax.swing.JFrame {
 
         jLabel1.setText("Nome Completo:");
 
-        jtnome.addActionListener(new java.awt.event.ActionListener() {
+        textFieldNomeCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtnomeActionPerformed(evt);
+                textFieldNomeClienteActionPerformed(evt);
             }
         });
 
@@ -109,26 +109,26 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         jLabel3.setText("Código:");
 
         try {
-            jtdatanascimento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            textFormattedDataNascimento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jtdatanascimento.addActionListener(new java.awt.event.ActionListener() {
+        textFormattedDataNascimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtdatanascimentoActionPerformed(evt);
+                textFormattedDataNascimentoActionPerformed(evt);
             }
         });
 
         jLabel4.setText("Sexo:");
 
-        jcsexo.setMaximumRowCount(3);
-        jcsexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Feminino", "Masculino", " " }));
-        jcsexo.setSelectedIndex(-1);
+        textFieldSexo.setMaximumRowCount(3);
+        textFieldSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Feminino", "Masculino", " " }));
+        textFieldSexo.setSelectedIndex(-1);
 
         jLabel5.setText("CPF:");
 
         try {
-            jfcpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            textFormattedCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -136,7 +136,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         jLabel6.setText("Telefone:");
 
         try {
-            jftelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
+            textFormattedTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -144,7 +144,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         jLabel7.setText("Celular:");
 
         try {
-            jfcelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
+            textFormatedCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -155,11 +155,11 @@ public class FormCadastroCliente extends javax.swing.JFrame {
 
         jLabel11.setText("Tipo:");
 
-        jctipo.setMaximumRowCount(6);
-        jctipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "A", "B", "C", "D", "E", " " }));
-        jctipo.setSelectedIndex(-1);
+        comboBoxTipo.setMaximumRowCount(6);
+        comboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "A", "B", "C", "D", "E", " " }));
+        comboBoxTipo.setSelectedIndex(-1);
 
-        jtcodigo.setEnabled(false);
+        textFieldCodigoCliente.setEnabled(false);
 
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -172,25 +172,25 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                             .add(jLabel3)
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(1, 1, 1)
-                                .add(jtcodigo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 66, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                .add(textFieldCodigoCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 66, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jtnome, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 330, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(textFieldNomeCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 330, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jLabel1))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jtdatanascimento)))
+                            .add(textFormattedDataNascimento)))
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(1, 1, 1)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(2, 2, 2)
-                                .add(jftelefone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 103, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(textFormattedTelefone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 103, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(jfcelular, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 104, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(textFormatedCelular, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 104, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .add(18, 18, 18)
-                                .add(jtemail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 169, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .add(textFieldEmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 169, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(jLabel6)
                                 .add(59, 59, 59)
@@ -200,18 +200,18 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel10)
-                            .add(jtcnh, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 123, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                            .add(textFieldCNH, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 123, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 14, Short.MAX_VALUE)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jLabel11)
                     .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                        .add(jctipo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 71, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(comboBoxTipo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 71, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel4)
-                            .add(jcsexo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                            .add(textFieldSexo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 18, Short.MAX_VALUE)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jfcpf, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 123, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(textFormattedCPF, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 123, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jLabel5))
                 .addContainerGap())
         );
@@ -228,17 +228,17 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                                     .add(jLabel1))
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                    .add(jtnome, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(jtdatanascimento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(jtcodigo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                    .add(textFieldNomeCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(textFormattedDataNascimento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(textFieldCodigoCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                                     .add(jLabel5)
                                     .add(jLabel4))
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                    .add(jfcpf, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(jcsexo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                                    .add(textFormattedCPF, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(textFieldSexo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(jLabel6)
@@ -247,14 +247,14 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                             .add(jLabel10))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jftelefone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jfcelular, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jtemail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jtcnh, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                            .add(textFormattedTelefone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(textFormatedCelular, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(textFieldEmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(textFieldCNH, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(jLabel11)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jctipo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(comboBoxTipo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .add(0, 14, Short.MAX_VALUE))
         );
 
@@ -270,10 +270,16 @@ public class FormCadastroCliente extends javax.swing.JFrame {
 
         jLabel16.setText("Cidade");
 
+        textFieldCidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldCidadeActionPerformed(evt);
+            }
+        });
+
         jLabel17.setText("CEP");
 
         try {
-            jfcep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###-###")));
+            textFormattedCEP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###-###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -293,28 +299,28 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel12)
                             .add(jLabel15)
-                            .add(jtbairro))
+                            .add(textFieldBairro))
                         .add(18, 18, 18)
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jtcidade, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 152, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(textFieldCidade, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 152, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jLabel16))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jfcep, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 94, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(textFormattedCEP, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 94, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jLabel17))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel18)
                             .add(jcestado, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                     .add(jPanel2Layout.createSequentialGroup()
-                        .add(jtrua)
+                        .add(textFieldLogradouro)
                         .add(18, 18, 18)
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jtnumero, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(textFieldNumero, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jLabel13))
                         .add(18, 18, 18)
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jtcomplemento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 52, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(textFieldComplemento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 52, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jLabel14))))
                 .addContainerGap())
         );
@@ -327,9 +333,9 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                     .add(jLabel14))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jtrua, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jtnumero, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jtcomplemento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(textFieldLogradouro, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(textFieldNumero, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(textFieldComplemento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel15)
@@ -338,72 +344,72 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                     .add(jLabel18))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jtbairro, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jtcidade, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jfcep, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(textFieldBairro, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(textFieldCidade, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(textFormattedCEP, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jcestado, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
         );
 
-        jbinserir.setText("Inserir Cliente");
-        jbinserir.addActionListener(new java.awt.event.ActionListener() {
+        buttonInserirCliente.setText("Inserir Cliente");
+        buttonInserirCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbinserirActionPerformed(evt);
+                buttonInserirClienteActionPerformed(evt);
             }
         });
 
-        jbexcluir.setText("Excluir Cliente");
-        jbexcluir.setEnabled(false);
-        jbexcluir.addActionListener(new java.awt.event.ActionListener() {
+        buttonExcluirCliente.setText("Excluir Cliente");
+        buttonExcluirCliente.setEnabled(false);
+        buttonExcluirCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbexcluirActionPerformed(evt);
+                buttonExcluirClienteActionPerformed(evt);
             }
         });
 
-        jbatualizar.setText("Atualizar Cliente");
-        jbatualizar.setEnabled(false);
-        jbatualizar.addActionListener(new java.awt.event.ActionListener() {
+        buttonAtualizarCliente.setText("Atualizar Cliente");
+        buttonAtualizarCliente.setEnabled(false);
+        buttonAtualizarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbatualizarActionPerformed(evt);
+                buttonAtualizarClienteActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Sair");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        buttonSair.setText("Sair");
+        buttonSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                buttonSairActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Limpar Cliente");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonCliente.setText("Limpar Cliente");
+        buttonCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttonClienteActionPerformed(evt);
             }
         });
 
-        jcbusca.setText("Buscar Cliente");
-        jcbusca.addActionListener(new java.awt.event.ActionListener() {
+        checkBoxBusca.setText("Buscar Cliente");
+        checkBoxBusca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcbuscaActionPerformed(evt);
+                checkBoxBuscaActionPerformed(evt);
             }
         });
 
         try {
-            jfcpfbusca.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            textFormattedCPFBusca.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jfcpfbusca.setEnabled(false);
+        textFormattedCPFBusca.setEnabled(false);
 
-        jbbuscacliente.setText("Buscar");
-        jbbuscacliente.setEnabled(false);
-        jbbuscacliente.addActionListener(new java.awt.event.ActionListener() {
+        buttonBuscarPorCPF.setText("Buscar");
+        buttonBuscarPorCPF.setEnabled(false);
+        buttonBuscarPorCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbbuscaclienteActionPerformed(evt);
+                buttonBuscarPorCPFActionPerformed(evt);
             }
         });
 
-        jtclientes.setModel(new javax.swing.table.DefaultTableModel(
+        tableClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -419,43 +425,43 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jtclientes.getTableHeader().setReorderingAllowed(false);
-        jtclientes.addMouseListener(new java.awt.event.MouseAdapter() {
+        tableClientes.getTableHeader().setReorderingAllowed(false);
+        tableClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jtclientesMouseClicked(evt);
+                tableClientesMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jtclientes);
-        if (jtclientes.getColumnModel().getColumnCount() > 0) {
-            jtclientes.getColumnModel().getColumn(0).setResizable(false);
-            jtclientes.getColumnModel().getColumn(1).setResizable(false);
-            jtclientes.getColumnModel().getColumn(2).setResizable(false);
-            jtclientes.getColumnModel().getColumn(3).setResizable(false);
-            jtclientes.getColumnModel().getColumn(4).setResizable(false);
-            jtclientes.getColumnModel().getColumn(5).setResizable(false);
+        jScrollPane1.setViewportView(tableClientes);
+        if (tableClientes.getColumnModel().getColumnCount() > 0) {
+            tableClientes.getColumnModel().getColumn(0).setResizable(false);
+            tableClientes.getColumnModel().getColumn(1).setResizable(false);
+            tableClientes.getColumnModel().getColumn(2).setResizable(false);
+            tableClientes.getColumnModel().getColumn(3).setResizable(false);
+            tableClientes.getColumnModel().getColumn(4).setResizable(false);
+            tableClientes.getColumnModel().getColumn(5).setResizable(false);
         }
 
-        jbbuscartodos.setText("Buscar Todos");
-        jbbuscartodos.setEnabled(false);
-        jbbuscartodos.addActionListener(new java.awt.event.ActionListener() {
+        buttonBuscarTodosClientes.setText("Buscar Todos");
+        buttonBuscarTodosClientes.setEnabled(false);
+        buttonBuscarTodosClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbbuscartodosActionPerformed(evt);
+                buttonBuscarTodosClientesActionPerformed(evt);
             }
         });
 
-        jbeditarcliente.setText("Editar Cliente");
-        jbeditarcliente.setEnabled(false);
-        jbeditarcliente.addActionListener(new java.awt.event.ActionListener() {
+        buttonEditarClienteTable.setText("Editar Cliente");
+        buttonEditarClienteTable.setEnabled(false);
+        buttonEditarClienteTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbeditarclienteActionPerformed(evt);
+                buttonEditarClienteTableActionPerformed(evt);
             }
         });
 
-        jbRelatorio.setText("Relatório");
-        jbRelatorio.setEnabled(false);
-        jbRelatorio.addActionListener(new java.awt.event.ActionListener() {
+        buttonRelatotorioCliente.setText("Relatório");
+        buttonRelatotorioCliente.setEnabled(false);
+        buttonRelatotorioCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbRelatorioActionPerformed(evt);
+                buttonRelatotorioClienteActionPerformed(evt);
             }
         });
 
@@ -467,30 +473,30 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                 .addContainerGap()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
-                        .add(jcbusca)
+                        .add(checkBoxBusca)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jfcpfbusca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(textFormattedCPFBusca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jbbuscacliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 94, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(buttonBuscarPorCPF, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 94, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jbbuscartodos)
+                        .add(buttonBuscarTodosClientes)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jbeditarcliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 102, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(buttonEditarClienteTable, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 102, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(0, 0, Short.MAX_VALUE))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(layout.createSequentialGroup()
-                        .add(jbinserir)
+                        .add(buttonInserirCliente)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jbexcluir)
+                        .add(buttonExcluirCliente)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jbatualizar)
+                        .add(buttonAtualizarCliente)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jbRelatorio, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(buttonRelatotorioCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jButton1)
+                        .add(buttonCliente)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jButton4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(buttonSair, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jScrollPane1))
                 .addContainerGap())
         );
@@ -503,21 +509,21 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                 .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jcbusca)
-                    .add(jfcpfbusca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jbbuscacliente)
-                    .add(jbbuscartodos)
-                    .add(jbeditarcliente))
+                    .add(checkBoxBusca)
+                    .add(textFormattedCPFBusca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(buttonBuscarPorCPF)
+                    .add(buttonBuscarTodosClientes)
+                    .add(buttonEditarClienteTable))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jButton4)
-                    .add(jButton1)
-                    .add(jbinserir)
-                    .add(jbexcluir)
-                    .add(jbatualizar)
-                    .add(jbRelatorio))
+                    .add(buttonSair)
+                    .add(buttonCliente)
+                    .add(buttonInserirCliente)
+                    .add(buttonExcluirCliente)
+                    .add(buttonAtualizarCliente)
+                    .add(buttonRelatotorioCliente))
                 .addContainerGap())
         );
 
@@ -525,61 +531,61 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtnomeActionPerformed
+    private void textFieldNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNomeClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtnomeActionPerformed
+    }//GEN-LAST:event_textFieldNomeClienteActionPerformed
 
-    private void jtdatanascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtdatanascimentoActionPerformed
+    private void textFormattedDataNascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFormattedDataNascimentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtdatanascimentoActionPerformed
+    }//GEN-LAST:event_textFormattedDataNascimentoActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSairActionPerformed
         this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_buttonSairActionPerformed
 
-    private void jbbuscaclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscaclienteActionPerformed
+    private void buttonBuscarPorCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarPorCPFActionPerformed
         limparTabelaCliente();
-        cliente = ClienteDao.getCliente(jfcpfbusca.getText());
+        cliente = ClienteDao.getCliente(textFormattedCPFBusca.getText());
 
-        DefaultTableModel modelo = (DefaultTableModel) jtclientes.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tableClientes.getModel();
         if (cliente != null) {
             modelo.addRow(cliente.getCliente());
-            jfcpfbusca.setText(null);
+            textFormattedCPFBusca.setText(null);
         } else {
             JOptionPane.showMessageDialog(null, "Cliente Inexistente!\nNão foi possivel encontrar o Cliente especificado!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
         }
-        jfcpfbusca.setText(null);
+        textFormattedCPFBusca.setText(null);
 
 
-    }//GEN-LAST:event_jbbuscaclienteActionPerformed
+    }//GEN-LAST:event_buttonBuscarPorCPFActionPerformed
 
-    private void jbinserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbinserirActionPerformed
+    private void buttonInserirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInserirClienteActionPerformed
         if (checacampos(null) == true) {
             double numercliente = Math.round(Math.random() * 1000);
             double random = checanumerocliente(numercliente);
-            jtcodigo.setText(Double.toString(random));
+            textFieldCodigoCliente.setText(Double.toString(random));
             Cliente cliente = new Cliente();
-            cliente.setCodigo(jtcodigo.getText());
-            cliente.setNome(jtnome.getText());
-            cliente.setCpf(jfcpf.getText());
-            cliente.setRua(jtrua.getText());
-            cliente.setCelular(jfcelular.getText());
+            cliente.setCodigo(textFieldCodigoCliente.getText());
+            cliente.setNome(textFieldNomeCliente.getText());
+            cliente.setCpf(textFormattedCPF.getText());
+            cliente.setRua(textFieldLogradouro.getText());
+            cliente.setCelular(textFormatedCelular.getText());
             try {
-                cliente.setDatanascimento(Utils.StrToDate(jtdatanascimento.getText()));
+                cliente.setDatanascimento(Utils.StrToDate(textFormattedDataNascimento.getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(FormCadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
             }
-            cliente.setNumero(jtnumero.getText());
-            cliente.setComplemento(jtcomplemento.getText());
-            cliente.setBairro(jtbairro.getText());
-            cliente.setCidade(jtcidade.getText());
+            cliente.setNumero(textFieldNumero.getText());
+            cliente.setComplemento(textFieldComplemento.getText());
+            cliente.setBairro(textFieldBairro.getText());
+            cliente.setCidade(textFieldCidade.getText());
             cliente.setEstado(jcestado.getSelectedItem().toString());
-            cliente.setCep(jfcep.getText());
-            cliente.setTelefone(jftelefone.getText());
-            cliente.setEmail(jtemail.getText());
-            cliente.setHabilitacao(jtcnh.getText());
-            cliente.setTipo(jctipo.getSelectedItem().toString());
-            cliente.setSexo(jcsexo.getSelectedItem().toString());
+            cliente.setCep(textFormattedCEP.getText());
+            cliente.setTelefone(textFormattedTelefone.getText());
+            cliente.setEmail(textFieldEmail.getText());
+            cliente.setHabilitacao(textFieldCNH.getText());
+            cliente.setTipo(comboBoxTipo.getSelectedItem().toString());
+            cliente.setSexo(textFieldSexo.getSelectedItem().toString());
 
             if (ClienteDao.getCliente(cliente.getCpf()) == null) {
 
@@ -593,129 +599,129 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_jbinserirActionPerformed
+    }//GEN-LAST:event_buttonInserirClienteActionPerformed
 
-    private void jcbuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbuscaActionPerformed
+    private void checkBoxBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxBuscaActionPerformed
         limpacampos();
         limparTabelaCliente();
-        if (jcbusca.isSelected()) {
-            jbbuscacliente.setEnabled(true);
-            jbexcluir.setEnabled(false);
-            jbatualizar.setEnabled(false);
-            jbinserir.setEnabled(false);
-            jfcpfbusca.setEnabled(true);
-            jbbuscartodos.setEnabled(true);
-            jtnome.setEnabled(false);
-            jfcpf.setEnabled(false);
-            jtrua.setEnabled(false);
-            jtnumero.setEnabled(false);
-            jtcomplemento.setEnabled(false);
-            jtbairro.setEnabled(false);
-            jtcidade.setEnabled(false);
+        if (checkBoxBusca.isSelected()) {
+            buttonBuscarPorCPF.setEnabled(true);
+            buttonExcluirCliente.setEnabled(false);
+            buttonAtualizarCliente.setEnabled(false);
+            buttonInserirCliente.setEnabled(false);
+            textFormattedCPFBusca.setEnabled(true);
+            buttonBuscarTodosClientes.setEnabled(true);
+            textFieldNomeCliente.setEnabled(false);
+            textFormattedCPF.setEnabled(false);
+            textFieldLogradouro.setEnabled(false);
+            textFieldNumero.setEnabled(false);
+            textFieldComplemento.setEnabled(false);
+            textFieldBairro.setEnabled(false);
+            textFieldCidade.setEnabled(false);
             jcestado.setEnabled(false);
-            jfcep.setEnabled(false);
-            jftelefone.setEnabled(false);
-            jtemail.setEnabled(false);
-            jtcnh.setEnabled(false);
-            jctipo.setEnabled(false);
-            jtdatanascimento.setEnabled(false);
-            jcsexo.setEnabled(false);
-            jfcelular.setEnabled(false);
+            textFormattedCEP.setEnabled(false);
+            textFormattedTelefone.setEnabled(false);
+            textFieldEmail.setEnabled(false);
+            textFieldCNH.setEnabled(false);
+            comboBoxTipo.setEnabled(false);
+            textFormattedDataNascimento.setEnabled(false);
+            textFieldSexo.setEnabled(false);
+            textFormatedCelular.setEnabled(false);
         } else {
 
             {
-                jbeditarcliente.setEnabled(false);
-                jbinserir.setEnabled(true);
-                jbexcluir.setEnabled(false);
-                jbatualizar.setEnabled(false);
-                jbbuscacliente.setEnabled(false);
-                jfcpfbusca.setEnabled(false);
-                jbbuscartodos.setEnabled(false);
-                jtnome.setEnabled(true);
-                jfcpf.setEnabled(true);
-                jtrua.setEnabled(true);
-                jtnumero.setEnabled(true);
-                jtcomplemento.setEnabled(true);
-                jtbairro.setEnabled(true);
-                jtcidade.setEnabled(true);
+                buttonEditarClienteTable.setEnabled(false);
+                buttonInserirCliente.setEnabled(true);
+                buttonExcluirCliente.setEnabled(false);
+                buttonAtualizarCliente.setEnabled(false);
+                buttonBuscarPorCPF.setEnabled(false);
+                textFormattedCPFBusca.setEnabled(false);
+                buttonBuscarTodosClientes.setEnabled(false);
+                textFieldNomeCliente.setEnabled(true);
+                textFormattedCPF.setEnabled(true);
+                textFieldLogradouro.setEnabled(true);
+                textFieldNumero.setEnabled(true);
+                textFieldComplemento.setEnabled(true);
+                textFieldBairro.setEnabled(true);
+                textFieldCidade.setEnabled(true);
                 jcestado.setEnabled(true);
-                jfcep.setEnabled(true);
-                jftelefone.setEnabled(true);
-                jtemail.setEnabled(true);
-                jtcnh.setEnabled(true);
-                jctipo.setEnabled(true);
-                jtdatanascimento.setEnabled(true);
-                jcsexo.setEnabled(true);
-                jfcelular.setEnabled(true);
+                textFormattedCEP.setEnabled(true);
+                textFormattedTelefone.setEnabled(true);
+                textFieldEmail.setEnabled(true);
+                textFieldCNH.setEnabled(true);
+                comboBoxTipo.setEnabled(true);
+                textFormattedDataNascimento.setEnabled(true);
+                textFieldSexo.setEnabled(true);
+                textFormatedCelular.setEnabled(true);
             }
         }
-    }//GEN-LAST:event_jcbuscaActionPerformed
+    }//GEN-LAST:event_checkBoxBuscaActionPerformed
 
-    private void jbexcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbexcluirActionPerformed
-        String cpf = jfcpf.getText();
+    private void buttonExcluirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExcluirClienteActionPerformed
+        String cpf = textFormattedCPF.getText();
         if (ClienteDao.getCliente(cpf) != null) {
 
             int resposta = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover este cliente?", "Remover", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if (resposta == 0) {
                 ClienteDao.removerCliente(cpf);
                 JOptionPane.showMessageDialog(null, "O cliente foi removido com sucesso!!!");
-                jcbusca.setSelected(false);
-                jbeditarcliente.setEnabled(false);
-                jbexcluir.setEnabled(false);
-                jbatualizar.setEnabled(false);
-                jbinserir.setEnabled(true);
+                checkBoxBusca.setSelected(false);
+                buttonEditarClienteTable.setEnabled(false);
+                buttonExcluirCliente.setEnabled(false);
+                buttonAtualizarCliente.setEnabled(false);
+                buttonInserirCliente.setEnabled(true);
                 limparTabelaCliente();
                 limpacampos();
             } else {
                 JOptionPane.showMessageDialog(null, "O cliente não foi removido.");
             }
         }
-    }//GEN-LAST:event_jbexcluirActionPerformed
+    }//GEN-LAST:event_buttonExcluirClienteActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
 
     }//GEN-LAST:event_formWindowActivated
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buttonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonClienteActionPerformed
         limpacampos();
         limparTabelaCliente();
-        jbatualizar.setEnabled(false);
-        jbexcluir.setEnabled(false);
-        jbinserir.setEnabled(true);
-        jcbusca.setSelected(false);
-        jbeditarcliente.setEnabled(false);
-        jbinserir.setEnabled(true);
-        jbexcluir.setEnabled(false);
-        jbatualizar.setEnabled(false);
-        jbbuscacliente.setEnabled(false);
-        jfcpfbusca.setEnabled(false);
-        jbbuscartodos.setEnabled(false);
-        jtnome.setEnabled(true);
-        jfcpf.setEnabled(true);
-        jtrua.setEnabled(true);
-        jtnumero.setEnabled(true);
-        jtcomplemento.setEnabled(true);
-        jtbairro.setEnabled(true);
-        jtcidade.setEnabled(true);
+        buttonAtualizarCliente.setEnabled(false);
+        buttonExcluirCliente.setEnabled(false);
+        buttonInserirCliente.setEnabled(true);
+        checkBoxBusca.setSelected(false);
+        buttonEditarClienteTable.setEnabled(false);
+        buttonInserirCliente.setEnabled(true);
+        buttonExcluirCliente.setEnabled(false);
+        buttonAtualizarCliente.setEnabled(false);
+        buttonBuscarPorCPF.setEnabled(false);
+        textFormattedCPFBusca.setEnabled(false);
+        buttonBuscarTodosClientes.setEnabled(false);
+        textFieldNomeCliente.setEnabled(true);
+        textFormattedCPF.setEnabled(true);
+        textFieldLogradouro.setEnabled(true);
+        textFieldNumero.setEnabled(true);
+        textFieldComplemento.setEnabled(true);
+        textFieldBairro.setEnabled(true);
+        textFieldCidade.setEnabled(true);
         jcestado.setEnabled(true);
-        jfcep.setEnabled(true);
-        jftelefone.setEnabled(true);
-        jtemail.setEnabled(true);
-        jtcnh.setEnabled(true);
-        jctipo.setEnabled(true);
-        jtdatanascimento.setEnabled(true);
-        jcsexo.setEnabled(true);
-        jfcelular.setEnabled(true);
+        textFormattedCEP.setEnabled(true);
+        textFormattedTelefone.setEnabled(true);
+        textFieldEmail.setEnabled(true);
+        textFieldCNH.setEnabled(true);
+        comboBoxTipo.setEnabled(true);
+        textFormattedDataNascimento.setEnabled(true);
+        textFieldSexo.setEnabled(true);
+        textFormatedCelular.setEnabled(true);
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_buttonClienteActionPerformed
 
-    private void jbbuscartodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscartodosActionPerformed
-        jfcpfbusca.setText("");
+    private void buttonBuscarTodosClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarTodosClientesActionPerformed
+        textFormattedCPFBusca.setText("");
         limparTabelaCliente();
 
         ArrayList<Cliente> lista = ClienteDao.getTodosClientes();
 
-        DefaultTableModel modelo = (DefaultTableModel) jtclientes.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tableClientes.getModel();
 
         if (!lista.isEmpty()) {
 
@@ -729,114 +735,118 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_jbbuscartodosActionPerformed
+    }//GEN-LAST:event_buttonBuscarTodosClientesActionPerformed
 
-    private void jtclientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtclientesMouseClicked
+    private void tableClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableClientesMouseClicked
         if (okcliente != "ok") {
-            if (jtclientes.getSelectedRow() >= -1) {
-                jbeditarcliente.setEnabled(true);
-                jbRelatorio.setEnabled(true);
-                jbatualizar.setEnabled(false);
-                jbexcluir.setEnabled(false);
-                jbbuscacliente.setEnabled(false);
-                jbbuscartodos.setEnabled(false);
+            if (tableClientes.getSelectedRow() >= -1) {
+                buttonEditarClienteTable.setEnabled(true);
+                buttonRelatotorioCliente.setEnabled(true);
+                buttonAtualizarCliente.setEnabled(false);
+                buttonExcluirCliente.setEnabled(false);
+                buttonBuscarPorCPF.setEnabled(false);
+                buttonBuscarTodosClientes.setEnabled(false);
             } else {
 
             }
         }
-    }//GEN-LAST:event_jtclientesMouseClicked
+    }//GEN-LAST:event_tableClientesMouseClicked
 
-    private void jbeditarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbeditarclienteActionPerformed
-        int linha = jtclientes.getSelectedRow();
-        String cpf = ((String) jtclientes.getModel().getValueAt(linha, 2));
+    private void buttonEditarClienteTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditarClienteTableActionPerformed
+        int linha = tableClientes.getSelectedRow();
+        String cpf = ((String) tableClientes.getModel().getValueAt(linha, 2));
         cliente = ClienteDao.getCliente(cpf);
-        jtcodigo.setText(cliente.getCodigo());
-        jtnome.setText(cliente.getNome());
-        jfcpf.setText(cliente.getCpf());
-        jtrua.setText(cliente.getRua());
-        jtnumero.setText(cliente.getNumero());
-        jtcomplemento.setText(cliente.getComplemento());
-        jtbairro.setText(cliente.getBairro());
-        jtcidade.setText(cliente.getCidade());
+        textFieldCodigoCliente.setText(cliente.getCodigo());
+        textFieldNomeCliente.setText(cliente.getNome());
+        textFormattedCPF.setText(cliente.getCpf());
+        textFieldLogradouro.setText(cliente.getRua());
+        textFieldNumero.setText(cliente.getNumero());
+        textFieldComplemento.setText(cliente.getComplemento());
+        textFieldBairro.setText(cliente.getBairro());
+        textFieldCidade.setText(cliente.getCidade());
         jcestado.setSelectedItem(cliente.getEstado());
-        jfcep.setText(cliente.getCep());
-        jftelefone.setValue(cliente.getTelefone());
-        jtemail.setText(cliente.getEmail());
-        jtcnh.setText(cliente.getHabilitacao());
-        jctipo.setSelectedItem(cliente.getTipo());
-        jtdatanascimento.setText(Utils.DateToStr(cliente.getDatanascimento()));
-        jcsexo.setSelectedItem(cliente.getSexo());
-        jfcelular.setText(cliente.getCelular());
-        jtnome.setEnabled(true);
-        jfcpf.setEnabled(true);
-        jtrua.setEnabled(true);
-        jtnumero.setEnabled(true);
-        jtcomplemento.setEnabled(true);
-        jtbairro.setEnabled(true);
-        jtcidade.setEnabled(true);
+        textFormattedCEP.setText(cliente.getCep());
+        textFormattedTelefone.setValue(cliente.getTelefone());
+        textFieldEmail.setText(cliente.getEmail());
+        textFieldCNH.setText(cliente.getHabilitacao());
+        comboBoxTipo.setSelectedItem(cliente.getTipo());
+        textFormattedDataNascimento.setText(Utils.DateToStr(cliente.getDatanascimento()));
+        textFieldSexo.setSelectedItem(cliente.getSexo());
+        textFormatedCelular.setText(cliente.getCelular());
+        textFieldNomeCliente.setEnabled(true);
+        textFormattedCPF.setEnabled(true);
+        textFieldLogradouro.setEnabled(true);
+        textFieldNumero.setEnabled(true);
+        textFieldComplemento.setEnabled(true);
+        textFieldBairro.setEnabled(true);
+        textFieldCidade.setEnabled(true);
         jcestado.setEnabled(true);
-        jfcep.setEnabled(true);
-        jftelefone.setEnabled(true);
-        jtemail.setEnabled(true);
-        jtcnh.setEnabled(true);
-        jctipo.setEnabled(true);
-        jtdatanascimento.setEnabled(true);
-        jcsexo.setEnabled(true);
-        jfcelular.setEnabled(true);
-        jcbusca.setSelected(false);
+        textFormattedCEP.setEnabled(true);
+        textFormattedTelefone.setEnabled(true);
+        textFieldEmail.setEnabled(true);
+        textFieldCNH.setEnabled(true);
+        comboBoxTipo.setEnabled(true);
+        textFormattedDataNascimento.setEnabled(true);
+        textFieldSexo.setEnabled(true);
+        textFormatedCelular.setEnabled(true);
+        checkBoxBusca.setSelected(false);
         limparTabelaCliente();
-        jbeditarcliente.setEnabled(false);
-        jbexcluir.setEnabled(true);
-        jbatualizar.setEnabled(true);
-    }//GEN-LAST:event_jbeditarclienteActionPerformed
+        buttonEditarClienteTable.setEnabled(false);
+        buttonExcluirCliente.setEnabled(true);
+        buttonAtualizarCliente.setEnabled(true);
+    }//GEN-LAST:event_buttonEditarClienteTableActionPerformed
 
-    private void jbatualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbatualizarActionPerformed
+    private void buttonAtualizarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAtualizarClienteActionPerformed
         limparTabelaCliente();
         if (checacampos(null) == true) {
             Cliente cliente = new Cliente();
-            cliente.setCodigo(jtcodigo.getText());
-            cliente.setNome(jtnome.getText());
-            cliente.setCpf(jfcpf.getText());
-            cliente.setRua(jtrua.getText());
-            cliente.setCelular(jfcelular.getText());
+            cliente.setCodigo(textFieldCodigoCliente.getText());
+            cliente.setNome(textFieldNomeCliente.getText());
+            cliente.setCpf(textFormattedCPF.getText());
+            cliente.setRua(textFieldLogradouro.getText());
+            cliente.setCelular(textFormatedCelular.getText());
             try {
-                cliente.setDatanascimento(Utils.StrToDate(jtdatanascimento.getText()));
+                cliente.setDatanascimento(Utils.StrToDate(textFormattedDataNascimento.getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(FormCadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
             }
-            cliente.setNumero(jtnumero.getText());
-            cliente.setComplemento(jtcomplemento.getText());
-            cliente.setBairro(jtbairro.getText());
-            cliente.setCidade(jtcidade.getText());
+            cliente.setNumero(textFieldNumero.getText());
+            cliente.setComplemento(textFieldComplemento.getText());
+            cliente.setBairro(textFieldBairro.getText());
+            cliente.setCidade(textFieldCidade.getText());
             cliente.setEstado(jcestado.getSelectedItem().toString());
-            cliente.setCep(jfcep.getText());
-            cliente.setTelefone(jftelefone.getText());
-            cliente.setEmail(jtemail.getText());
-            cliente.setHabilitacao(jtcnh.getText());
-            cliente.setTipo(jctipo.getSelectedItem().toString());
-            cliente.setSexo(jcsexo.getSelectedItem().toString());
+            cliente.setCep(textFormattedCEP.getText());
+            cliente.setTelefone(textFormattedTelefone.getText());
+            cliente.setEmail(textFieldEmail.getText());
+            cliente.setHabilitacao(textFieldCNH.getText());
+            cliente.setTipo(comboBoxTipo.getSelectedItem().toString());
+            cliente.setSexo(textFieldSexo.getSelectedItem().toString());
 
             ClienteDao.atualizarCliente(cliente);
             JOptionPane.showMessageDialog(null, "Cliente Atualizado com Sucesso!");
-            jcbusca.setSelected(false);
-            jbeditarcliente.setEnabled(false);
-            jbexcluir.setEnabled(false);
-            jbatualizar.setEnabled(false);
-            jbinserir.setEnabled(true);
+            checkBoxBusca.setSelected(false);
+            buttonEditarClienteTable.setEnabled(false);
+            buttonExcluirCliente.setEnabled(false);
+            buttonAtualizarCliente.setEnabled(false);
+            buttonInserirCliente.setEnabled(true);
             limpacampos();
 
         }
-    }//GEN-LAST:event_jbatualizarActionPerformed
+    }//GEN-LAST:event_buttonAtualizarClienteActionPerformed
 
-    private void jbRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRelatorioActionPerformed
+    private void buttonRelatotorioClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRelatotorioClienteActionPerformed
         FormRelCliente frc = new FormRelCliente();
         frc.setVisible(true);
-        int linha = jtclientes.getSelectedRow();
-        String cpf = ((String) jtclientes.getModel().getValueAt(linha, 0));
+        int linha = tableClientes.getSelectedRow();
+        String cpf = ((String) tableClientes.getModel().getValueAt(linha, 0));
         cliente = ClienteDao.getCliente(cpf);
         FormRelCliente.cliente = cliente;
 
-    }//GEN-LAST:event_jbRelatorioActionPerformed
+    }//GEN-LAST:event_buttonRelatotorioClienteActionPerformed
+
+    private void textFieldCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldCidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldCidadeActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -870,8 +880,17 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton buttonAtualizarCliente;
+    private javax.swing.JButton buttonBuscarPorCPF;
+    private javax.swing.JButton buttonBuscarTodosClientes;
+    private javax.swing.JButton buttonCliente;
+    private javax.swing.JButton buttonEditarClienteTable;
+    private javax.swing.JButton buttonExcluirCliente;
+    private javax.swing.JButton buttonInserirCliente;
+    private javax.swing.JButton buttonRelatotorioCliente;
+    private javax.swing.JButton buttonSair;
+    private javax.swing.JCheckBox checkBoxBusca;
+    private javax.swing.JComboBox comboBoxTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -892,110 +911,101 @@ public class FormCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton jbRelatorio;
-    private javax.swing.JButton jbatualizar;
-    private javax.swing.JButton jbbuscacliente;
-    private javax.swing.JButton jbbuscartodos;
-    private javax.swing.JButton jbeditarcliente;
-    private javax.swing.JButton jbexcluir;
-    private javax.swing.JButton jbinserir;
-    private javax.swing.JCheckBox jcbusca;
     private javax.swing.JComboBox jcestado;
-    private javax.swing.JComboBox jcsexo;
-    private javax.swing.JComboBox jctipo;
-    private javax.swing.JFormattedTextField jfcelular;
-    private javax.swing.JFormattedTextField jfcep;
-    private javax.swing.JFormattedTextField jfcpf;
-    private javax.swing.JFormattedTextField jfcpfbusca;
-    private javax.swing.JFormattedTextField jftelefone;
-    private javax.swing.JTextField jtbairro;
-    private javax.swing.JTextField jtcidade;
-    private javax.swing.JTable jtclientes;
-    private javax.swing.JTextField jtcnh;
-    private javax.swing.JTextField jtcodigo;
-    private javax.swing.JTextField jtcomplemento;
-    private javax.swing.JFormattedTextField jtdatanascimento;
-    private javax.swing.JTextField jtemail;
-    private javax.swing.JTextField jtnome;
-    private javax.swing.JTextField jtnumero;
-    private javax.swing.JTextField jtrua;
+    private javax.swing.JTable tableClientes;
+    private javax.swing.JTextField textFieldBairro;
+    private javax.swing.JTextField textFieldCNH;
+    private javax.swing.JTextField textFieldCidade;
+    private javax.swing.JTextField textFieldCodigoCliente;
+    private javax.swing.JTextField textFieldComplemento;
+    private javax.swing.JTextField textFieldEmail;
+    private javax.swing.JTextField textFieldLogradouro;
+    private javax.swing.JTextField textFieldNomeCliente;
+    private javax.swing.JTextField textFieldNumero;
+    private javax.swing.JComboBox textFieldSexo;
+    private javax.swing.JFormattedTextField textFormatedCelular;
+    private javax.swing.JFormattedTextField textFormattedCEP;
+    private javax.swing.JFormattedTextField textFormattedCPF;
+    private javax.swing.JFormattedTextField textFormattedCPFBusca;
+    private javax.swing.JFormattedTextField textFormattedDataNascimento;
+    private javax.swing.JFormattedTextField textFormattedTelefone;
     // End of variables declaration//GEN-END:variables
 
     public void limpacampos() {
-        jtcodigo.setText(null);
-        jtnome.setText(null);
-        jfcpf.setText(null);
-        jtrua.setText(null);
-        jtnumero.setText(null);
-        jtcomplemento.setText(null);
-        jtbairro.setText(null);
-        jtcidade.setText(null);
+        textFieldCodigoCliente.setText(null);
+        textFieldNomeCliente.setText(null);
+        textFormattedCPF.setText(null);
+        textFieldLogradouro.setText(null);
+        textFieldNumero.setText(null);
+        textFieldComplemento.setText(null);
+        textFieldBairro.setText(null);
+        textFieldCidade.setText(null);
         jcestado.setSelectedItem(null);
-        jfcep.setText(null);
-        jftelefone.setValue(null);
-        jtemail.setText(null);
-        jtcnh.setText(null);
-        jctipo.setSelectedItem(null);
-        jtdatanascimento.setText(null);
-        jcsexo.setSelectedItem(null);
-        jfcelular.setText(null);
+        textFormattedCEP.setText(null);
+        textFormattedTelefone.setValue(null);
+        textFieldEmail.setText(null);
+        textFieldCNH.setText(null);
+        comboBoxTipo.setSelectedItem(null);
+        textFormattedDataNascimento.setText(null);
+        textFieldSexo.setSelectedItem(null);
+        textFormatedCelular.setText(null);
     }
 
     public boolean checacampos(String str) {
         str = "";
 
-        if (jtnome.getText().trim().isEmpty()) {
+        if (textFieldNomeCliente.getText().trim().isEmpty()) {
             str += "Nome\n";
         }
 
-        if (jtdatanascimento.getText().equals("  /  /    ")) {
+        if (textFormattedDataNascimento.getText().equals("  /  /    ")) {
             str += "Data de Nascimento\n";
 
         }
 
-        if (jcsexo.getSelectedItem() == null) {
+        if (textFieldSexo.getSelectedItem() == null) {
             str += "Sexo\n";
 
         }
 
-        if (jfcpf.getText().equals("   .   .   -  ")) {
+        if (textFormattedCPF.getText().equals("   .   .   -  ")) {
             str += "CPF\n";
         }
 
-        if (jftelefone.getText().equals("(  )     -    ")) {
+        if (textFormattedTelefone.getText().equals("(  )     -    ")) {
             str += "Telefone\n";
 
         }
-        if (jtemail.getText().trim().isEmpty()) {
+        if (textFieldEmail.getText().trim().isEmpty()) {
             str += "Email\n";
 
         }
-        if (jtcnh.getText().trim().isEmpty()) {
+        if (textFieldCNH.getText().trim().isEmpty()) {
             str += "CNH\n";
 
         }
 
-        if (jctipo.getSelectedItem() == null) {
+        if (comboBoxTipo.getSelectedItem() == null) {
             str += "Tipo\n";
 
         }
 
-        if (jtrua.getText().trim().isEmpty()) {
+        if (textFieldLogradouro.getText().trim().isEmpty()) {
             str += "Rua\n";
         }
-        if (jtnumero.getText().trim().isEmpty()) {
+        if (textFieldNumero.getText().trim().isEmpty()) {
             str += "Número\n";
         }
 
-        if (jtbairro.getText().trim().isEmpty()) {
+        if (textFieldBairro.getText().trim().isEmpty()) {
             str += "Bairro\n";
         }
-        if (jtcidade.getText().trim().isEmpty()) {
+        if (textFieldCidade.getText().trim().isEmpty()) {
             str += "Cidade\n";
 
         }
 
-        if (jfcep.getText().equals("     -   ")) {
+        if (textFormattedCEP.getText().equals("     -   ")) {
             str += "CEP\n";
 
         }
@@ -1016,8 +1026,8 @@ public class FormCadastroCliente extends javax.swing.JFrame {
     }
 
     private void limparTabelaCliente() {
-        DefaultTableModel modelo = (DefaultTableModel) jtclientes.getModel();
-        for (int i = jtclientes.getRowCount() - 1; i >= 0; --i) {
+        DefaultTableModel modelo = (DefaultTableModel) tableClientes.getModel();
+        for (int i = tableClientes.getRowCount() - 1; i >= 0; --i) {
             modelo.removeRow(i);
         }
 

@@ -41,7 +41,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel1" max="32767" attributes="0"/>
-                                  <Component id="jtnumaluguel" max="32767" attributes="0"/>
+                                  <Component id="textFieldNumeroLocacao" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -54,20 +54,20 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel2" max="32767" attributes="0"/>
-                                  <Component id="jtdataaluguel" min="-2" pref="94" max="-2" attributes="0"/>
+                                  <Component id="textFieldDataLocacao" min="-2" pref="94" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jfdatadevolucao" max="32767" attributes="0"/>
-                                  <Component id="jtdatadevolucao" max="32767" attributes="0"/>
+                                  <Component id="textFormattedDataDevolucao" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel5" max="32767" attributes="0"/>
-                                  <Component id="jtvalorlocacao" min="-2" pref="98" max="-2" attributes="0"/>
+                                  <Component id="textFieldValorLocacao" min="-2" pref="98" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
-                              <Component id="jbcalcularvalorlocacao" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonCalcularValor" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jbconfirmarclocacao" min="-2" pref="143" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -86,7 +86,7 @@
               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-              <Component id="jtnumaluguel" min="-2" max="-2" attributes="0"/>
+              <Component id="textFieldNumeroLocacao" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -96,7 +96,7 @@
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jbconfirmarclocacao" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jbcalcularvalorlocacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="buttonCalcularValor" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jbsair" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -109,9 +109,9 @@
                       </Group>
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jtdataaluguel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtdatadevolucao" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtvalorlocacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textFieldDataLocacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textFormattedDataDevolucao" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textFieldValorLocacao" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -136,17 +136,17 @@
               <Component id="jScrollPane1" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="jbconfirmarcliente" min="-2" pref="133" max="-2" attributes="0"/>
+                  <Component id="buttonConfirmarCliente" min="-2" pref="133" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jfcpfbusca" min="-2" pref="116" max="-2" attributes="0"/>
+                          <Component id="textFieldCpf" min="-2" pref="116" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jbbuscarcliente" min="-2" max="-2" attributes="0"/>
+                          <Component id="buttonBuscarCliente" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jbbuscatdsclientes" min="-2" max="-2" attributes="0"/>
+                          <Component id="buttonBuscarTodosClientes" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -159,14 +159,14 @@
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jfcpfbusca" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jbbuscarcliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jbbuscatdsclientes" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldCpf" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonBuscarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonBuscarTodosClientes" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="114" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jbconfirmarcliente" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonConfirmarCliente" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -179,7 +179,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jtclientes">
+            <Component class="javax.swing.JTable" name="tableClientes">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="6" rowCount="0">
@@ -230,7 +230,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jtclientesMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableClientesMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>
@@ -240,36 +240,36 @@
             <Property name="text" type="java.lang.String" value="CPF:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jfcpfbusca">
+        <Component class="javax.swing.JFormattedTextField" name="textFieldCpf">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="###.###.###-##" subtype="-1" type="5"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jbbuscarcliente">
+        <Component class="javax.swing.JButton" name="buttonBuscarCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar Cliente "/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbbuscarclienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBuscarClienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jbbuscatdsclientes">
+        <Component class="javax.swing.JButton" name="buttonBuscarTodosClientes">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar Todos"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbbuscatdsclientesActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBuscarTodosClientesActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jbconfirmarcliente">
+        <Component class="javax.swing.JButton" name="buttonConfirmarCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Confirmar Cliente"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbconfirmarclienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonConfirmarClienteActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -296,13 +296,13 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jbbuscatdsautos" max="32767" attributes="0"/>
-                              <Component id="jbuscarauto" max="32767" attributes="0"/>
+                              <Component id="buttonBuscarTodosAutomoveis" max="32767" attributes="0"/>
+                              <Component id="buttonBuscarAutomovel" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jbuscaavancada" max="32767" attributes="0"/>
-                              <Component id="jbbuscaavancada" max="32767" attributes="0"/>
+                              <Component id="checkBoxBuscaAvancada" max="32767" attributes="0"/>
+                              <Component id="buttonBuscaAvancada" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -310,17 +310,17 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jtde" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jtdevalor" min="-2" pref="55" max="-2" attributes="0"/>
+                                  <Component id="textFormatterValorDe" min="-2" pref="55" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jtate" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jtatevalor" min="-2" pref="55" max="-2" attributes="0"/>
+                                  <Component id="textFormatterValorAte" min="-2" pref="55" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jltipo" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jctipo" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboBoxTipoAutomovel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -346,22 +346,22 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jtde" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jtate" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jctipo" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jtdevalor" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jtatevalor" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboBoxTipoAutomovel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="textFormatterValorDe" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="textFormatterValorAte" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jbbuscatdsautos" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonBuscarTodosAutomoveis" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jbuscaavancada" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="checkBoxBuscaAvancada" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jbuscarauto" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonBuscarAutomovel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jfplaca" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jbbuscaavancada" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonBuscaAvancada" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -382,7 +382,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jtauto">
+            <Component class="javax.swing.JTable" name="tableAutomovel">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="6" rowCount="0">
@@ -433,27 +433,27 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jtautoMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableAutomovelMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jbbuscatdsautos">
+        <Component class="javax.swing.JButton" name="buttonBuscarTodosAutomoveis">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar Todos"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbbuscatdsautosActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBuscarTodosAutomoveisActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jbuscarauto">
+        <Component class="javax.swing.JButton" name="buttonBuscarAutomovel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar Autom&#xf3;vel"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbuscarautoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBuscarAutomovelActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="jfplaca">
@@ -481,13 +481,13 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbconfirmarautomovelActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jbuscaavancada">
+        <Component class="javax.swing.JCheckBox" name="checkBoxBuscaAvancada">
           <Properties>
             <Property name="text" type="java.lang.String" value="Busca Avan&#xe7;ada"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbuscaavancadaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkBoxBuscaAvancadaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jtde">
@@ -508,7 +508,7 @@
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jctipo">
+        <Component class="javax.swing.JComboBox" name="comboBoxTipoAutomovel">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
@@ -523,7 +523,7 @@
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jctipoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxTipoAutomovelActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jltipo">
@@ -532,16 +532,16 @@
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jbbuscaavancada">
+        <Component class="javax.swing.JButton" name="buttonBuscaAvancada">
           <Properties>
             <Property name="text" type="java.lang.String" value="Busca Avan&#xe7;ada"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbbuscaavancadaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBuscaAvancadaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jtdevalor">
+        <Component class="javax.swing.JFormattedTextField" name="textFormatterValorDe">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="###.##" subtype="-1" type="5"/>
@@ -549,7 +549,7 @@
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jtatevalor">
+        <Component class="javax.swing.JFormattedTextField" name="textFormatterValorAte">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="###.##" subtype="-1" type="5"/>
@@ -564,12 +564,12 @@
         <Property name="text" type="java.lang.String" value="N&#xfa;mero de Loca&#xe7;&#xe3;o"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtnumaluguel">
+    <Component class="javax.swing.JTextField" name="textFieldNumeroLocacao">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtnumaluguelActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldNumeroLocacaoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -577,12 +577,12 @@
         <Property name="text" type="java.lang.String" value="Data de Loca&#xe7;&#xe3;o"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtdataaluguel">
+    <Component class="javax.swing.JTextField" name="textFieldDataLocacao">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtdataaluguelActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldDataLocacaoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jbconfirmarclocacao">
@@ -599,7 +599,7 @@
         <Property name="text" type="java.lang.String" value="Data de Devolu&#xe7;&#xe3;o"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="jtdatadevolucao">
+    <Component class="javax.swing.JFormattedTextField" name="textFormattedDataDevolucao">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
           <Format format="##/##/####" subtype="-1" type="5"/>
@@ -612,12 +612,12 @@
         <Property name="text" type="java.lang.String" value="Valor da Loca&#xe7;&#xe3;o"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtvalorlocacao">
+    <Component class="javax.swing.JTextField" name="textFieldValorLocacao">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtvalorlocacaoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldValorLocacaoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jbsair">
@@ -628,13 +628,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbsairActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jbcalcularvalorlocacao">
+    <Component class="javax.swing.JButton" name="buttonCalcularValor">
       <Properties>
         <Property name="text" type="java.lang.String" value="Calcular Valor Loca&#xe7;&#xe3;o"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbcalcularvalorlocacaoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCalcularValorActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

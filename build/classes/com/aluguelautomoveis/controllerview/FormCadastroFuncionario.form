@@ -35,29 +35,29 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jcbusca" min="-2" max="-2" attributes="0"/>
+                      <Component id="checkBoxBuscarFuncionario" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jfcpfbusca" min="-2" pref="115" max="-2" attributes="0"/>
+                      <Component id="textFieldBuscarCPF" min="-2" pref="115" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jbbuscafuncionario" min="-2" pref="94" max="-2" attributes="0"/>
+                      <Component id="buttonBuscar" min="-2" pref="94" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jbbuscartodos" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonBuscarTodos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jbeditarfuncionario" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonEditarFuncionario" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
                   <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jbinserir" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonInserir" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jbexcluir" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonExcluir" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jbatualizar" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonAtualizar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonLimpar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton4" min="-2" pref="81" max="-2" attributes="0"/>
+                      <Component id="buttonSair" min="-2" pref="81" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
               </Group>
@@ -74,21 +74,21 @@
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jcbusca" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jfcpfbusca" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jbbuscafuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jbbuscartodos" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jbeditarfuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkBoxBuscarFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldBuscarCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonBuscarTodos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonEditarFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane1" pref="388" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jbinserir" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jbexcluir" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jbatualizar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonSair" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonInserir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonAtualizar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -118,18 +118,18 @@
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                  <Component id="jtcodigo" min="-2" pref="66" max="-2" attributes="0"/>
+                                  <Component id="textFieldCodigo" min="-2" pref="66" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jtnome" min="-2" pref="330" max="-2" attributes="0"/>
+                              <Component id="textFieldNomeCompleto" min="-2" pref="330" max="-2" attributes="0"/>
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel2" min="-2" pref="90" max="-2" attributes="0"/>
-                              <Component id="jtdatanascimento" min="-2" pref="123" max="-2" attributes="0"/>
+                              <Component id="textFieldDataNascimento" min="-2" pref="123" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -137,14 +137,14 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                                  <Component id="jftelefone" min="-2" pref="103" max="-2" attributes="0"/>
+                                  <Component id="textFieldTelefone" min="-2" pref="103" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                              <Component id="jfcelular" min="-2" pref="104" max="-2" attributes="0"/>
+                              <Component id="textFieldCelular" min="-2" pref="104" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -152,7 +152,7 @@
                                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jtemail" max="32767" attributes="0"/>
+                              <Component id="textFieldEmail" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -161,14 +161,14 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <Component id="jcsexo" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboBoxSexo" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jfcpf" alignment="0" min="-2" pref="123" max="-2" attributes="0"/>
+                                      <Component id="textFieldCPF" alignment="0" min="-2" pref="123" max="-2" attributes="0"/>
                                       <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -180,9 +180,9 @@
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jtusuario" min="-2" pref="101" max="-2" attributes="0"/>
+                          <Component id="textFieldUsuario" min="-2" pref="101" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jtsenha" max="32767" attributes="0"/>
+                          <Component id="textFieldSenha" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -201,9 +201,9 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jtnome" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jtdatanascimento" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jtcodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="textFieldNomeCompleto" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="textFieldDataNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="textFieldCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
@@ -213,8 +213,8 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jfcpf" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jcsexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="textFieldCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboBoxSexo" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -228,11 +228,11 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jftelefone" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jfcelular" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtemail" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtusuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtsenha" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldCelular" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldSenha" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="14" max="32767" attributes="0"/>
               </Group>
@@ -245,9 +245,9 @@
             <Property name="text" type="java.lang.String" value="Nome Completo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtnome">
+        <Component class="javax.swing.JTextField" name="textFieldNomeCompleto">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtnomeActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldNomeCompletoActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -260,14 +260,14 @@
             <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jtdatanascimento">
+        <Component class="javax.swing.JFormattedTextField" name="textFieldDataNascimento">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="##/##/####" subtype="-1" type="5"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtdatanascimentoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldDataNascimentoActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
@@ -275,7 +275,7 @@
             <Property name="text" type="java.lang.String" value="Sexo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jcsexo">
+        <Component class="javax.swing.JComboBox" name="comboBoxSexo">
           <Properties>
             <Property name="maximumRowCount" type="int" value="3"/>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -293,7 +293,7 @@
             <Property name="text" type="java.lang.String" value="CPF:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jfcpf">
+        <Component class="javax.swing.JFormattedTextField" name="textFieldCPF">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="###.###.###-##" subtype="-1" type="5"/>
@@ -305,7 +305,7 @@
             <Property name="text" type="java.lang.String" value="Telefone:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jftelefone">
+        <Component class="javax.swing.JFormattedTextField" name="textFieldTelefone">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="(##) ####-####" subtype="-1" type="5"/>
@@ -317,7 +317,7 @@
             <Property name="text" type="java.lang.String" value="Celular:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jfcelular">
+        <Component class="javax.swing.JFormattedTextField" name="textFieldCelular">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="(##) ####-####" subtype="-1" type="5"/>
@@ -329,14 +329,14 @@
             <Property name="text" type="java.lang.String" value="Email:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtemail">
+        <Component class="javax.swing.JTextField" name="textFieldEmail">
         </Component>
-        <Component class="javax.swing.JTextField" name="jtcodigo">
+        <Component class="javax.swing.JTextField" name="textFieldCodigo">
           <Properties>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtusuario">
+        <Component class="javax.swing.JTextField" name="textFieldUsuario">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
           <Properties>
@@ -348,7 +348,7 @@
             <Property name="text" type="java.lang.String" value="Senha"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jtsenha">
+        <Component class="javax.swing.JPasswordField" name="textFieldSenha">
         </Component>
       </SubComponents>
     </Container>
@@ -370,34 +370,34 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jtbairro" alignment="0" max="32767" attributes="0"/>
+                              <Component id="textFieldBairro" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jtcidade" min="-2" pref="152" max="-2" attributes="0"/>
+                              <Component id="textFieldCidade" min="-2" pref="152" max="-2" attributes="0"/>
                               <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jfcep" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
+                              <Component id="textFieldCEP" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
                               <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                              <Component id="jcestado" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboBoxUF" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jtrua" max="32767" attributes="0"/>
+                          <Component id="textFieldRua" max="32767" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jtnumero" min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="textFieldNumero" min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jtcomplemento" min="-2" pref="52" max="-2" attributes="0"/>
+                              <Component id="textFieldComplemento" min="-2" pref="52" max="-2" attributes="0"/>
                               <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -416,9 +416,9 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jtrua" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtnumero" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtcomplemento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldRua" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldComplemento" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -429,10 +429,10 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jtbairro" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtcidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jfcep" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jcestado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldBairro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldCidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldCEP" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="comboBoxUF" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -444,42 +444,42 @@
             <Property name="text" type="java.lang.String" value="Rua/Av."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtrua">
+        <Component class="javax.swing.JTextField" name="textFieldRua">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
             <Property name="text" type="java.lang.String" value="Num."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtnumero">
+        <Component class="javax.swing.JTextField" name="textFieldNumero">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel14">
           <Properties>
             <Property name="text" type="java.lang.String" value="Compl."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtcomplemento">
+        <Component class="javax.swing.JTextField" name="textFieldComplemento">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel15">
           <Properties>
             <Property name="text" type="java.lang.String" value="Bairro"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtbairro">
+        <Component class="javax.swing.JTextField" name="textFieldBairro">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel16">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cidade"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtcidade">
+        <Component class="javax.swing.JTextField" name="textFieldCidade">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel17">
           <Properties>
             <Property name="text" type="java.lang.String" value="CEP"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jfcep">
+        <Component class="javax.swing.JFormattedTextField" name="textFieldCEP">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="##.###-###" subtype="-1" type="5"/>
@@ -491,7 +491,7 @@
             <Property name="text" type="java.lang.String" value="UF"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jcestado">
+        <Component class="javax.swing.JComboBox" name="comboBoxUF">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="27">
@@ -529,57 +529,57 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jbinserir">
+    <Component class="javax.swing.JButton" name="buttonInserir">
       <Properties>
         <Property name="text" type="java.lang.String" value="Inserir Funcionario"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbinserirActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonInserirActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jbexcluir">
+    <Component class="javax.swing.JButton" name="buttonExcluir">
       <Properties>
         <Property name="text" type="java.lang.String" value="Excluir Funcionario"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbexcluirActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonExcluirActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jbatualizar">
+    <Component class="javax.swing.JButton" name="buttonAtualizar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Atualizar Funcionario"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbatualizarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonAtualizarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="buttonSair">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSairActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="buttonLimpar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Limpar Funcionario"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonLimparActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jcbusca">
+    <Component class="javax.swing.JCheckBox" name="checkBoxBuscarFuncionario">
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar Funcionario"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbuscaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkBoxBuscarFuncionarioActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="jfcpfbusca">
+    <Component class="javax.swing.JFormattedTextField" name="textFieldBuscarCPF">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
           <Format format="###.###.###-##" subtype="-1" type="5"/>
@@ -587,13 +587,13 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jbbuscafuncionario">
+    <Component class="javax.swing.JButton" name="buttonBuscar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbbuscafuncionarioActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBuscarActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -603,7 +603,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jtfuncionario">
+        <Component class="javax.swing.JTable" name="tableFuncionarios">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="4" rowCount="0">
@@ -642,27 +642,27 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jtfuncionarioMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableFuncionariosMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jbbuscartodos">
+    <Component class="javax.swing.JButton" name="buttonBuscarTodos">
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar Todos"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbbuscartodosActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBuscarTodosActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jbeditarfuncionario">
+    <Component class="javax.swing.JButton" name="buttonEditarFuncionario">
       <Properties>
         <Property name="text" type="java.lang.String" value="Editar Funcionario"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbeditarfuncionarioActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonEditarFuncionarioActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

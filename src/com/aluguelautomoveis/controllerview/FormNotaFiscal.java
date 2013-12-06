@@ -31,9 +31,9 @@ public class FormNotaFiscal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtnf = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        textAreaNotaFiscal = new javax.swing.JTextArea();
+        buttonEmitirNotaFiscal = new javax.swing.JButton();
+        buttonSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 700));
@@ -46,10 +46,10 @@ public class FormNotaFiscal extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nota Fiscal", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Agency FB", 1, 18), new java.awt.Color(0, 0, 204))); // NOI18N
 
-        jtnf.setEditable(false);
-        jtnf.setColumns(20);
-        jtnf.setRows(5);
-        jScrollPane1.setViewportView(jtnf);
+        textAreaNotaFiscal.setEditable(false);
+        textAreaNotaFiscal.setColumns(20);
+        textAreaNotaFiscal.setRows(5);
+        jScrollPane1.setViewportView(textAreaNotaFiscal);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -65,17 +65,17 @@ public class FormNotaFiscal extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
         );
 
-        jButton2.setText("Emitir Nota Fiscal");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonEmitirNotaFiscal.setText("Emitir Nota Fiscal");
+        buttonEmitirNotaFiscal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                buttonEmitirNotaFiscalActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Sair");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        buttonSair.setText("Sair");
+        buttonSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                buttonSairActionPerformed(evt);
             }
         });
 
@@ -88,9 +88,9 @@ public class FormNotaFiscal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonEmitirNotaFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 799, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(buttonSair, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -99,8 +99,8 @@ public class FormNotaFiscal extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(buttonEmitirNotaFiscal)
+                    .addComponent(buttonSair))
                 .addContainerGap())
         );
 
@@ -108,11 +108,11 @@ public class FormNotaFiscal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSairActionPerformed
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_buttonSairActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void buttonEmitirNotaFiscalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEmitirNotaFiscalActionPerformed
         try {
 
             BufferedWriter out;
@@ -128,10 +128,10 @@ public class FormNotaFiscal extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_buttonEmitirNotaFiscalActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        jtnf.setText(aluguel.Locacao());
+        textAreaNotaFiscal.setText(aluguel.Locacao());
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -169,15 +169,15 @@ public class FormNotaFiscal extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton buttonEmitirNotaFiscal;
+    private javax.swing.JButton buttonSair;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jtnf;
+    private javax.swing.JTextArea textAreaNotaFiscal;
     // End of variables declaration//GEN-END:variables
 
     private void limparTabela() {
-        jtnf.setText("");
+        textAreaNotaFiscal.setText("");
     }
 
 }

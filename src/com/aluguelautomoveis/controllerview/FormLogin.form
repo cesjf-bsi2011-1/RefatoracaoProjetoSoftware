@@ -40,9 +40,9 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="bLogin" min="-2" pref="146" max="-2" attributes="0"/>
+              <Component id="buttonLogin" min="-2" pref="146" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="bCancelar" min="-2" pref="146" max="-2" attributes="0"/>
+              <Component id="buttonAcessar" min="-2" pref="146" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -56,8 +56,8 @@
               <Component id="pDados" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="bLogin" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
-                  <Component id="bCancelar" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="buttonLogin" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="buttonAcessar" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -82,9 +82,9 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lNome" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="tNome" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
+                      <Component id="textFieldLogin" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
                       <Component id="lSenha" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="tSenha" alignment="0" min="-2" pref="139" max="-2" attributes="0"/>
+                      <Component id="textFieldSenha" alignment="0" min="-2" pref="139" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="121" max="32767" attributes="0"/>
               </Group>
@@ -95,11 +95,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="lNome" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="tNome" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldLogin" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="lSenha" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="tSenha" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldSenha" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="31" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -111,7 +111,7 @@
             <Property name="text" type="java.lang.String" value="Nome:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tNome">
+        <Component class="javax.swing.JTextField" name="textFieldLogin">
           <Properties>
             <Property name="text" type="java.lang.String" value="Admin"/>
           </Properties>
@@ -121,7 +121,7 @@
             <Property name="text" type="java.lang.String" value="Senha:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="tSenha">
+        <Component class="javax.swing.JPasswordField" name="textFieldSenha">
           <Properties>
             <Property name="text" type="java.lang.String" value="1234"/>
           </Properties>
@@ -136,7 +136,7 @@
         <Property name="text" type="java.lang.String" value="Login"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="bLogin">
+    <Component class="javax.swing.JButton" name="buttonLogin">
       <Properties>
         <Property name="text" type="java.lang.String" value="Login"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -144,11 +144,11 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bLoginMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bLoginActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="buttonLoginMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonLoginActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="bCancelar">
+    <Component class="javax.swing.JButton" name="buttonAcessar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -156,7 +156,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bCancelarMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="buttonAcessarMouseClicked"/>
       </Events>
     </Component>
   </SubComponents>

@@ -31,7 +31,7 @@ public class FormRelCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        jtCli = new javax.swing.JTextArea();
+        textAreaCliente = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -40,9 +40,9 @@ public class FormRelCliente extends javax.swing.JFrame {
             }
         });
 
-        jtCli.setColumns(20);
-        jtCli.setRows(5);
-        jScrollPane2.setViewportView(jtCli);
+        textAreaCliente.setColumns(20);
+        textAreaCliente.setRows(5);
+        jScrollPane2.setViewportView(textAreaCliente);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,7 +66,7 @@ public class FormRelCliente extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        jtCli.setText(cliente.Cliente());
+        textAreaCliente.setText(cliente.Cliente());
 
     }//GEN-LAST:event_formWindowOpened
 
@@ -106,6 +106,6 @@ public class FormRelCliente extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jtCli;
+    private javax.swing.JTextArea textAreaCliente;
     // End of variables declaration//GEN-END:variables
 }

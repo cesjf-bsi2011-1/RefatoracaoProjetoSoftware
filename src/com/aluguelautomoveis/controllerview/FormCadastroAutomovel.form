@@ -36,15 +36,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel2" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="jbinserir" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonInserirAutomovel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jbexcluir" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonExcluirAutomovel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jbatualizar" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonAtualizarAutomovel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jblimpar" min="-2" pref="151" max="-2" attributes="0"/>
+                      <Component id="buttonLimparBusca" min="-2" pref="151" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jbsair" min="-2" pref="85" max="-2" attributes="0"/>
+                      <Component id="buttonSair" min="-2" pref="85" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -62,13 +62,13 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                      <Component id="jbatualizar" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="jbsair" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jblimpar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonAtualizarAutomovel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="buttonSair" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonLimparBusca" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="jbinserir" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jbexcluir" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonInserirAutomovel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonExcluirAutomovel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -94,8 +94,8 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jccombustivel" alignment="0" pref="117" max="32767" attributes="0"/>
-                      <Component id="jtmarca" alignment="0" max="32767" attributes="0"/>
+                      <Component id="comboBoxCombustivel" alignment="0" pref="117" max="32767" attributes="0"/>
+                      <Component id="textFieldMarca" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -103,28 +103,28 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jcportas" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboBoxPortas" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jtchassi" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+                              <Component id="textFieldChassi" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
                               <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                              <Component id="jfvalor" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
+                              <Component id="textFormattedValor" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jtmodelo" max="32767" attributes="0"/>
+                      <Component id="textFieldModelo" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jtstatus" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textFieldStatus" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                              <Component id="jctipo" max="32767" attributes="0"/>
+                              <Component id="textFieldTipo" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -166,17 +166,17 @@
                           </Group>
                           <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jtmodelo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="textFieldModelo" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jfplaca" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jtcor" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jfano" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jtmarca" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="textFieldMarca" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jctipo" min="-2" max="-2" attributes="0"/>
+                          <Component id="textFieldTipo" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -189,11 +189,11 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jccombustivel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jcportas" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jfvalor" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtstatus" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtchassi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="comboBoxCombustivel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="comboBoxPortas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFormattedValor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldChassi" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -206,7 +206,7 @@
             <Property name="text" type="java.lang.String" value="Modelo"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtmodelo">
+        <Component class="javax.swing.JTextField" name="textFieldModelo">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
@@ -255,7 +255,7 @@
             <Property name="text" type="java.lang.String" value="Combust&#xed;vel"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jccombustivel">
+        <Component class="javax.swing.JComboBox" name="comboBoxCombustivel">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -273,7 +273,7 @@
             <Property name="text" type="java.lang.String" value="Portas"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jcportas">
+        <Component class="javax.swing.JComboBox" name="comboBoxPortas">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="3">
@@ -295,7 +295,7 @@
             <Property name="text" type="java.lang.String" value="Valor R$"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jfvalor">
+        <Component class="javax.swing.JFormattedTextField" name="textFormattedValor">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="###.##" subtype="-1" type="5"/>
@@ -307,17 +307,17 @@
             <Property name="text" type="java.lang.String" value="Status"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtstatus">
+        <Component class="javax.swing.JTextField" name="textFieldStatus">
           <Properties>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtstatusActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldStatusActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtmarca">
+        <Component class="javax.swing.JTextField" name="textFieldMarca">
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jtchassi">
+        <Component class="javax.swing.JFormattedTextField" name="textFieldChassi">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="#?????###??######" subtype="-1" type="5"/>
@@ -329,7 +329,7 @@
             <Property name="text" type="java.lang.String" value="Tipo"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jctipo">
+        <Component class="javax.swing.JComboBox" name="textFieldTipo">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
@@ -343,17 +343,17 @@
             <Property name="selectedIndex" type="int" value="-1"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jctipoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldTipoActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jbinserir">
+    <Component class="javax.swing.JButton" name="buttonInserirAutomovel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Inserir Autom&#xf3;vel"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbinserirActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonInserirAutomovelActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel2">
@@ -370,19 +370,19 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                      <Component id="checkBoxPesquisa" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jfplacabusca" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="textFormattedPlaca" min="-2" pref="60" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btpesquisar" min="-2" pref="145" max="-2" attributes="0"/>
+                          <Component id="buttonPesquisaPlaca" min="-2" pref="145" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btpesquisartodos" min="-2" pref="156" max="-2" attributes="0"/>
+                          <Component id="buttonPesquisaTodos" min="-2" pref="156" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jbeditarauto" min="-2" pref="138" max="-2" attributes="0"/>
+                          <Component id="buttonEditarAutomovel" min="-2" pref="138" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="375" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="505" max="32767" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <Component id="jScrollPane1" max="32767" attributes="0"/>
@@ -393,15 +393,15 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkBoxPesquisa" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jfplacabusca" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btpesquisar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btpesquisartodos" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jbeditarauto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFormattedPlaca" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonPesquisaPlaca" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonPesquisaTodos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonEditarAutomovel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane1" pref="352" max="32767" attributes="0"/>
@@ -415,7 +415,7 @@
             <Property name="text" type="java.lang.String" value="Placa"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jfplacabusca">
+        <Component class="javax.swing.JFormattedTextField" name="textFormattedPlaca">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="???-####" subtype="-1" type="5"/>
@@ -423,33 +423,33 @@
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jfplacabuscaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFormattedPlacaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btpesquisar">
+        <Component class="javax.swing.JButton" name="buttonPesquisaPlaca">
           <Properties>
             <Property name="text" type="java.lang.String" value="Pesquisar"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btpesquisarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonPesquisaPlacaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+        <Component class="javax.swing.JCheckBox" name="checkBoxPesquisa">
           <Properties>
             <Property name="text" type="java.lang.String" value="Pesquisar Autom&#xf3;vel "/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkBoxPesquisaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btpesquisartodos">
+        <Component class="javax.swing.JButton" name="buttonPesquisaTodos">
           <Properties>
             <Property name="text" type="java.lang.String" value="Pesquisar Todos"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btpesquisartodosActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonPesquisaTodosActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -459,7 +459,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jtauto">
+            <Component class="javax.swing.JTable" name="tableAutomovel">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="6" rowCount="0">
@@ -510,32 +510,32 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jtautoMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableAutomovelMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jbeditarauto">
+        <Component class="javax.swing.JButton" name="buttonEditarAutomovel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Editar Autom&#xf3;vel"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbeditarautoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonEditarAutomovelActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jbexcluir">
+    <Component class="javax.swing.JButton" name="buttonExcluirAutomovel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Excluir Autom&#xf3;vel"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbexcluirActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonExcluirAutomovelActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jbatualizar">
+    <Component class="javax.swing.JButton" name="buttonAtualizarAutomovel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Atualizar Autom&#xf3;vel"/>
         <Property name="enabled" type="boolean" value="false"/>
@@ -547,10 +547,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbatualizarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonAtualizarAutomovelActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jbsair">
+    <Component class="javax.swing.JButton" name="buttonSair">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sair"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -561,16 +561,16 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbsairActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSairActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jblimpar">
+    <Component class="javax.swing.JButton" name="buttonLimparBusca">
       <Properties>
         <Property name="text" type="java.lang.String" value="Limpar Busca"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jblimparActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonLimparBuscaActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
