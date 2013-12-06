@@ -4,7 +4,7 @@
  */
 package com.aluguelautomoveis.controllerview;
 
-import com.aluguelautomoveis.model.Aluguel;
+import com.aluguelautomoveis.model.AluguelBean;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 public class FormNotaFiscal extends javax.swing.JFrame {
 
-    static Aluguel aluguel = null;
+    static AluguelBean aluguel = null;
 
     public FormNotaFiscal() {
         initComponents();

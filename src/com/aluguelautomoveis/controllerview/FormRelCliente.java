@@ -4,7 +4,7 @@
  */
 package com.aluguelautomoveis.controllerview;
 
-import com.aluguelautomoveis.model.Cliente;
+import com.aluguelautomoveis.model.ClienteBean;
 
 /**
  *
@@ -12,7 +12,7 @@ import com.aluguelautomoveis.model.Cliente;
  */
 public class FormRelCliente extends javax.swing.JFrame {
 
-    static Cliente cliente = null;
+    static ClienteBean cliente = null;
 
     /**
      * Creates new form FormRelCliente

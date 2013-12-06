@@ -7,7 +7,7 @@ import java.util.Date;
  *
  * @author curso
  */
-public class Funcionario implements Serializable {
+public class FuncionarioBean implements Serializable {
 
     private String codigo;
     private String nome;
@@ -27,11 +27,11 @@ public class Funcionario implements Serializable {
     private String usuario;
     private String senha;
 
-    public Funcionario() {
+    public FuncionarioBean() {
 
     }
 
-    public Funcionario(String codigo, String nome, String cpf, String rua, String numero, String complemento, String bairro, String cidade, String estado, String cep, String telefone, String email, String habilitacao, String tipo, Date datanascimento, String celular, String sexo, String usuario, String senha) {
+    public FuncionarioBean(String codigo, String nome, String cpf, String rua, String numero, String complemento, String bairro, String cidade, String estado, String cep, String telefone, String email, String habilitacao, String tipo, Date datanascimento, String celular, String sexo, String usuario, String senha) {
         this.codigo = codigo;
         this.nome = nome;
         this.cpf = cpf;

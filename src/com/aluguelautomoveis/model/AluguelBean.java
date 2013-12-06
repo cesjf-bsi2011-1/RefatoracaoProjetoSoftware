@@ -5,11 +5,11 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
-public class Aluguel implements Serializable {
+public class AluguelBean implements Serializable {
 
     private double numero;
-    private Cliente cliente;
-    private Automovel automovel;
+    private ClienteBean cliente;
+    private AutomovelBean automovel;
     private double valorTotal;
     private int numerodias;
     private Date datalocacao;
@@ -18,7 +18,7 @@ public class Aluguel implements Serializable {
     private int diasmulta;
     public String validacao;
 
-    public Aluguel() {
+    public AluguelBean() {
 
     }
 
@@ -127,28 +127,28 @@ public class Aluguel implements Serializable {
     /**
      * @return the cliente
      */
-    public Cliente getCliente() {
+    public ClienteBean getCliente() {
         return cliente;
     }
 
     /**
      * @param cliente the cliente to set
      */
-    public void setCliente(Cliente cliente) {
+    public void setCliente(ClienteBean cliente) {
         this.cliente = cliente;
     }
 
     /**
      * @return the automovel
      */
-    public Automovel getAutomovel() {
+    public AutomovelBean getAutomovel() {
         return automovel;
     }
 
     /**
      * @param automovel the automovel to set
      */
-    public void setAutomovel(Automovel automovel) {
+    public void setAutomovel(AutomovelBean automovel) {
         this.automovel = automovel;
     }
 

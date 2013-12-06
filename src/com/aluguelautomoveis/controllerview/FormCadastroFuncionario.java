@@ -1,6 +1,6 @@
 package com.aluguelautomoveis.controllerview;
 
-import com.aluguelautomoveis.model.Funcionario;
+import com.aluguelautomoveis.model.FuncionarioBean;
 import javax.swing.JOptionPane;
 import com.aluguelautomoveis.model.Utils;
 import java.text.ParseException;
@@ -22,7 +22,7 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
     public FormCadastroFuncionario() {
         initComponents();
     }
-    Funcionario funcionario = null;
+    FuncionarioBean funcionario = null;
     String okfuncionario = null;
 
     /**
@@ -535,7 +535,7 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
             double numerfuncionario = Math.round(Math.random() * 1000);
             double random = checanumerofuncionario(numerfuncionario);
             textFieldCodigo.setText(Double.toString(random));
-            Funcionario funcionario = new Funcionario();
+            FuncionarioBean funcionario = new FuncionarioBean();
             funcionario.setCodigo(textFieldCodigo.getText());
             funcionario.setNome(textFieldNomeCompleto.getText());
             funcionario.setCpf(textFieldCPF.getText());
@@ -690,7 +690,7 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
         textFieldBuscarCPF.setText("");
         limparTabelaFuncionario();
 
-        ArrayList<Funcionario> lista = FuncionarioDao.getTodosFuncionario();
+        ArrayList<FuncionarioBean> lista = FuncionarioDao.getTodosFuncionario();
 
         DefaultTableModel modelo = (DefaultTableModel) tableFuncionarios.getModel();
 
@@ -769,7 +769,7 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
     private void buttonAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAtualizarActionPerformed
         limparTabelaFuncionario();
         if (checacampos(null) == true) {
-            Funcionario funcionario = new Funcionario();
+            FuncionarioBean funcionario = new FuncionarioBean();
             funcionario.setCodigo(textFieldCodigo.getText());
             funcionario.setNome(textFieldNomeCompleto.getText());
             funcionario.setCpf(textFieldCPF.getText());
@@ -998,7 +998,7 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
     }
 
     public double checanumerofuncionario(double numerfuncionario) {
-        ArrayList<Funcionario> lista = FuncionarioDao.getTodosFuncionario();
+        ArrayList<FuncionarioBean> lista = FuncionarioDao.getTodosFuncionario();
 
         if (!lista.isEmpty()) {
             for (int i = 0; i < lista.size(); i++) {

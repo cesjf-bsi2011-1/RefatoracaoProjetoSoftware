@@ -4,7 +4,7 @@
  */
 package com.aluguelautomoveis.controllerview;
 
-import com.aluguelautomoveis.model.Automovel;
+import com.aluguelautomoveis.model.AutomovelBean;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -23,7 +23,7 @@ public class FormCadastroAutomovel extends javax.swing.JFrame {
         initComponents();
     }
 
-    Automovel auto = null;
+    AutomovelBean auto = null;
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -451,7 +451,7 @@ public class FormCadastroAutomovel extends javax.swing.JFrame {
     private void buttonInserirAutomovelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInserirAutomovelActionPerformed
 
         if (checacampos(null) == true) {
-            Automovel auto = new Automovel();
+            AutomovelBean auto = new AutomovelBean();
             auto.setMarca(textFieldMarca.getText());
             auto.setModelo(textFieldModelo.getText());
             auto.setCor(jtcor.getText());
@@ -547,7 +547,7 @@ public class FormCadastroAutomovel extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Automóvel não pode ser Atualizado pois encontra-se Alugado!", "Atenção", JOptionPane.ERROR_MESSAGE);
         } else {
 
-            auto = new Automovel();
+            auto = new AutomovelBean();
             auto.setMarca(textFieldMarca.getText());
             auto.setModelo(textFieldModelo.getText());
             auto.setCor(jtcor.getText());
@@ -637,7 +637,7 @@ public class FormCadastroAutomovel extends javax.swing.JFrame {
 
         jfplaca.setText("");
 
-        ArrayList<Automovel> lista = AutomovelDao.getTodosAutomoveis();
+        ArrayList<AutomovelBean> lista = AutomovelDao.getTodosAutomoveis();
 
         DefaultTableModel modelo = (DefaultTableModel) tableAutomovel.getModel();
 

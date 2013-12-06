@@ -3,7 +3,7 @@ package com.aluguelautomoveis.model;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Cliente implements Serializable {
+public class ClienteBean implements Serializable {
 
     private String codigo;
     private String nome;
@@ -23,11 +23,11 @@ public class Cliente implements Serializable {
     private String celular;
     private String sexo;
 
-    public Cliente() {
+    public ClienteBean() {
 
     }
 
-    public Cliente(String codigo, String nome, String cpf, String rua, String numero, String complemento, String bairro, String cidade,
+    public ClienteBean(String codigo, String nome, String cpf, String rua, String numero, String complemento, String bairro, String cidade,
             String estado, String cep, String telefone, String email, String habilitacao, String tipo, Date datanascimento, String celular, String sexo) {
         this.codigo = codigo;
         this.nome = nome;

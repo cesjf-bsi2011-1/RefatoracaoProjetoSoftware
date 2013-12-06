@@ -1,6 +1,6 @@
 package com.aluguelautomoveis.model.dao;
 
-import com.aluguelautomoveis.model.Cliente;
+import com.aluguelautomoveis.model.ClienteBean;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,15 +13,15 @@ import java.util.logging.Logger;
 
 public class ClienteDao {
 
-    private static ArrayList<Cliente> lista = new ArrayList<Cliente>();
+    private static ArrayList<ClienteBean> lista = new ArrayList<ClienteBean>();
 
-    public static void addCliente(Cliente cliente) {
+    public static void addCliente(ClienteBean cliente) {
         abrir();
         lista.add(cliente);
         salvar();
     }
 
-    public static Cliente getCliente(String cpf) {
+    public static ClienteBean getCliente(String cpf) {
         abrir();
         int pos = -1;
 
@@ -52,7 +52,7 @@ public class ClienteDao {
 
     }
 
-    public static void atualizarCliente(Cliente cliente) {
+    public static void atualizarCliente(ClienteBean cliente) {
         abrir();
 
         int posicao = localizar(cliente.getCpf());
@@ -74,7 +74,7 @@ public class ClienteDao {
         return pos;
     }
 
-    public static ArrayList<Cliente> getTodosClientes() {
+    public static ArrayList<ClienteBean> getTodosClientes() {
         abrir();
 
         return lista;
@@ -104,7 +104,7 @@ public class ClienteDao {
         }
         try {
 
-            lista = (ArrayList<Cliente>) in.readObject();
+            lista = (ArrayList<ClienteBean>) in.readObject();
         } catch (IOException ex) {
             Logger.getLogger(ClienteDao.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {

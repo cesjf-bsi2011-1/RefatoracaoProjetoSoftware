@@ -4,8 +4,8 @@
  */
 package com.aluguelautomoveis.controllerview;
 
-import com.aluguelautomoveis.model.Cliente;
-import com.aluguelautomoveis.model.Automovel;
+import com.aluguelautomoveis.model.ClienteBean;
+import com.aluguelautomoveis.model.AutomovelBean;
 import com.aluguelautomoveis.model.Utils;
 import java.util.Date;
 import java.util.ArrayList;
@@ -17,13 +17,13 @@ import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import com.aluguelautomoveis.model.dao.AluguelDao;
-import com.aluguelautomoveis.model.Aluguel;
+import com.aluguelautomoveis.model.AluguelBean;
 
 public class FormAluguel extends javax.swing.JFrame {
 
-    Cliente cliente = null;
-    Automovel automovel = null;
-    Aluguel aluguel = null;
+    ClienteBean cliente = null;
+    AutomovelBean automovel = null;
+    AluguelBean aluguel = null;
     String okcliente = null;
     String okcarro = null;
     double random = 0;
@@ -515,7 +515,7 @@ public class FormAluguel extends javax.swing.JFrame {
         limparTabelaAutomovel();
         jfplaca.setText("");
 
-        ArrayList<Automovel> lista = AutomovelDao.getTodosAutomoveis();
+        ArrayList<AutomovelBean> lista = AutomovelDao.getTodosAutomoveis();
 
         DefaultTableModel modelo = (DefaultTableModel) tableAutomovel.getModel();
 
@@ -577,7 +577,7 @@ public class FormAluguel extends javax.swing.JFrame {
         textFieldCpf.setText("");
         limparTabelaCliente();
 
-        ArrayList<Cliente> lista = ClienteDao.getTodosClientes();
+        ArrayList<ClienteBean> lista = ClienteDao.getTodosClientes();
 
         DefaultTableModel modelo = (DefaultTableModel) tableClientes.getModel();
 
@@ -609,7 +609,7 @@ public class FormAluguel extends javax.swing.JFrame {
         DefaultTableModel modelo = (DefaultTableModel) tableClientes.getModel();
         cliente = ClienteDao.getCliente(cpf);
         modelo.addRow(cliente.getCliente());
-        aluguel = new Aluguel();
+        aluguel = new AluguelBean();
         aluguel.setCliente(cliente);
 
         if (cliente != null) {
@@ -788,7 +788,7 @@ public class FormAluguel extends javax.swing.JFrame {
         jfplaca.setText("");
         limparTabelaAutomovel();
 
-        ArrayList<Automovel> lista = AutomovelDao.getTodosAutomoveis();
+        ArrayList<AutomovelBean> lista = AutomovelDao.getTodosAutomoveis();
 
         DefaultTableModel modelo = (DefaultTableModel) tableAutomovel.getModel();
 

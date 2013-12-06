@@ -1,6 +1,6 @@
 package com.aluguelautomoveis.model.dao;
 
-import com.aluguelautomoveis.model.Automovel;
+import com.aluguelautomoveis.model.AutomovelBean;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,15 +13,15 @@ import java.util.logging.Logger;
 
 public class AutomovelDao {
 
-    private static ArrayList<Automovel> lista = new ArrayList<Automovel>();
+    private static ArrayList<AutomovelBean> lista = new ArrayList<AutomovelBean>();
 
-    public static void addAutomovel(Automovel auto) {
+    public static void addAutomovel(AutomovelBean auto) {
         abrir();
         lista.add(auto);
         salvar();
     }
 
-    public static Automovel getAutomovel(String placa) {
+    public static AutomovelBean getAutomovel(String placa) {
         abrir();
         int pos = -1;
 
@@ -52,7 +52,7 @@ public class AutomovelDao {
 
     }
 
-    public static void atualizarAutomovel(Automovel auto) {
+    public static void atualizarAutomovel(AutomovelBean auto) {
         abrir();
 
         int posicao = localizar(auto.getPlaca());
@@ -74,7 +74,7 @@ public class AutomovelDao {
         return pos;
     }
 
-    public static ArrayList<Automovel> getTodosAutomoveis() {
+    public static ArrayList<AutomovelBean> getTodosAutomoveis() {
         abrir();
 
         return lista;
@@ -104,7 +104,7 @@ public class AutomovelDao {
         }
         try {
 
-            lista = (ArrayList<Automovel>) in.readObject();
+            lista = (ArrayList<AutomovelBean>) in.readObject();
         } catch (IOException ex) {
             Logger.getLogger(AutomovelDao.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {

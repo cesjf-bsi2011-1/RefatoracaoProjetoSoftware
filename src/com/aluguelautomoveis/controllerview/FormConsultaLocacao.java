@@ -4,8 +4,8 @@
  */
 package com.aluguelautomoveis.controllerview;
 
-import com.aluguelautomoveis.model.Aluguel;
-import com.aluguelautomoveis.model.Automovel;
+import com.aluguelautomoveis.model.AluguelBean;
+import com.aluguelautomoveis.model.AutomovelBean;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -19,8 +19,8 @@ import com.aluguelautomoveis.model.dao.AutomovelDao;
  */
 public class FormConsultaLocacao extends javax.swing.JFrame {
 
-    Automovel automovel = null;
-    Aluguel aluguel = null;
+    AutomovelBean automovel = null;
+    AluguelBean aluguel = null;
 
     public FormConsultaLocacao() {
         initComponents();
@@ -221,7 +221,7 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
         limparTabela();
         textFieldNumeroAluguel.setText("");
 
-        ArrayList<Aluguel> lista = AluguelDao.getTodosAlugueis();
+        ArrayList<AluguelBean> lista = AluguelDao.getTodosAlugueis();
 
         DefaultTableModel modelo = (DefaultTableModel) tableLocacoes.getModel();
 
@@ -244,7 +244,7 @@ public class FormConsultaLocacao extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Digite o número da Locação!");
             textFieldNumeroAluguel.requestFocus(true);
         } else {
-            Aluguel aluguel = AluguelDao.getAluguel(Double.parseDouble(textFieldNumeroAluguel.getText()));
+            AluguelBean aluguel = AluguelDao.getAluguel(Double.parseDouble(textFieldNumeroAluguel.getText()));
             DefaultTableModel modelo = (DefaultTableModel) tableLocacoes.getModel();
             if (aluguel != null) {
                 modelo.addRow(aluguel.getAluguelo());

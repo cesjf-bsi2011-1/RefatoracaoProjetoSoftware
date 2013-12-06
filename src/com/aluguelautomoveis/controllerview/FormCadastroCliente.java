@@ -1,6 +1,6 @@
 package com.aluguelautomoveis.controllerview;
 
-import com.aluguelautomoveis.model.Cliente;
+import com.aluguelautomoveis.model.ClienteBean;
 import javax.swing.JOptionPane;
 import com.aluguelautomoveis.model.Utils;
 import java.text.ParseException;
@@ -16,7 +16,7 @@ import com.aluguelautomoveis.model.dao.ClienteDao;
  */
 public class FormCadastroCliente extends javax.swing.JFrame {
 
-    Cliente cliente = null;
+    ClienteBean cliente = null;
     String okcliente = null;
 
     /**
@@ -564,7 +564,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
             double numercliente = Math.round(Math.random() * 1000);
             double random = checanumerocliente(numercliente);
             textFieldCodigoCliente.setText(Double.toString(random));
-            Cliente cliente = new Cliente();
+            ClienteBean cliente = new ClienteBean();
             cliente.setCodigo(textFieldCodigoCliente.getText());
             cliente.setNome(textFieldNomeCliente.getText());
             cliente.setCpf(textFormattedCPF.getText());
@@ -719,7 +719,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         textFormattedCPFBusca.setText("");
         limparTabelaCliente();
 
-        ArrayList<Cliente> lista = ClienteDao.getTodosClientes();
+        ArrayList<ClienteBean> lista = ClienteDao.getTodosClientes();
 
         DefaultTableModel modelo = (DefaultTableModel) tableClientes.getModel();
 
@@ -799,7 +799,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
     private void buttonAtualizarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAtualizarClienteActionPerformed
         limparTabelaCliente();
         if (checacampos(null) == true) {
-            Cliente cliente = new Cliente();
+            ClienteBean cliente = new ClienteBean();
             cliente.setCodigo(textFieldCodigoCliente.getText());
             cliente.setNome(textFieldNomeCliente.getText());
             cliente.setCpf(textFormattedCPF.getText());
@@ -1034,7 +1034,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
     }
 
     public double checanumerocliente(double numercliente) {
-        ArrayList<Cliente> lista = ClienteDao.getTodosClientes();
+        ArrayList<ClienteBean> lista = ClienteDao.getTodosClientes();
 
         if (!lista.isEmpty()) {
             for (int i = 0; i < lista.size(); i++) {

@@ -1,6 +1,6 @@
 package com.aluguelautomoveis.model.dao;
 
-import com.aluguelautomoveis.model.Funcionario;
+import com.aluguelautomoveis.model.FuncionarioBean;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,15 +14,15 @@ import java.util.logging.Logger;
 
 public class FuncionarioDao {
 
-    private static ArrayList<Funcionario> lista = new ArrayList<Funcionario>();
+    private static ArrayList<FuncionarioBean> lista = new ArrayList<FuncionarioBean>();
 
-    public static void addFuncionario(Funcionario funcionario) {
+    public static void addFuncionario(FuncionarioBean funcionario) {
         abrir();
         lista.add(funcionario);
         salvar();
     }
 
-    public static Funcionario getFuncionario(String cpf) {
+    public static FuncionarioBean getFuncionario(String cpf) {
         abrir();
         int pos = -1;
 
@@ -53,7 +53,7 @@ public class FuncionarioDao {
 
     }
 
-    public static void atualizarFuncionario(Funcionario funcionario) {
+    public static void atualizarFuncionario(FuncionarioBean funcionario) {
         abrir();
 
         int posicao = localizar(funcionario.getCpf());
@@ -75,7 +75,7 @@ public class FuncionarioDao {
         return pos;
     }
 
-    public static ArrayList<Funcionario> getTodosFuncionario() {
+    public static ArrayList<FuncionarioBean> getTodosFuncionario() {
         abrir();
 
         return lista;
@@ -105,7 +105,7 @@ public class FuncionarioDao {
         }
         try {
 
-            lista = (ArrayList<Funcionario>) in.readObject();
+            lista = (ArrayList<FuncionarioBean>) in.readObject();
         } catch (IOException ex) {
             Logger.getLogger(FuncionarioDao.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {

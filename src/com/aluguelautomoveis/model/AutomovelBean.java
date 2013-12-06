@@ -2,7 +2,7 @@ package com.aluguelautomoveis.model;
 
 import java.io.Serializable;
 
-public class Automovel implements Serializable {
+public class AutomovelBean implements Serializable {
 
     private String marca;
     private String modelo;
@@ -16,7 +16,7 @@ public class Automovel implements Serializable {
     private String status;
     private String tipo;
 
-    public Automovel(String marca, String modelo, String cor, String ano, String combustivel, float valor, String portas, String chassi,
+    public AutomovelBean(String marca, String modelo, String cor, String ano, String combustivel, float valor, String portas, String chassi,
             String placa, String tipo) {
         this.marca = marca;
         this.modelo = modelo;
@@ -31,7 +31,7 @@ public class Automovel implements Serializable {
         this.tipo = tipo;
     }
 
-    public Automovel() {
+    public AutomovelBean() {
         this.marca = marca;
         this.modelo = modelo;
         this.cor = cor;

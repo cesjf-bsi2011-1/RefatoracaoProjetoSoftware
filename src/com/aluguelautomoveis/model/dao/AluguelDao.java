@@ -1,7 +1,7 @@
 package com.aluguelautomoveis.model.dao;
 
 import java.util.ArrayList;
-import com.aluguelautomoveis.model.Aluguel;
+import com.aluguelautomoveis.model.AluguelBean;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,15 +13,15 @@ import java.util.logging.Logger;
 
 public class AluguelDao {
 
-    private static ArrayList<Aluguel> lista = new ArrayList<Aluguel>();
+    private static ArrayList<AluguelBean> lista = new ArrayList<AluguelBean>();
 
-    public static void addAluguel(Aluguel aluguel) {
+    public static void addAluguel(AluguelBean aluguel) {
         abrir();
         lista.add(aluguel);
         salvar();
     }
 
-    public static Aluguel getAluguel(double numero) {
+    public static AluguelBean getAluguel(double numero) {
         abrir();
         int pos = -1;
 
@@ -53,7 +53,7 @@ public class AluguelDao {
 
     }
 
-    public static ArrayList<Aluguel> getTodosAlugueis() {
+    public static ArrayList<AluguelBean> getTodosAlugueis() {
         abrir();
         return lista;
     }
@@ -93,7 +93,7 @@ public class AluguelDao {
         }
         try {
 
-            lista = (ArrayList<Aluguel>) in.readObject();
+            lista = (ArrayList<AluguelBean>) in.readObject();
         } catch (IOException ex) {
             Logger.getLogger(AluguelDao.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
