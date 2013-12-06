@@ -1,5 +1,6 @@
 package com.aluguelautomoveis.model;
 
+import com.aluguelautomoveis.util.DateFormat;
 import java.io.Serializable;
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -106,7 +107,7 @@ public class AluguelBean implements Serializable {
     }
 
     public Object[] getAluguelo() {
-        Object v[] = {getNumero(), getCliente().getNome(), getCliente().getCpf(), getCliente().getHabilitacao(), getAutomovel().getMarca(), getAutomovel().getModelo(), getAutomovel().getPlaca(), valorTotal, Utils.DateToStr(datalocacao), Utils.DateToStr(datadevolucao)};
+        Object v[] = {getNumero(), getCliente().getNome(), getCliente().getCpf(), getCliente().getHabilitacao(), getAutomovel().getMarca(), getAutomovel().getModelo(), getAutomovel().getPlaca(), valorTotal, DateFormat.DateToStr(datalocacao), DateFormat.DateToStr(datadevolucao)};
         return v;
     }
 
@@ -252,13 +253,13 @@ public class AluguelBean implements Serializable {
         str += "\n";
         str += "\t \t \t \t  NOTA FISCAL";
         str += "\t \t \t \t \t " + "\n";
-        str += "Data: " + Utils.DateToStr(getDatalocacao()) + "\t \t \t \t \t \t \t Número NF: " + getNumero() + "\n";
+        str += "Data: " + DateFormat.DateToStr(getDatalocacao()) + "\t \t \t \t \t \t \t Número NF: " + getNumero() + "\n";
         str += "\n";
         str += "\n";
         str += "--------- Dados do Cliente: ----------------------------------------\t" + "\n";
         str += " \t" + "\n";
         str += "\n";
-        str += "Nome: " + cliente.getNome() + "\t CPF: " + cliente.getCpf() + "\t Data de Nascimento: " + Utils.DateToStr(cliente.getDatanascimento()) + "\n";
+        str += "Nome: " + cliente.getNome() + "\t CPF: " + cliente.getCpf() + "\t Data de Nascimento: " + DateFormat.DateToStr(cliente.getDatanascimento()) + "\n";
         str += "Endereço: " + "Rua: " + cliente.getRua() + "\t Nº. " + cliente.getNumero() + "\t Complemento: " + cliente.getComplemento() + "\n";
         str += "CEP: " + cliente.getCep() + "\t Bairro: " + cliente.getBairro() + "\t Cidade: " + cliente.getCidade() + "\t Estado: " + cliente.getEstado() + " \n";
         str += "E-mail: " + cliente.getEmail() + "\n";
@@ -271,8 +272,8 @@ public class AluguelBean implements Serializable {
         str += "--------- Dados da Locação: -----------------------------------------\n";
         str += " \t" + "\n";
         str += "\n";
-        str += "Data da Locação: " + Utils.DateToStr(getDatalocacao()) + "\n";
-        str += "Data da Devolução: " + Utils.DateToStr(getDatadevolucao()) + "\n";
+        str += "Data da Locação: " + DateFormat.DateToStr(getDatalocacao()) + "\n";
+        str += "Data da Devolução: " + DateFormat.DateToStr(getDatadevolucao()) + "\n";
         str += "Valor Multa: " + getMulta() + "\n";
         str += "Valor Total: " + getValorTotal() + "\n";
 

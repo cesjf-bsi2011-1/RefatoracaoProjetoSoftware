@@ -6,7 +6,7 @@ package com.aluguelautomoveis.controllerview;
 
 import com.aluguelautomoveis.model.ClienteBean;
 import com.aluguelautomoveis.model.AutomovelBean;
-import com.aluguelautomoveis.model.Utils;
+import com.aluguelautomoveis.util.DateFormat;
 import java.util.Date;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -504,7 +504,7 @@ public class FormAluguel extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         Date data = new Date();
-        textFieldDataLocacao.setText(Utils.DateToStr(data));
+        textFieldDataLocacao.setText(DateFormat.DateToStr(data));
         textFormattedDataDevolucao.setText(null);
         textFormatterValorDe.setText(null);
         textFormatterValorAte.setText(null);
@@ -720,12 +720,12 @@ public class FormAluguel extends javax.swing.JFrame {
 
             try {
 
-                aluguel.setDatadevolucao(Utils.StrToDate(textFormattedDataDevolucao.getText()));
+                aluguel.setDatadevolucao(DateFormat.StrToDate(textFormattedDataDevolucao.getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(FormAluguel.class.getName()).log(Level.SEVERE, null, ex);
             }
             try {
-                aluguel.setDatalocacao(Utils.StrToDate(textFieldDataLocacao.getText()));
+                aluguel.setDatalocacao(DateFormat.StrToDate(textFieldDataLocacao.getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(FormAluguel.class.getName()).log(Level.SEVERE, null, ex);
             }

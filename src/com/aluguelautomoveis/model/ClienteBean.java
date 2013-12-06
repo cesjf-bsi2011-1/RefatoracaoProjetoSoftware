@@ -1,5 +1,6 @@
 package com.aluguelautomoveis.model;
 
+import com.aluguelautomoveis.util.DateFormat;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -299,7 +300,7 @@ public class ClienteBean implements Serializable {
         str += "--------- Dados do Cliente: ----------------------------------------\t" + "\n";
         str += " \t" + "\n";
         str += "\n";
-        str += "Nome: " + getNome() + "\t CPF: " + getCpf() + "\t Data de Nascimento: " + Utils.DateToStr(getDatanascimento()) + "\n";
+        str += "Nome: " + getNome() + "\t CPF: " + getCpf() + "\t Data de Nascimento: " + DateFormat.DateToStr(getDatanascimento()) + "\n";
         str += "Endereço: " + "Rua: " + getRua() + "\t Nº. " + getNumero() + "\t Complemento: " + getComplemento() + "\n";
         str += "CEP: " + getCep() + "\t Bairro: " + getBairro() + "\t Cidade: " + getCidade() + "\t Estado: " + getEstado() + " \n";
         str += "E-mail: " + getEmail() + "\n";

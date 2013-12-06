@@ -2,7 +2,7 @@ package com.aluguelautomoveis.controllerview;
 
 import com.aluguelautomoveis.model.FuncionarioBean;
 import javax.swing.JOptionPane;
-import com.aluguelautomoveis.model.Utils;
+import com.aluguelautomoveis.util.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -542,7 +542,7 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
             funcionario.setRua(textFieldRua.getText());
             funcionario.setCelular(textFieldCelular.getText());
             try {
-                funcionario.setDatanascimento(Utils.StrToDate(textFieldDataNascimento.getText()));
+                funcionario.setDatanascimento(DateFormat.StrToDate(textFieldDataNascimento.getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(FormCadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -738,7 +738,7 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
         textFieldCEP.setText(funcionario.getCep());
         textFieldTelefone.setValue(funcionario.getTelefone());
         textFieldEmail.setText(funcionario.getEmail());
-        textFieldDataNascimento.setText(Utils.DateToStr(funcionario.getDatanascimento()));
+        textFieldDataNascimento.setText(DateFormat.DateToStr(funcionario.getDatanascimento()));
         comboBoxSexo.setSelectedItem(funcionario.getSexo());
         textFieldCelular.setText(funcionario.getCelular());
         textFieldUsuario.setText(funcionario.getUsuario());
@@ -776,7 +776,7 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
             funcionario.setRua(textFieldRua.getText());
             funcionario.setCelular(textFieldCelular.getText());
             try {
-                funcionario.setDatanascimento(Utils.StrToDate(textFieldDataNascimento.getText()));
+                funcionario.setDatanascimento(DateFormat.StrToDate(textFieldDataNascimento.getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(FormCadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
             }

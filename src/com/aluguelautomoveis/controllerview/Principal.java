@@ -6,7 +6,7 @@ package com.aluguelautomoveis.controllerview;
 
 import javax.swing.JOptionPane;
 import java.util.Date;
-import com.aluguelautomoveis.model.Utils;
+import com.aluguelautomoveis.util.DateFormat;
 import com.sun.security.auth.module.NTSystem;
 
 public class Principal extends javax.swing.JFrame {
@@ -20,7 +20,7 @@ public class Principal extends javax.swing.JFrame {
         Date hoje = new Date();
         String today = "";
 
-        today += Utils.DateToStr(hoje);
+        today += DateFormat.DateToStr(hoje);
 
         return today;
     }

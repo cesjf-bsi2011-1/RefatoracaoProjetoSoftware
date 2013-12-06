@@ -2,7 +2,7 @@ package com.aluguelautomoveis.controllerview;
 
 import com.aluguelautomoveis.model.ClienteBean;
 import javax.swing.JOptionPane;
-import com.aluguelautomoveis.model.Utils;
+import com.aluguelautomoveis.util.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -571,7 +571,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
             cliente.setRua(textFieldLogradouro.getText());
             cliente.setCelular(textFormatedCelular.getText());
             try {
-                cliente.setDatanascimento(Utils.StrToDate(textFormattedDataNascimento.getText()));
+                cliente.setDatanascimento(DateFormat.StrToDate(textFormattedDataNascimento.getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(FormCadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -770,7 +770,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         textFieldEmail.setText(cliente.getEmail());
         textFieldCNH.setText(cliente.getHabilitacao());
         comboBoxTipo.setSelectedItem(cliente.getTipo());
-        textFormattedDataNascimento.setText(Utils.DateToStr(cliente.getDatanascimento()));
+        textFormattedDataNascimento.setText(DateFormat.DateToStr(cliente.getDatanascimento()));
         textFieldSexo.setSelectedItem(cliente.getSexo());
         textFormatedCelular.setText(cliente.getCelular());
         textFieldNomeCliente.setEnabled(true);
@@ -806,7 +806,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
             cliente.setRua(textFieldLogradouro.getText());
             cliente.setCelular(textFormatedCelular.getText());
             try {
-                cliente.setDatanascimento(Utils.StrToDate(textFormattedDataNascimento.getText()));
+                cliente.setDatanascimento(DateFormat.StrToDate(textFormattedDataNascimento.getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(FormCadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
             }
